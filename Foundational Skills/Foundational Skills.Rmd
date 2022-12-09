@@ -1,0 +1,101 @@
+---
+title: "Foundational Skills Framework"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+tutorial_options(exercise.eval = TRUE)
+library(tidyverse)
+library(nycflights13)
+nycflights <- nycflights13::flights
+gradethis::gradethis_setup()
+```
+
+## Introduction
+
+Welcome! The purpose of this tutorial is to get you setup with what we refer to as the Foundational Skills Framework.
+
+No two data science projects are the same. Even so, we’ve created a general framework for you to use as a foundation and as a set of concepts to help you work through the walkthroughs in this book. The four core concepts we will use to build our framework are:
+
+- Projects
+- Functions
+- Packages
+- Data
+
+## Projects
+
+### Background
+
+One of the first steps of every workflow should be to set up a “Project” within RStudio. A Project is the home for all of the files, images, reports, and code that are used in any given project. Note that when we capitalize the word “Project,” we’re referring to a specific setup within RStudio, while we refer to general projects that you might work on with the lowercase “project.”
+
+We use Projects because they create a self-contained folder for a given analysis in R. This means that if you want to share your Project with a colleague, they will not have to reset file paths (or even know anything about file paths!) in order to re-run your analysis.
+
+Furthermore, even if the only person you ever collaborate with is a future version of yourself, using a Project for each of your analyses will mean that you can move the Project folder around on your computer, or even move it to a new computer, and remain confident that the analysis will run in the future (at least in terms of file path structures).
+
+### Setting Up your Project
+
+Creating a Project is one of the first steps in working on an R-based data science project in RStudio. To create a Project you will need to first open RStudio.
+
+From within RStudio, follow these steps:
+
+- Click on “File”
+- Select “New Project”
+
+```{r, out.width="60%"}
+knitr::include_graphics("images/project-window.png")
+```
+
+- Choose “New Directory”
+- Click on “New Project”
+- Enter your Project’s name in the box that says, “Directory name.” We recommend choosing a Project name that helps you remember that this is a project that involves data science in education. Avoid using spaces in your Project name, and instead, separate words with hyphens or underscore characters.
+- Choose where to save your Project by clicking on “Browse” next to the box labeled "Create project as a subdirectory of:" If you are just using this to learn and test out creating a Project, consider placing it in your downloads or another temporary directory so that you remember to remove it later.
+- Click “Create Project”
+
+You've done it! There are a number of benefits to projects in RStudio. They allow you to open and use related files. They also allow you to easily switch between the things you are working on. Last, they make it easy to collaborate. 
+
+### Quiz Questions
+
+Let's reflect with a short question.
+
+```{r letter-a, echo=FALSE}
+question("Which of the following is not a benefit of creating a project in RStudio?",
+  answer("Projects allow you to open and use related files"),
+  answer("Projects allow you to easily switch between the things you are working on"),
+  answer("Projects provide ready-made templates for analyses", correct = TRUE),
+  answer("Projects make it easy to collaborate")
+)
+```
+
+The last part of this should include the name of the project you created.
+
+Also, please click the project button in the top right corner of your screen. Then, click "Close Project". Follow this by clicking the name of your project. Here's a very short video that describes this process.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NNbYaNc421s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Have you been able to tab between projects successfully?
+
+```{r, check-close-projects}
+question("Which of the following is not a benefit of creating a project in RStudio?",
+  answer("Yes", correct = TRUE),
+  answer("No")
+)
+```
+
+## Functions
+
+You can think of functions as *verbs* --- but verbs that do things to your data. Fortunately, in many cases, the names of verbs inform you as to what the function does. For example, what do you think the following function does?
+
+`sample_n()`
+
+
+
+## Packages
+
+xx
+
+## Data
+
+xx
