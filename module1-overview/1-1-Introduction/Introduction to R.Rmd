@@ -89,21 +89,21 @@ Now that you know how to calculate basic math and add comments explaining your c
 
 
 **Variables.** 
-Now that you know how R classifies some of the basic information types, we will almost always want to 'store' this information as a variable or as an object. In programming, variables allow us to store information and associate that information with a name. In R, we assign objectvariables by using the assignment operator, an arrow sign (<-) made with a less-than signcarat and a dash. 
+Now that you know how R classifies some of the basic information types, we will almost always want to 'store' this information as a variable or as an object. In programming, variables allow us to store information and associate that information with a name. In R, we assign objects by using the assignment operator, an arrow sign (<-) made with a less-than sign and a dash. 
 
-Below is an example demonstrating how to assign data types to a variable or object. Run the first line of code written below. You can see that R gives no output. That's because you simply stored/assigned 9 to the word apple. Now go ahead and type in apple under the line of code written. Take some time to think about the output R will give, if any at all. Go ahead and run these two lines of code to show the output.
+Below is an example demonstrating how to assign data types to a variable or object. In this case, we are assigning a student ID number to an object called `student_id`. Run the first line of code written below. You can see that R gives no output. That's because you simply stored/assigned 98749 to the word `student_id`. Now go ahead and type in `student_id` under the line of code written. Take some time to think about the output R will give, if any at all. Go ahead and run these two lines of code to show the output.
 ```{r  assignmentoperator, exercise = TRUE}
-apple <- 9  #this assigns or 'stores' 9 (a numeric data type) to the word 'apple' (a character data type)
+student_id <- 98749  #this assigns or 'stores' 98749 (a numeric data type) to the word 'student_id' (a character data type)
 
 
 ```
 <br>
 **Vectors.**
-We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type. In the example below, we assign a list of character data types (names of months in this case) to a vector called `spring_months`.
+We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type. In the example below, we assign a list of character data types (names of months in this case) to a vector called `student_ids`.
 
-Like the example above, if you run the line of code written below, R gives no output due to the same reason as above. Take some time to think about the output R will give, if any at all, before typing in `spring_months` under the line of code written and pressing "Run Code."
+Like the example above, if you run the line of code written below, R gives no output due to the same reason as above. Take some time to think about the output R will give, if any at all, before typing in `student_ids` under the line of code written and pressing "Run Code."
 ```{r  vectorassign, exercise = TRUE}
-spring_months <- c("March", "April","May","June") 
+student_ids <- c("98749", "042023","052018","061992") 
 
 
 ```
@@ -115,9 +115,19 @@ Let's take some time to reflect before moving on. What is one thing that surpris
 
 Great! Now that we know a little bit about R and what it can do, let's learn how to install the software onto your computer.
 
-### How to install R
+To be successful in this course, you will need to download and install two required software on your computer: R and RStudio. Don't worry, both are free! The first software you will need to install is R which the the **programming language** we will be using in this course. R is available for multiple computer operating systems such as Mac OS, Windows, and Linux. RStudio is the **software program** that makes R (the programming language) easy to use. As a recap, R is the programming language we will be using and RStudio is the software program/environment we get to use R in. 
+
+We will first cover how to install R, the programming language, then we will cover how to install RStudio. 
+
+You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
+
+### Video: How to install R
 
 ![](https://vimeo.com/203516510)
+
+For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
+
+If you need help installing R, please contact UT OIT at XX.
 
 ### Test your knowledge
 
@@ -132,11 +142,19 @@ quiz(caption = "Quiz - Installing R",
 
 ## Install RStudio
 
+Great! Now that you have successfully downloaded and installed, let's walk through how to download and install RStudio onto your computer. 
+
 ### How to install RStudio
 
-RStudio is an Integrated Development Environment for R. What does that mean? Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language. RStudio makes programming in R much easier and I suggest that you use it!
+As we briefly described, RStudio is an Integrated Development Environment for R. What does that mean? Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language. RStudio makes programming in R much easier and I suggest that you use it!
+
+You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
 
 ![](https://vimeo.com/203516968)
+
+For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
+
+If you need help installing R, please contact UT OIT at XX.
 
 ### Test your knowledge
 
@@ -160,15 +178,40 @@ quiz(caption = "Quiz - Install RStudio",
 )
 ```
 
-## Install Packages
+## Getting Started with R and RStudio
 
-### How to install R packages
+Great! Now that you have successfully installed R and RStudio onto your computer. Let's take a little tour to get you familiar with the software.
 
-![](https://vimeo.com/203516241)
+## RStudio Tour
+
+Before we begin, please save the project file in Canvas titled introtoR.Rproj in this current module. Save this .Rproj file in the folder you would like to keep your course materials for this class.
+
+Once you have successfully saved the .Rproj file in your preferred location on your computer. Double click on the .RProj file to open up this file in RStudio (RStudio will automatically open when you double click the file).
+
+Once RStudio is open, in the bottom right window pane, double click on the `intro to R.Rmd` file.
+
+The video below will give you a tour of the RStudio environment using the `intro to R. Rmd` file. Please follow along :)
+
+INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
+
+## Working Directory and RProjects
+
+We hope you enjoyed our virtual tour of RStudio. The next thing we want to cover are working directories and RProjects. Both let RStudio know where on your computer your saving your files or opening files from. These are important to use and set up at the beginning when creating R files/scripts (otherwise you will get errors messages because RStudio doesn't know what file location you're working off of).
+
+The video below will give you a brief tutorial of setting your file location using a working directory or RProjects.
+
+INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
+
+You may have already figured out that you don't need to use `getwd()` for the intro to R. Rmd` file you're using in RStudio right now since it's part of an R Project. Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project. 
+
+We will do into more detail on R projects in the 1.2 Foundational Skills module. 
+
+Pretty cool, huh?
+
 
 ### Test your knowledge
 
-```{r names, echo = FALSE}
+```{r quiz4, echo = FALSE}
 quiz(caption = "Quiz - Working with Packages",
   question("What command do you use to install packages?",
     answer("`library()`", message = "We will see what `library()` does later."),
@@ -194,100 +237,17 @@ quiz(caption = "Quiz - Working with Packages",
 )
 ```
 
+### Tasks
+Now that you have R and RStudio installed on your machine and you have been acquainted with RStudio, we have provided a few tasks below for you to complete.
+1. Choose a preferred appearance theme for RStudio
+2. Change the default setting that saves the workspace
+3. Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523. Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
+4. Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
 
-## Welcome
+### Reflect
+Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
-This is a demo tutorial. Compare it to the [source code](https://github.com/rstudio/learnr/tree/main/inst/tutorials/ex-setup-r/ex-setup-r.Rmd) that made it.
-
-## Topic 1
-
-### Exercise
-
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
-
-Write the R code required to add two plus two:
-
-```{r two-plus-two, exercise=TRUE}
-2+2
-```
-
-### Exercise with Code
-
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
-
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
-```
-
-## Topic 2
-
-### Exercise with Hint
-
-*Here's an exercise where the chunk is pre-evaluated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
-```
-
-```{r print-limit-hint}
-head(mtcars)
-```
-
-### Quiz
-
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
-
-Some questions to verify that you understand the purposes of various base and recommended R packages:
-
-```{r quiz}
-quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
-  ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
-  )
-)
-```
-### Is this tutorial for you?
-
-Do you need to work through the tutorial? Take the quiz below to find out.
-
-
-question("Check all that you have NOT done:",
-  answer("installed R on my computer", message = "* Install R"),
-  answer("installed the RStudio IDE", message = "* Install RStudio IDE"),
-  answer("installed the tidyverse R package", message = "* Install Packages"),
-  answer("None of the above. I've done them all.", correct = TRUE, message = "You can skip this tutorial!"),
-  type = "multiple",
-  incorrect = "This tutorial is here to help! To get set up read:"
-  ,
-  question("Where do you download R?",
-    answer("www.rstudio.com/download"),
-    answer("[cloud.r-project.org](http://cloud.r-project.org)", correct = TRUE, message = "You can also download R from [cran.r-project.org](http://cran.r-project.org)"),
-    answer("www.r-project.org", message = "Good try, but not exactly. www.r-project.org doesn't provide a download link, but it does provide a link to one the websites above."),
-    answer("www.r.com"),
-    allow_retry = TRUE
-  ),
-  question("How often should you update R?",
-    answer("Everytime you use it", message = "This will be too often unless you use R very rarely!"),
-    answer("About once a year", correct = TRUE, "A new version of R is released about once a year. Update sooner if you encounter a bug that you cannot explain."),
-    answer("Never", message = "A new version of R is released about once a year. I'll assume that you are using the newest version of R, which will be the fastest version with the fewest unexpected behaviors." ),
-    allow_retry = TRUE
-  )
-)
-
+### El Fin
+Good job on completing the first of three tutorials within the first module of this course! Please move onto the next tutorial within this module on Canvas where we will learn foundational R and data analytic skills.
 
 

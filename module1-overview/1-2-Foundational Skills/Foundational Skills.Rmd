@@ -9,20 +9,18 @@ library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
 tutorial_options(exercise.eval = TRUE)
 library(tidyverse)
-library(nycflights13)
-nycflights <- nycflights13::flights
 gradethis::gradethis_setup()
 ```
 
 ## Introduction
 
-Welcome! The purpose of this tutorial is to get you setup with what we refer to as the Foundational Skills Framework.
+Welcome! The purpose of this tutorial is to get you setup with what we refer to as the Foundational Skills Framework (Estrellado et al., 2020).
 
 No two data science projects are the same. Even so, we’ve created a general framework for you to use as a foundation and as a set of concepts to help you work through the walkthroughs in this book. The four core concepts we will use to build our framework are:
 
 - Projects
-- Functions
 - Packages
+- Functions
 - Data
 
 ## Projects
@@ -84,18 +82,196 @@ question("Which of the following is not a benefit of creating a project in RStud
 )
 ```
 
+## R Packages
+
+We already know R is a statistical coding language we will be using but there are also things within R called packages. Packages are a collection of R functions, compiled code, and sample data. Nearly every R user uses packages to improve efficiency and reproducability of their code.
+
+As the name implies, these packages are like packages that contain useful tools. Alternatively, you can think of a package as different dialects of the R language. 
+
+More on this in the video below where you will learn about packages, how to install packages, and how to load packages :)
+
+INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
+
+As a brief note, when you load RStudio, you can still use the default language which is called base R. Base R is already pre-loaded when you open RStudio. For example, you can use the following line of code below which is considered Base R.
+
+```{r  baseR, exercise = TRUE}
+2*18
+```
+
+### Installing R Packages
+
+Here's an example line of how you would install a package.
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("package_name")
+```
+
+You would replace `"package_name"` with the name of the package you would like to install. 
+
+For example, if you wanted to install the package `tidyverse` you would run the line of code below in your console in R and press enter.
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("tidyverse")
+```
+
+Please remember you only need to install R packages once in your computer's lifetime, you need quotations around the package name when you use `install_package()`, and R is case sensitive so be careful in how you type the name of the package. 
+
+### Loading R Packages
+
+Now that we covered how to install R packages onto your computer (within R), anytime you want to use a package, you will need to load it. While you only need to install an R package once in your computer's lifetime, anytime you want to use an R package in any R file/script, you will need to load it every time. In order to do this, you will use `library()`.
+
+For example, if you wanted to load the package `tidyverse` into your R environment to use, you would use the line of code below.
+```{r}
+library("tidyverse")
+```
+
+Please note that you have to install a package before you load a package using the `library()` function. 
+
+### Best Practices: R Packages
+
+We wanted to provide you with some best practices on using R packages through you data science journey. 
+- Since you only need to install a package once, it is common practice to install the package in your console using `install.packages()`
+- Since you need to load a package every time you plan to use a package in your R file/script, it is common practice to the package(s) at the top of your file/script using `library()`
+- While we will provide you with the most common packages to use for education data science, you can learn more about the packages we will be using as well as additional packages [here](https://cran.r-project.org/web/packages/available_packages_by_date.html)
+
+
+### Additional information on R Packages
+
+If you would like additional information on packages within R, you can watch the brief video below.
+
+![](https://vimeo.com/203516241)
+
+### Your Turn: Install the following packages in R
+
+Let's practice installing packages in R. Open up RStudio and install the following packages. We will use these packages throughout the course.
+- here
+- janitor
+- lme4
+- lubridate
+- psych
+- tidyverse
+- skimr
+
+```{r quiz5, echo=FALSE}
+quiz(caption = "Quiz - Installing Packages",
+  question("Were you able to install the 7 packages listed above in R",
+    answer("Yes!", correct = TRUE, message = "Good job!"),
+    answer("No.")
+  )
+)
+```
+
 ## Functions
+
+Now that we learned about packages within R, let's learn about functions!
 
 You can think of functions as *verbs* --- but verbs that do things to your data. Fortunately, in many cases, the names of verbs inform you as to what the function does. For example, what do you think the following function does?
 
-`sample_n()`
+`sqrt()`
+
+```{r quiz6, echo=FALSE}
+quiz(caption = "What's that function?",
+  question("Do you know what the function above does",
+    answer("Yes!", correct = TRUE, message = "Good job! This function takes the square root of a number!"),
+    answer("No.", message = "Dont worry about it! This function takes the square root of a number!")
+  )
+)
+```
+Why don't you try using the `sqrt()` function below? Please type in a value and press run.
+
+```{r sqrt, exercise = TRUE}
 
 
+```
 
-## Packages
+As you can see, the `sqrt()` is a function that calculates the square root of a value. In other words, the function 'sqrt()` is a verb that does things (takes the square root) of your data (the number you provide it).
 
-xx
+Another function is `mean()`. You can probably imagine that this function takes the mean (or finds the average) of the values you provide it. 
+
+For example, let's pretend we have student exam grades and want to find the class average.
+```{r  mean, exercise = TRUE}
+mean(83, 74, 94, 87, 97, 81, 72, 73, 84, 63, 85, 76, 72)
+```
+
+The `mean()` function is a little bit different than the `sqrt()` function in different ways. First, these functions do different things so knowing their purpose is important. Second, these functions accept different values in a different structure. For example, `sqrt()` accepts only one value while `mean()` accepts multiple values at once that are separated by a comma. 
+
+In order to make functions useful, you must know 1) their purpose and 2) the types of inputs the functions needs, 3) and the structure in which you need to provide these inputs (e.g., for example `mean()` accepts multiples values that are separated by commas).
+
+A good way to find know the purpose, type of input(s) required by the function, and the structure of these input(s), you can look up the function's documentation. There are a couple of ways to do this so we made a brief video below showing you. Note: `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
+
+[INSERT VIDEO ON LOOKING UP FUNCTION DOCUMENTATION]
+
+Perhaps you remembered us learning that packages have R functions within them? This is true! Different R packages will have different R functions within them that do different things. One of the reasons why we load our packages first using the `library()` function is so R can read in all the items contained in that package including the functions you are planning to use. 
+
+You can also find the function documentation by looking up the reference manual for the package it belongs to: https://cran.r-project.org/web/packages/available_packages_by_name.html
+
+We'll continue to revisit functions throughout the remainder of this course.
+
 
 ## Data
 
-xx
+### Supported data files
+
+The last, and certainly not least, core concept to the Foundational Skills Framework is data! RStudio supports a lot of different data files for data science procedures. We listed the common data files that are supported by RStudio below
+- csv
+- xls
+- xlsx
+- sav
+- dta
+
+These data files are uploaded using code opposed to the 'point and click' procedure. The different file types listed above can be read-in (aka uploaded) to RStudio using different functions found in different packages (perhaps you can see the order of operations we've built thus far). We've provided some examples below.
+
+### Example code to read in different data files
+
+We can use the tidyverse package to read in .csv files
+```{r, eval=FALSE, echo=TRUE}
+nameyourdataset <- read_csv('nameoffile.csv')
+```
+
+We can use the readxl package to read in .xls and .xlsx files
+```{r, eval=FALSE, echo=TRUE}
+nameyourdataset <- read_excel('nameoffile.xls')
+nameyourdataset <- read_excel('nameoffile.xlsx')
+```
+
+We can use the haven package to read in .sav (SPSS) data files and .dta (stata) data files
+```{r, eval=FALSE, echo=TRUE}
+nameyourdataset <- read_sav('nameoffile.sav')
+nameyourdataset <- read_dta('nameoffile.dta')
+```
+
+### The High School and Beyond Data
+
+For this course, we will be using the High School and Beyond (HSB) dataset provided by the National Center for Education Statistics. We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students students with 11 variables. The HSB data can be found in your R project under the 'data' folder and is labeled hsb.csv. The codebook/data dictionary for the data set can also be found in the 'data' folder and is labeled hsb-codebook.txt. We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this course.
+
+HSB codebook
+- id: Student ID
+- gender: Student's gender (female, male)
+- race: Student's race (african, american, asian, hispanic, white)
+- ses: Socioeconomic status of student's family (low, middle, high)
+- schtyp: Type of school student is enrolled in (public, private)
+- prog: Type of program student is enrolled in (general, academic, vocational)
+- read: Standardized reading score
+- write: Standardized writing score
+- math: Standardized math score
+- science: Standardized science score
+- socst: Standardized social studies score
+
+### Tasks
+Now that you are more acquainted with R, RStudio, and the Foundational Skills framework, let's engage in a task! Please follow the steps outlined below.
+1. Create a new R script (lastname-R-module1) and save in your project folder for this course.
+2. Load the tidyverse and psych libraries in your R script
+3. Find the hsb dataset in the R project for this course named hsb-data.csv and upload it into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb-raw` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb-raw`.
+4. Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.
+5. Using  comments within R, write a few notes about the results produced from the `describe()` function. In addition, please make sure you have left brief comments on all written code within this file (future you will thank you later :-)).
+6. Read the brief resource in Canvas titled: base-r-cheat-sheet.pdf and ADD ANOTHER CHEATSHEET/RESOURCE
+
+#### Note:
+You may run into issues in completing the tasks listed above. Please refer to this document as well as the introduction to R document. Google is also a great resource when you run into issues in R.
+
+### Reflect
+Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
+
+### El Fin
+Good job on completing the first of three tutorials within the first module of this course! Please move onto the next tutorial within this module on Canvas where we will begin to explore the hsb dataset.
+
