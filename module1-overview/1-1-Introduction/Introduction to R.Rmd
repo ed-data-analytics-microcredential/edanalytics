@@ -119,7 +119,7 @@ To be successful in this course, you will need to download and install two requi
 
 We will first cover how to install R, the programming language, then we will cover how to install RStudio. 
 
-You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
+You can navigate to the official R and RStudio to download and install R [here](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
 
 ### Video: How to install R
 
@@ -148,7 +148,7 @@ Great! Now that you have successfully downloaded and installed, let's walk throu
 
 As we briefly described, RStudio is an Integrated Development Environment for R. What does that mean? Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language. RStudio makes programming in R much easier and I suggest that you use it!
 
-You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
+You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/) Please watch the video below on how to download and install R.
 
 ![](https://vimeo.com/203516968)
 
@@ -184,13 +184,13 @@ Great! Now that you have successfully installed R and RStudio onto your computer
 
 ## RStudio Tour
 
-Before we begin, please save the project file in Canvas titled introtoR.Rproj in this current module. Save this .Rproj file in the folder you would like to keep your course materials for this class.
+Before we begin, please save the project file in Canvas titled microcred.Rproj in this current module. Save this .Rproj file in the folder you would like to keep your course materials for this class.
 
 Once you have successfully saved the .Rproj file in your preferred location on your computer. Double click on the .RProj file to open up this file in RStudio (RStudio will automatically open when you double click the file).
 
-Once RStudio is open, in the bottom right window pane, double click on the `intro to R.Rmd` file.
+Once RStudio is open, in the bottom right window pane, double click on the `intro to R.R` file.
 
-The video below will give you a tour of the RStudio environment using the `intro to R. Rmd` file. Please follow along :)
+The video below will give you a tour of the RStudio environment using the `intro to R. R` file. Please follow along :)
 
 INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
 
@@ -202,7 +202,7 @@ The video below will give you a brief tutorial of setting your file location usi
 
 INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
 
-You may have already figured out that you don't need to use `getwd()` for the intro to R. Rmd` file you're using in RStudio right now since it's part of an R Project. Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project. 
+You may have already figured out that you don't need to use `getwd()` for the `intro to R` file you're using in RStudio right now since it's part of an R Project. Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project. 
 
 We will do into more detail on R projects in the 1.2 Foundational Skills module. 
 
@@ -237,12 +237,14 @@ quiz(caption = "Quiz - Working with Packages",
 )
 ```
 
-### Tasks
+## Tasks
 Now that you have R and RStudio installed on your machine and you have been acquainted with RStudio, we have provided a few tasks below for you to complete.
+
 1. Choose a preferred appearance theme for RStudio
 2. Change the default setting that saves the workspace
-3. Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523. Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
-4. Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
+3. Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523. 
+4. Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
+5. Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
 
 ### Reflect
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?

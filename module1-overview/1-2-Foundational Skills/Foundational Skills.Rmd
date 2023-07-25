@@ -33,7 +33,9 @@ We use Projects because they create a self-contained folder for a given analysis
 
 Furthermore, even if the only person you ever collaborate with is a future version of yourself, using a Project for each of your analyses will mean that you can move the Project folder around on your computer, or even move it to a new computer, and remain confident that the analysis will run in the future (at least in terms of file path structures).
 
-### Setting Up your Project
+### Setting Up Your Project
+
+Note: We have already given you a project file with the different R-related files needed for this course so you will not need to create a R Project for this course. However, RProjects are important in terms of file management in R so we provided you with information below on how to create RProjects if you intend to use R for other data related projects outside this course.
 
 Creating a Project is one of the first steps in working on an R-based data science project in RStudio. To create a Project you will need to first open RStudio.
 
@@ -130,6 +132,7 @@ Please note that you have to install a package before you load a package using t
 ### Best Practices: R Packages
 
 We wanted to provide you with some best practices on using R packages through you data science journey. 
+
 - Since you only need to install a package once, it is common practice to install the package in your console using `install.packages()`
 - Since you need to load a package every time you plan to use a package in your R file/script, it is common practice to the package(s) at the top of your file/script using `library()`
 - While we will provide you with the most common packages to use for education data science, you can learn more about the packages we will be using as well as additional packages [here](https://cran.r-project.org/web/packages/available_packages_by_date.html)
@@ -184,7 +187,7 @@ Why don't you try using the `sqrt()` function below? Please type in a value and 
 
 ```
 
-As you can see, the `sqrt()` is a function that calculates the square root of a value. In other words, the function 'sqrt()` is a verb that does things (takes the square root) of your data (the number you provide it).
+As you can see, the `sqrt()` is a function that calculates the square root of a value. In other words, the function `sqrt()` is a verb that does things (takes the square root) of your data (the number you provide it).
 
 Another function is `mean()`. You can probably imagine that this function takes the mean (or finds the average) of the values you provide it. 
 
@@ -195,7 +198,11 @@ mean(83, 74, 94, 87, 97, 81, 72, 73, 84, 63, 85, 76, 72)
 
 The `mean()` function is a little bit different than the `sqrt()` function in different ways. First, these functions do different things so knowing their purpose is important. Second, these functions accept different values in a different structure. For example, `sqrt()` accepts only one value while `mean()` accepts multiple values at once that are separated by a comma. 
 
-In order to make functions useful, you must know 1) their purpose and 2) the types of inputs the functions needs, 3) and the structure in which you need to provide these inputs (e.g., for example `mean()` accepts multiples values that are separated by commas).
+In order to make functions useful, you must know:
+
+1. The function's purpose;
+2. The types of inputs the functions needs;
+3. And the structure in which you need to provide these inputs (e.g., for example `mean()` accepts multiples values that are separated by commas).
 
 A good way to find know the purpose, type of input(s) required by the function, and the structure of these input(s), you can look up the function's documentation. There are a couple of ways to do this so we made a brief video below showing you. Note: `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
 
@@ -213,6 +220,7 @@ We'll continue to revisit functions throughout the remainder of this course.
 ### Supported data files
 
 The last, and certainly not least, core concept to the Foundational Skills Framework is data! RStudio supports a lot of different data files for data science procedures. We listed the common data files that are supported by RStudio below
+
 - csv
 - xls
 - xlsx
@@ -223,18 +231,18 @@ These data files are uploaded using code opposed to the 'point and click' proced
 
 ### Example code to read in different data files
 
-We can use the tidyverse package to read in .csv files
+We can use the `tidyverse` package to read in .csv files
 ```{r, eval=FALSE, echo=TRUE}
 nameyourdataset <- read_csv('nameoffile.csv')
 ```
 
-We can use the readxl package to read in .xls and .xlsx files
+We can use the `readxl` package to read in .xls and .xlsx files
 ```{r, eval=FALSE, echo=TRUE}
 nameyourdataset <- read_excel('nameoffile.xls')
 nameyourdataset <- read_excel('nameoffile.xlsx')
 ```
 
-We can use the haven package to read in .sav (SPSS) data files and .dta (stata) data files
+We can use the `haven` package to read in .sav (SPSS) data files and .dta (stata) data files
 ```{r, eval=FALSE, echo=TRUE}
 nameyourdataset <- read_sav('nameoffile.sav')
 nameyourdataset <- read_dta('nameoffile.dta')
@@ -244,7 +252,8 @@ nameyourdataset <- read_dta('nameoffile.dta')
 
 For this course, we will be using the High School and Beyond (HSB) dataset provided by the National Center for Education Statistics. We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students students with 11 variables. The HSB data can be found in your R project under the 'data' folder and is labeled hsb.csv. The codebook/data dictionary for the data set can also be found in the 'data' folder and is labeled hsb-codebook.txt. We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this course.
 
-HSB codebook
+HSB codebook:
+
 - id: Student ID
 - gender: Student's gender (female, male)
 - race: Student's race (african, american, asian, hispanic, white)
@@ -257,9 +266,10 @@ HSB codebook
 - science: Standardized science score
 - socst: Standardized social studies score
 
-### Tasks
+## Tasks
 Now that you are more acquainted with R, RStudio, and the Foundational Skills framework, let's engage in a task! Please follow the steps outlined below.
-1. Create a new R script (lastname-R-module1) and save in your project folder for this course.
+
+1. Create a new R script (lastname-R-task2) and save in your project folder for this course.
 2. Load the tidyverse and psych libraries in your R script
 3. Find the hsb dataset in the R project for this course named hsb-data.csv and upload it into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb-raw` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb-raw`.
 4. Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.

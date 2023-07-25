@@ -19,35 +19,35 @@ Welcome! Now that you understand how to use packages, functions, and how to impo
 
 This tutorial will cover the nuts and bolts of data within R in terms of knowing the different data types and structures and understanding how to access specific elements within a data object. These concepts are fundamental and essential in gearing us up to learn about data manipulation in the next module. We will be covering the following in this tutorial:
 
-*-* Data types
-*-* Data structure
-*-* Data indexing
+- Data types
+- Data structure
+- Data indexing
 
 ## Data Types
 
 Data types are the types of data supported and can be used with R and within RStudio. While there are different data types that can be used within R, we will cover the 4 basic data types:
 
-*-* Numeric
-*-* Integer
-*-* Character
-*-* Logical
+- Numeric
+- Integer
+- Character
+- Logical
 
 ### Numeric
 
 Numeric data types are real number values that are allowed to have decimal points and are not considered whole numbers.
-```{r  numeric_types, exercise = TRUE}
+```{r  numerictypes, echo=TRUE}
 # Numeric atomic vector
-grade1 <- 93.5
-grade1
+grade1 <- 93.51
 typeof(grade1)
 str(grade1)
+
 ```
 
 In this example above, we are saving the numerical value 93.5 to an object called `grade1`. When you run the line of code `grade1`, you can see it will give you the value of 93.5. Additionally, we can use the `typeof()` function to check the data type in which the output says "double" which is true since all numeric data types are considered double numerical values since they are allowed to have decimal points. We can also use `str()` function to check the structure of the object `grade1` which the output says it's `num`, a numerical data type, with the value 93.5 inside of the object.
 
 While we used 93.5 to demonstrate a numeric data type, 93 is also considered a numeric data type which is synonymous as a double numerical value even though this value does not have specified decimal places. Check out the example below :smiley:
 
-```{r  numeric_types2, exercise = TRUE}
+```{r  numeric_types3, echo=TRUE}
 # Numeric atomic vector
 grade2 <- 93
 grade2
@@ -61,7 +61,7 @@ You're probably wondering why 93 is considered a double numerical value and not 
 
 Integer data types are real numbers that are not allowed to have decimal points as opposed to numeric data types. Specifically, the suffix `L` is used to specify integer data.
 
-```{r  integer_types, exercise = TRUE}
+```{r  integer_types, echo=TRUE}
 integer <- 256L
 integer
 typeof(integer)
@@ -74,7 +74,7 @@ As you can see when we use `typeof()` and `str()`, the output tells us that the 
 
 Character data types are aptly named as they are data types that are used to specify data that are characters and string values. String values are a set of character data while a character value is a single character. For example, `'T'` is considered a single character while `"Theo"` is considered a string. Going one more step in this distinction `"Hi my name is Theo"` is also considered a string of character values. Strings can be represented through the use of single quotes `''` or double quotes `""`. As a common rule, `''` is used for character variables and `""` is used for string variables.
 
-```{r  char_types, exercise = TRUE}
+```{r  char_types, echo=TRUE}
 
 name <- "Theo"
 name
@@ -86,9 +86,9 @@ When we use `typeof()` and `str()`, the output tells us that the object `name` i
 
 ### Logical
 
-Yay!:tada: We made it to the final data type: logical data. Logical data types in R are known as boolean data types. Logical data can only have two values: `TRUE` and `FALSE`.
+Yay!We made it to the final data type: logical data. Logical data types in R are known as boolean data types. Logical data can only have two values: `TRUE` and `FALSE`.
 
-```{r  logical_char, exercise = TRUE}
+```{r  logical_char, echo=TRUE}
 
 logical1 <- TRUE
 logical1
@@ -122,11 +122,12 @@ kable(data_structure, caption = "Table 1: Data Structures")
 ```
 
 Here are the 5 common data structures outlined below:
-*-* Atomic vector: Homogeneous and 1-dimensional
-*-* List: Heterogeneous and 1-dimensional
-*-* Matrix: Homogeneous and 2-dimensional
-*-* Array: Homogeneous and =< 2-dimensional
-*-* Data frame: Heterogeneous and 2-dimensional
+
+- Atomic vector: Homogeneous and 1-dimensional
+- List: Heterogeneous and 1-dimensional
+- Matrix: Homogeneous and 2-dimensional
+- Array: Homogeneous and =< 2-dimensional
+- Data frame: Heterogeneous and 2-dimensional
 
 ### Atomic vector
 
@@ -249,7 +250,7 @@ char_vector
 
 Let's say we want to save the second school name into another object called `hs`. We can achieve this by specifying the location of the second element within `char_vector` using `[[]]`.
 
-```{r  index_vec2, exercise = TRUE}
+```{r  index_vec2, echo=TRUE}
 char_vector <- c("Bell Middle", "Kim High", "South Elementary")
 char_vector
 hs <- char_vector[[2]]
@@ -260,7 +261,7 @@ As you can see in the example above, we access the second element inside of `cha
 
 After saving Kim High to another object called `hs`, do you think Kim High still exists as the second element in `char_vector`? Let's check!
 
-```{r  index_vec3, exercise = TRUE}
+```{r  index_vec3, echo=TRUE}
 char_vector <- c("Bell Middle", "Kim High", "South Elementary")
 char_vector
 hs <- char_vector[[2]]
@@ -272,7 +273,7 @@ char_vector
 
 Let's go ahead and try to access certain values in a list! We're going to use the same example above when we learned about lists. Let's access the different first two data types specified in this list below.
 
-```{r  index_list, exercise = TRUE}
+```{r  index_list, echo=TRUE}
 list_example <- list(100:105, "apple", c(TRUE, FALSE, FALSE), c(99.8, 87.0, 88.3))
 list_example
 list_example[[1]]
@@ -281,7 +282,7 @@ list_example[[2]]
 
 Great! We were able to access the first element of the list that contained the values 100 - 105 and the second element of the list that contained the string `"apple"`. Let's try accessing one value in this list. Specifically, let's save the value 103 to a new object called `quiz1`.
 
-```{r  index_list2, exercise = TRUE}
+```{r  index_list2, echo=TRUE}
 list_example <- list(100:105, "apple", c(TRUE, FALSE, FALSE), c(99.8, 87.0, 88.3))
 list_example
 quiz1 <- list_example[[1]][4]
@@ -294,7 +295,7 @@ In the code `list_example[[1]][4]` we tell R to access the first element of `lis
 
 Great! So far we have only accessed values in 1-dimensional data structures so let's try accessing values in two dimensional data structures. Specifically, let's use the example below to access all values within column 2
 
-```{r  index_matrix, exercise = TRUE}
+```{r  index_matrix, echo=TRUE}
 matrix_example <- matrix(1:9, ncol=3, nrow = 3)
 matrix_example
 matrix_example[, 2]
@@ -303,7 +304,7 @@ matrix_example[, 2]
 
 Good job! Let's use the same example but access all values in the second row.
 
-```{r  index_matrix2, exercise = TRUE}
+```{r  index_matrix2, exercise=TRUE}
 matrix_example <- matrix(1:9, ncol=3, nrow = 3)
 matrix_example
 matrix_example[2, ]
@@ -312,7 +313,7 @@ matrix_example[2, ]
 
 How do you think you would access the value located in the second column and second row? Give it a try below.
 
-```{r  index_matrix3, exercise = TRUE}
+```{r  index_matrix3, echo=TRUE}
 matrix_example <- matrix(1:9, ncol=3, nrow = 3)
 matrix_example
 
@@ -322,7 +323,7 @@ matrix_example
 
 Here's the answer!
 
-```{r  index_matrix4, exercise = TRUE}
+```{r  index_matrix4, echo=TRUE}
 matrix_example <- matrix(1:9, ncol=3, nrow = 3)
 matrix_example
 matrix_example[2, 2]
@@ -436,7 +437,7 @@ classification
 
 We can check the structure of the data using `str()`
 
-```{r}
+```{r echo=TRUE}
 str(classification)
 ```
 
@@ -444,13 +445,13 @@ In the output above, you can see that R tells us that the object called `classif
 
 The ordering of levels in this case is not intuitive so let's go ahead and change it! We can reorder the levels of a factor using the `levels` argument in the `factor()` function.
 
-```{r}
+```{r echo=TRUE}
 classification <- factor(classification, levels = c("freshman", "sophomore", "junior", "senior"))
 ```
 
 Let's check if the reordering was successful.
 
-```{r}
+```{r echo=TRUE}
 str(classification)
 ```
 
@@ -462,14 +463,14 @@ More often than not, when you import data into R, it won't automatically import 
 
 To illustrate this, let's go ahead and make an object with strings called `school_type`.
 
-```{r}
+```{r echo=TRUE}
 school_type <- c("private", "public", "charter")
 str(school_type)
 ```
 
 We can convert these strings into factors using the `as.factor()` function and check by using the `str()` function.
 
-```{r}
+```{r echo=TRUE}
 school_type <- as.factor(school_type)
 str(school_type)
 ```
@@ -491,14 +492,14 @@ knitr::include_graphics(paste0(getwd(), "/images/logicalchart.png"))
 
 For example, if we want to know if two objects are equal we can use the following:
 
-```{r}
+```{r echo=TRUE}
 1 == 1
 ```
 
 The output will return the logical operator `TRUE`.
 
 Here's another example using values stored in an object:
-```{r}
+```{r echo=TRUE}
 object1 <- 106
 object2 <- 509
 
@@ -506,12 +507,12 @@ object1 > object2
 ```
 
 We can also use logical comparisons for character values!
-```{r}
+```{r echo=TRUE}
 "Bob" != "Bobby"
 ```
 
 Lastly, we can compare values within two lists:
-```{r}
+```{r echo=TRUE}
 list1 <- c(906, "Juan", 1000, "Gracie")
 list2 <- c(906, "juan", 0001, "Gracie")
 
@@ -521,7 +522,7 @@ In the output we can see that the first element in `list1` and `list1` are equal
 
 There's a lot we can do with logical comparisons but we wanted to introduce you to logical comparisons and operators as they will come in handy when we begin to wrangle our data in the next module.
 
-### Tasks
+## Tasks
 Now that you are more acquainted with data types and structures, let's engage in a task! Please follow the steps outlined below.
 
 1. Open the R script you created in the previous submodule (lastname-R-task2) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
@@ -529,9 +530,9 @@ Now that you are more acquainted with data types and structures, let's engage in
 3. Using comments, write notes on the types of data for each variable in the hsb dataset.
 4. Ensure the following 4 variables are classified as factors: gender, race, ses, schtype, prog. Save these changes to another data frame object called `hsbclean`.
 5. Change the following column names and save these changes to another data frame object called `hsbclean`.
-*-* schtype -> schooltype
-*-* prog -> program
-*-* socst -> socialst
+- schtype -> schooltype
+- prog -> program
+- socst -> socialst
 
 #### Note:
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
