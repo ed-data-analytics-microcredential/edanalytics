@@ -19,7 +19,7 @@ In this tutorial we will learn how to wrangle data using `dplyr` functions withi
 The typical data science process is outlined in the figure below. We start by **importing** data (which we learned in the previous module), we then **tidy** our data by ensuring each column in a variable and each row is an observation. We then **transform** our data by modifying and creating new variables within our dataset. The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
 
 
-```{r tidychart, include=FALSE}
+```{r tidychart, echo=FALSE}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
 
 ```
@@ -87,12 +87,12 @@ You can think of the functions within `dplyr` to manipulate data as verbs. The f
 
 Before we begin, we need to learn about the pipe.
 
-```{r pipe, include=FALSE}
+```{r pipe, echo=FALSE}
 knitr::include_graphics(paste0(getwd(), "/images/pipe.png"))
 
 ```
 
-No, not that one!
+Yes, that one!
 
 #### `pipe()`
 
