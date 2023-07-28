@@ -250,9 +250,7 @@ char_vector
 
 Let's say we want to save the second school name into another object called `hs`. We can achieve this by specifying the location of the second element within `char_vector` using `[[]]`.
 
-```{r  index_vec2, echo=TRUE}
-char_vector <- c("Bell Middle", "Kim High", "South Elementary")
-char_vector
+```{r  index_vec2, exercise=TRUE, exercise.setup = "index_vec"}
 hs <- char_vector[[2]]
 hs
 ```
@@ -533,6 +531,8 @@ Now that you are more acquainted with data types and structures, let's engage in
 - schtype -> schooltype
 - prog -> program
 - socst -> socialst
+6. Save R script as lastname-R-task3
+7. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf and ADD ANOTHER CHEATSHEET/RESOURCE
 
 #### Note:
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
