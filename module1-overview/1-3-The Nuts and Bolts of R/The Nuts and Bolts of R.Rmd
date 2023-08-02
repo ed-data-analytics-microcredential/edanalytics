@@ -541,4 +541,4 @@ You may run into issues in completing the tasks listed above. Please refer to th
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
 ### El Fin
-Good job on completing the first of three tutorials within the first module of this course! Please move onto the next module on Canvas where we will learn about data wrangling.
+Good job on completing the final tutorials within the first module of this course! Please move onto the next module on Canvas where we will learn about data wrangling.
