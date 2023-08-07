@@ -84,6 +84,8 @@ You can think of the functions within `dplyr` to manipulate data as verbs. The f
 - `arrange()` arranges how observations in a column are displayed
 - `rename()` renames a column
 - `mutate()` mutates/changes values in a column and creates new columns
+- `group_by()` groups rows in dataframe by columns
+- `summarise()` creates a new dataframe by returning one row for each combination of grouping variable(s) and the specified summary statistic for each group
 
 Before we begin, we need to learn about the pipe.
 
@@ -215,6 +217,54 @@ gss |>
   select(-c(rincome, denom))
 
 ```
+
+#### `group_by`()`
+
+The `group_by()` function is aptly named as you can group data in a dataframe by one or more variables through the use of `group_by()`
+
+```{r group, exercise=TRUE}
+gss |>
+  group_by(marital)
+```
+
+In looking at the output, you can see that `group_by()` doesnt' change the data, but if you look closely at the output, you can see that the data is grouped by marital status `Groups: marital[6]` Great, this is exactly what we wanted! `group_by()` is often used in tandem with another function such as `summarise()` so let's learn about the `summarise()` function.
+
+#### `summarise`()`
+
+The `summarise()` function creates a new dataframe and returns one row for each combination of grouping variable(s) with a column showing a specified summary statistic for each of these groups. This function is often used in tandem with the `group_by()` function, however is there is no grouping variable, the output produced by `summarise()` will providde the summary statistic for all observations.
+
+```{r summarise, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise
+gss |>
+  group_by(marital) |>
+  summarise(
+    avg_age = mean(complete.cases(age))
+  )
+```
+
+Oh no! R is trying to calculate the mean of each marital groups' age but there are NAs in the `age` column so it's returning NAs. Let's remove those `NA`s and then calculate the average age by using `na.rm = TRUE` inside the `mean()` function.
+```{r summarise2, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise for complete cases only
+gss |>
+  group_by(marital) |>
+  summarise(
+    avg_age = mean(age, na.rm=TRUE)
+  )
+```
+
+Perfect, this is exactly what we wanted. 
+
+Let's look at an example of how `summarise()` works by itself without creating groups with `group_by()`.
+
+```{r summarise3, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise for complete cases only
+gss |>
+  summarise(
+    avg_age = mean(age, na.rm=TRUE)
+  )
+```
+
+This gives us the average age of all respondents in the dataset who provided their age on the survey.
 
 ### Reflect
 
