@@ -188,11 +188,8 @@ Before we begin, please save the project file in Canvas titled microcred.Rproj i
 
 Once you have successfully saved the .Rproj file in your preferred location on your computer. Double click on the .RProj file to open up this file in RStudio (RStudio will automatically open when you double click the file).
 
-Once RStudio is open, in the bottom right window pane, double click on the `intro to R.R` file.
 
-The video below will give you a tour of the RStudio environment using the `intro to R. R` file. Please follow along :)
-
-INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
+INSERT VIDEO LINK HERE FOR microcred-1.1.01-tour.mp4
 
 ## Working Directory and RProjects
 
@@ -207,6 +204,10 @@ You may have already figured out that you don't need to use `getwd()` for the `i
 We will do into more detail on R projects in the 1.2 Foundational Skills module. 
 
 Pretty cool, huh?
+
+## Disable Save Workspace Image
+
+INSERT VIDEO LINK HERE FOR microcred- 1.1.03-disableworkspace.mp4
 
 
 ### Test your knowledge
