@@ -14,9 +14,9 @@ gradethis::gradethis_setup()
 
 ## Introduction
 
-Welcome! The purpose of this tutorial is to get you setup with what we refer to as the Foundational Skills Framework (Estrellado et al., 2020).
+Welcome! The purpose of this tutorial is to get you setup with what Estrellado and colleagues (2020) refer to as the Foundational Skills Framework.
 
-No two data science projects are the same. Even so, we’ve created a general framework for you to use as a foundation and as a set of concepts to help you work through the walkthroughs in this book. The four core concepts we will use to build our framework are:
+No two data science projects are the same. Even so, we’ve created a general framework for you to use as a foundation and as a set of concepts to help you work through the walkthroughs in these tutorials. The four core concepts we will use to build our framework are:
 
 - Projects
 - Packages
@@ -35,7 +35,7 @@ Furthermore, even if the only person you ever collaborate with is a future versi
 
 ### Setting Up Your Project
 
-Note: We have already given you a project file with the different R-related files needed for this course so you will not need to create a R Project for this course. However, RProjects are important in terms of file management in R so we provided you with information below on how to create RProjects if you intend to use R for other data related projects outside this course.
+Note: We have already given you a project file with the different R-related files needed for this course so you will not need to create a R Project for this course. However, R Projects are important in terms of file management in R so we provided you with information below on how to create R Projects if you intend to use R for other data related projects outside this course.
 
 Creating a Project is one of the first steps in working on an R-based data science project in RStudio. To create a Project you will need to first open RStudio.
 
@@ -69,26 +69,18 @@ question("Which of the following is not a benefit of creating a project in RStud
 )
 ```
 
-The last part of this should include the name of the project you created.
+<!-- To close an R Project, click the project button in the top right corner of your screen. Then, click "Close Project". Follow this by clicking the name of your project. Here's a very short video that describes this process. -->
 
-Also, please click the project button in the top right corner of your screen. Then, click "Close Project". Follow this by clicking the name of your project. Here's a very short video that describes this process.
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/NNbYaNc421s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NNbYaNc421s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- -->
 
-Have you been able to tab between projects successfully?
-
-```{r, check-close-projects}
-question("Which of the following is not a benefit of creating a project in RStudio?",
-  answer("Yes", correct = TRUE),
-  answer("No")
-)
-```
 
 ## R Packages
 
-We already know R is a statistical coding language we will be using but there are also things within R called packages. Packages are a collection of R functions, compiled code, and sample data. Nearly every R user uses packages to improve efficiency and reproducability of their code.
+We already know R is a statistical programming language we will be using but there are also things within R called packages. Packages are extensions of the programming language and are a collection of R functions, compiled code, and sample data. Nearly every R user uses packages to improve efficiency and reproducability of their code.
 
-As the name implies, these packages are like packages that contain useful tools. Alternatively, you can think of a package as different dialects of the R language. 
+You can think of R packages as a collection of useful tools. Alternatively, you can think of a package as different dialects of the R language. 
 
 More on this in the video below where you will learn about packages, how to install packages, and how to load packages :)
 
@@ -116,13 +108,27 @@ For example, if you wanted to install the package `tidyverse` you would run the 
 install.packages("tidyverse")
 ```
 
-Please remember you only need to install R packages once in your computer's lifetime, you need quotations around the package name when you use `install_package()`, and R is case sensitive so be careful in how you type the name of the package. 
+Please remember you only need to install R packages **once** in your computer's lifetime, you need quotations around the package name when you use `install_package()`, and R is **case sensitive** so be careful in how you type the name of the package. 
+
+Alternatively, you can click the **Install** button in the Packages tab in lower right pane of RStudio and type of the name of the package you want to install (e.g., `tidyverse`) and click Install. See figures below:
+
+```{r, out.width="100%"}
+knitr::include_graphics("images/packages_window1.PNG")
+```
+  
+  
+  
+
+```{r, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/packages_window2.PNG")
+```
+
 
 ### Loading R Packages
 
-Now that we covered how to install R packages onto your computer (within R), anytime you want to use a package, you will need to load it. While you only need to install an R package once in your computer's lifetime, anytime you want to use an R package in any R file/script, you will need to load it every time. In order to do this, you will use `library()`.
+Now that we covered how to install R packages onto your computer (within R), anytime you want to use a package, you will need to load it. While you only need to install an R package once in your computer's lifetime, anytime you want to use an R package in any R file/script, you will need to load it every time. In order to do this, you will use the `library()` function.
 
-For example, if you wanted to load the package `tidyverse` into your R environment to use, you would use the line of code below.
+For example, if you wanted to load the package `tidyverse` into your R environment, you would use the following line of code.
 ```{r}
 library("tidyverse")
 ```
@@ -134,7 +140,7 @@ Please note that you have to install a package before you load a package using t
 We wanted to provide you with some best practices on using R packages through you data science journey. 
 
 - Since you only need to install a package once, it is common practice to install the package in your console using `install.packages()`
-- Since you need to load a package every time you plan to use a package in your R file/script, it is common practice to the package(s) at the top of your file/script using `library()`
+- Since you need to load a package every time you plan to use a package in your R file/script, it is common practice to list the packages you will be using at the top of your file/script using `library()`
 - While we will provide you with the most common packages to use for education data science, you can learn more about the packages we will be using as well as additional packages [here](https://cran.r-project.org/web/packages/available_packages_by_date.html)
 
 
@@ -176,7 +182,7 @@ You can think of functions as *verbs* --- but verbs that do things to your data.
 quiz(caption = "What's that function?",
   question("Do you know what the function above does",
     answer("Yes!", correct = TRUE, message = "Good job! This function takes the square root of a number!"),
-    answer("No.", message = "Dont worry about it! This function takes the square root of a number!")
+    answer("No.", message = "Don't worry about it! This function takes the square root of a number!")
   )
 )
 ```
@@ -189,26 +195,26 @@ Why don't you try using the `sqrt()` function below? Please type in a value and 
 
 As you can see, the `sqrt()` is a function that calculates the square root of a value. In other words, the function `sqrt()` is a verb that does things (takes the square root) of your data (the number you provide it).
 
-Another function is `mean()`. You can probably imagine that this function takes the mean (or finds the average) of the values you provide it. 
+Another function is `mean()`. You can probably imagine that this function takes the mean (or arithmetic average) of the values you provide it. 
 
 For example, let's pretend we have student exam grades and want to find the class average.
 ```{r  mean, exercise = TRUE}
-mean(83, 74, 94, 87, 97, 81, 72, 73, 84, 63, 85, 76, 72)
+mean(c(83, 74, 94, 87, 97, 81, 72, 73, 84, 63, 85, 76, 72))
 ```
 
-The `mean()` function is a little bit different than the `sqrt()` function in different ways. First, these functions do different things so knowing their purpose is important. Second, these functions accept different values in a different structure. For example, `sqrt()` accepts only one value while `mean()` accepts multiple values at once that are separated by a comma. 
+The `mean()` function is a little bit different than the `sqrt()` function in different ways. First, these functions do different things so knowing their purpose is important. Second, these functions accept different values in a different structure. For example, `sqrt()` accepts only one value while `mean()` accepts multiple values grouped with the `c()` function and separated by commas. 
 
 In order to make functions useful, you must know:
 
 1. The function's purpose;
 2. The types of inputs the functions needs;
-3. And the structure in which you need to provide these inputs (e.g., for example `mean()` accepts multiples values that are separated by commas).
+3. And the structure in which you need to provide these inputs.
 
-A good way to find know the purpose, type of input(s) required by the function, and the structure of these input(s), you can look up the function's documentation. There are a couple of ways to do this so we made a brief video below showing you. Note: `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
+A good way to find know the purpose, type of input(s) required by the function, and the structure of these input(s), you can look up the function's documentation. You can use the `help()` function (e.g., `help(mean)`) or use a `?` before the function name (e.g., `?mean`). We made a brief video below showing you how to get help. *Note:* `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
 
 [INSERT VIDEO ON LOOKING UP FUNCTION DOCUMENTATION]
 
-Perhaps you remembered us learning that packages have R functions within them? This is true! Different R packages will have different R functions within them that do different things. One of the reasons why we load our packages first using the `library()` function is so R can read in all the items contained in that package including the functions you are planning to use. 
+Perhaps you remembered learning that packages have R functions within them? This is true! Different R packages will have different R functions within them that do different things. One of the reasons why we load our packages first using the `library()` function is so R can read in all the items contained in that package including the functions you are planning to use. 
 
 You can also find the function documentation by looking up the reference manual for the package it belongs to: https://cran.r-project.org/web/packages/available_packages_by_name.html
 
@@ -221,7 +227,7 @@ We'll continue to revisit functions throughout the remainder of this course.
 
 The last, and certainly not least, core concept to the Foundational Skills Framework is data! RStudio supports a lot of different data files for data science procedures. We listed the common data files that are supported by RStudio below
 
-- csv
+- csv 
 - xls
 - xlsx
 - sav
@@ -256,7 +262,7 @@ HSB codebook:
 
 - id: Student ID
 - gender: Student's gender (female, male)
-- race: Student's race (african, american, asian, hispanic, white)
+- race: Student's race (african american, asian, hispanic, white)
 - ses: Socioeconomic status of student's family (low, middle, high)
 - schtyp: Type of school student is enrolled in (public, private)
 - prog: Type of program student is enrolled in (general, academic, vocational)
@@ -265,6 +271,36 @@ HSB codebook:
 - math: Standardized math score
 - science: Standardized science score
 - socst: Standardized social studies score
+
+
+## Test your knowledge  ADD QUESTIONS ABOUT HELP and other things
+
+```{r quiz4, echo = FALSE}
+quiz(caption = "Quiz - Working with Packages",
+  question("What command do you use to install packages?",
+    answer("`library()`", message = "We will see what `library()` does later."),
+    answer("`install.packages()`", correct = TRUE),
+    answer("`install_packages()`"),
+    answer("There is no command. You must visit [cran.r-project.org](http://cran.r-project.org) and download packages manually.", message = "R makes it easy to download packages. You connect to the internet and then run one of the commands above."),
+    allow_retry = TRUE
+  ),
+  question("How often do you need to install a package on your computer?",
+    answer("Every time you restart R"),
+    answer("Every time you restart your computer"),
+    answer("Only once. Afterwards, R can find it on your hard drive as needed.", correct = TRUE),
+    answer("Never, as long as you are connected to the internet.", message = "This could be true if you are using R over a cloud service. However, if you are using R locally on your own computer, you will need to install each package that you use on your computer."),
+    allow_retry = TRUE
+  ),
+  question("What is the tidyverse?",
+    answer("A collection of packages that work well together and provide tools for common data science tasks.", correct = TRUE, message = 'You can install all of the tidyverse packages at once with `install.packages("tidyverse")`.'),
+    answer("A word processing program for R"),
+    answer("A code style that reads like poetry"),
+    answer("An alternate universe where everyone is an R programmer."),
+    allow_retry = TRUE
+  )
+)
+```
+
 
 ## Tasks
 Now that you are more acquainted with R, RStudio, and the Foundational Skills framework, let's engage in a task! Please follow the steps outlined below.

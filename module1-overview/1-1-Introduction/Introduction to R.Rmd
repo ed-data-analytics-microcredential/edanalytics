@@ -8,10 +8,10 @@ description: >
   install R packages from CRAN. 
 ---
 
-
 ```{r setup, include=FALSE}
 library(learnr)
 tutorial_options(exercise.timelimit = 60)
+gradethis::gradethis_setup()
 ```
 
 ## Outline
@@ -26,29 +26,30 @@ In this tutorial, we learn about R and help you set up your computer to use R.
 
 ## Why R?
 
-R is a *free* and open-source programming language for statistical computing and graphics. The R Project for Statistical Computing (https://www.r-project.org) supports and develops R. 
+R is a *free* and open-source programming language for statistical computing and graphics.
+The R Project for Statistical Computing (<https://www.r-project.org>) supports and develops R.
 
 **Why learn R?**
-- R is free and open-source. Becasue it's free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can can audit the code and edit any bugs (i.e., there is no black box). 
-- R is the lingua franca of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go. 
-- R has beautiful data visualization capabilities. We will learn the basics of making graphs in R in this microcredential. 
-- R has a great community! There are many talented R programmers that have contributed helpful R packages. In addition, there are great R mailing lists and Stack Overflow (https://stackoverflow.com) where you can find help using R. 
 
+-   R is free and open-source. Because it is free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can can audit the code and edit any bugs (i.e., there is no black box).
+-   R is the lingua franca of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go.
+-   R has beautiful data visualization capabilities. We will learn the basics of making graphs in R in this microcredential.
+-   R has a great community! There are many talented R programmers that have contributed helpful R packages. In addition, there are great R mailing lists and Stack Overflow (<https://stackoverflow.com>) where you can find help using R.
 
-**R you ready?** 
-The R community is made up of people passionate about the intersection of numbers, data, analysis, and code. In this first section, you will be introduced to some basic R syntax and discuss how R classifies data types so that it can mathematically process them in analysis.
+**R you ready?**
 
+The R community is made up of people passionate about the intersection of numbers, data, analysis, and code.
+It was invented by scientists for statistical computing and a community of specialized packages has been built around the language.
+In this first section, you will be introduced to some basic R syntax and discuss how R classifies data types so that it can mathematically process them in analysis.
 
-*Background Information:* 
-Unlike with other languages, most beginners who want to learn R do so because they want to analyze data. In this way, R is more of a tool to understand data than a programming language used to build software applications. However, what we are learning will build the foundation for you to start programming in R. 
-
-**What is the tool for?**
-R is powerful for conducting statistics and other specialized data analysis. It was invented by scientists for statistical computing and a community of specialized packages has been built around the language.
-
+*Background Information:* Unlike with other programing languages, most beginners who want to learn R do so because they want to analyze data.
+In this way, R is more of a tool to understand data than a programming language used to build software applications.
+However, what we are learning will build the foundation for you to start programming in R.
 
 ### What Can R do?
-**Mathematical calculations.**
-Let’s start with the basic syntax for mathematical calculations in R. R performs addition, subtraction, multiplication, and division with +, -, *, and / operators. 
+
+**Mathematical calculations.** Let's start with the basic syntax for mathematical calculations in R.
+R performs addition, subtraction, multiplication, and division with +, -, \*, and / operators.
 
 Run the following code using the blue "Run Code" button on the right.
 
@@ -60,74 +61,129 @@ Run the following code using the blue "Run Code" button on the right.
 10/5
 ```
 
-Mathematical operations in R follow the standard mathematical order of operations. Let’s write your first line of R code and calculate some basic math! Solve 3+10/2 by writing code below and pressing "Run Code".
+Mathematical operations in R follow the standard mathematical order of operations.
+Let's write your first line of R code and calculate some basic math!
+Solve 3+10/2 by writing code below and pressing "Run Code".
+
 ```{r  math2, exercise = TRUE, exercise.eval = TRUE}
 
 ```
+
 ```{r  math2-solution}
 3+10/2
 ```
-<br>
-**Comments.**
-It's often good practice to annotate the code you write and not let the computer read it as code. We can annotate or write text in our coding scripts using comments. Comments is text written after a # in a program that is not run by the computer. R interprets anything after a # as a comment. A brief example is provided below demonstrating the use of comments.
 
+<br> **Comments.** It's often good practice to annotate the code you write and not let the computer read it as code.
+We can annotate or write text in our coding scripts using comments.
+Comments are text written after a \# in a program that is not run by the computer.
+R interprets anything after a \# as a comment.
+A brief example is provided below demonstrating the use of comments.
 
 ```{r  comment, exercise = TRUE}
 12 + 21 #this line of code sums 12 and 21
 
 ```
+
 As you can see, the sum of 12 and 21 is shown when you run the code, but the comment is not displayed in the output.
 
-**Data Types.**
-Now that you know how to calculate basic math and add comments explaining your code, let’s dive into how R “thinks about” different types of data. In R and in programming, data types are the classifications we give different kinds of information pieces. In this lesson, we will explore the following R data types:
+**Data Types.** Now that you know how to calculate basic math and add comments explaining your code, let's dive into how R "thinks about" different types of data.
+In R and in programming, data types are the classifications we give different kinds of information pieces.
+In this lesson, we will explore the following R data types:
 
-* Numeric: Any number with or without a decimal point: 23, 0.03 and the numeric null value `NA`.
-* Character: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) or text. Most strings are surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Sometimes you will hear this type referred to as “string.”
-* Logical: This data type only has two possible values— either `TRUE` or `FALSE` (without quotes). It’s helpful to think of logical types or booleans as on and off switches or as the answers to a “yes” or “no” question.
-* Vectors: A list of related data that is all the same type.
-* `NA`: This data type represents the absence of a value, and is represented by the keyword NA (without quotes) but it has its own significance in the context of the different types. That is there is a numeric NA, a character NA, and a logical NA.
+-   Numeric: Any number with or without a decimal point: 23, 0.03 and the numeric null value `NA`.
+-   Character: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) or text. Most strings are surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Sometimes you will hear this type referred to as a "string".
+-   Logical: This data type only has two possible values--- either `TRUE` or `FALSE` (without quotes). It's helpful to think of logical types, or booleans, as on and off switches or as the answers to a "yes" or "no" question.
+-   `NA`: This data type represents the absence of a value, and is represented by the keyword NA (without quotes) but it has its own significance in the context of the different types. That is there is a numeric NA, a character NA, and a logical NA.
 
+**Variables and Objects.** Now that you know how R classifies some of the basic information types, we will almost always want to 'store' this information as a variable or as an object.
+In programming, variables allow us to store information and associate that information with a name.
+In R, we assign objects and variables by using the assignment operator, an arrow sign (\<-) made with a less-than sign and a dash.
 
-**Variables.** 
-Now that you know how R classifies some of the basic information types, we will almost always want to 'store' this information as a variable or as an object. In programming, variables allow us to store information and associate that information with a name. In R, we assign objects by using the assignment operator, an arrow sign (<-) made with a less-than sign and a dash. 
+Below is an example demonstrating how to assign data types to a variable or object.
+In this case, we are assigning a student ID number to an object called `student_id`.
+Run the first line of code written below.
+You can see that R gives no output.
+That's because you simply stored/assigned 98749 to the word `student_id`.
+Now go ahead and type in `student_id` under the line of code written.
+Take some time to think about the output R will give, if any at all.
+Go ahead and run these two lines of code to show the output.
 
-Below is an example demonstrating how to assign data types to a variable or object. In this case, we are assigning a student ID number to an object called `student_id`. Run the first line of code written below. You can see that R gives no output. That's because you simply stored/assigned 98749 to the word `student_id`. Now go ahead and type in `student_id` under the line of code written. Take some time to think about the output R will give, if any at all. Go ahead and run these two lines of code to show the output.
 ```{r  assignmentoperator, exercise = TRUE}
-student_id <- 98749  #this assigns or 'stores' 98749 (a numeric data type) to the word 'student_id' (a character data type)
+student_id <- 98749  #this assigns or 'stores' 98749 (a numeric data type) to the object/variable named 'student_id' 
 
 
 ```
-<br>
-**Vectors.**
-We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type. In the example below, we assign a list of character data types (names of months in this case) to a vector called `student_ids`.
 
-Like the example above, if you run the line of code written below, R gives no output due to the same reason as above. Take some time to think about the output R will give, if any at all, before typing in `student_ids` under the line of code written and pressing "Run Code."
+<br> **Vectors.** In R, vectors are a list-like structure that contain items of the same data type. To combine the list of items to a vector, use the `c()` function and separate the items by a comma. 
+In the example below, we assign a list of character data types (student ID numbers in this case) to a vector called `student_ids`. Notice the use of the assignment operator `<-` and the `c()` function to create the vector. *Note:* We could have made this a numeric vector by removing the quotes `"` from around the numbers (e.g., `student_ids <- c(98749, 042023, 052018, 061992)` ). 
+
+Like the example above, if you run the line of code written below, R gives no output due to the same reason as above.
+Take some time to think about the output R will give, if any at all, before typing in `student_ids` under the line of code written and pressing "Run Code."
+
 ```{r  vectorassign, exercise = TRUE}
 student_ids <- c("98749", "042023","052018","061992") 
 
 
 ```
 
+Try this yourself, create a character vector named `first_quarter` and store the months "January", "February", and "March" to the `first_quarter` vector. 
+
+```{r  vectorassign2, exercise = TRUE, exercise.eval = TRUE}
+ 
+
+```
+
+```{r  vectorassign2-check}
+gradethis::grade_result(gradethis::pass_if(~identical(.result, first_quarter <- c("January", "February", "March"))))
+```
+
+```{r  vectorassign2-hint-1}
+first_quarter <- c() #finish the syntax
+```
+
+```{r  vectorassign2-hint-2}
+first_quarter <- c("January",  ) # Don't forget to capitalize the names of the months!
+```
+
+```{r  vectorassign2-solution}
+first_quarter <- c("January", "February", "March")
+```
+
 ### Reflect
-Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
+
+Let's take some time to reflect before moving on.
+What is one thing that surprised you?
+What is one thing that confused you?
+Did you learn anything that might be useful in the type of work you do?
 
 ## Install R
 
-Great! Now that we know a little bit about R and what it can do, let's learn how to install the software onto your computer.
+Great!
+Now that we know a little bit about R and what it can do, let's learn how to install the software onto your computer.
 
-To be successful in this course, you will need to download and install two required software on your computer: R and RStudio. Don't worry, both are free! The first software you will need to install is R which the the **programming language** we will be using in this course. R is available for multiple computer operating systems such as Mac OS, Windows, and Linux. RStudio is the **software program** that makes R (the programming language) easy to use. As a recap, R is the programming language we will be using and RStudio is the software program/environment we get to use R in. 
+To be successful in this course, you will need to download and install two required software programs on your computer: R and RStudio.
+Don't worry, both are free!
+The first software you will need to install is R which the the **programming language** we will be using in this course.
+R is available for multiple computer operating systems such as Mac OS, Windows, and Linux.
+RStudio is the **software program** that makes R (the programming language) easy to use.
+As a recap, R is the programming language we will be using and RStudio is the software program/environment we use R in.
 
-We will first cover how to install R, the programming language, then we will cover how to install RStudio. 
+We will first cover how to install R, the programming language, then we will cover how to install RStudio.
 
-You can navigate to the official R and RStudio to download and install R [here](https://posit.co/download/rstudio-desktop/). Please watch the video below on how to download and install R.
+You can navigate to the official R and RStudio sites to download and install:
+-[R](https://cran.rstudio.com/) 
+-[RStudio](https://posit.co/download/rstudio-desktop/).
+Please watch the video below on how to download and install R.
 
 ### Video: How to install R
 
 ![](https://vimeo.com/203516510)
 
+<! -- Migrate this to our own site rather than Anthony's -->
 For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
 
-If you need help installing R, please contact UT OIT at XX.
+For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
+
 
 ### Test your knowledge
 
@@ -142,32 +198,39 @@ quiz(caption = "Quiz - Installing R",
 
 ## Install RStudio
 
-Great! Now that you have successfully downloaded and installed, let's walk through how to download and install RStudio onto your computer. 
+Great!
+Now that you have successfully downloaded and installed R, let's walk through how to download and install RStudio onto your computer.
 
 ### How to install RStudio
 
-As we briefly described, RStudio is an Integrated Development Environment for R. What does that mean? Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language. RStudio makes programming in R much easier and I suggest that you use it!
+As we briefly described, RStudio is an Integrated Development Environment for R.
+What does that mean?
+Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language.
+RStudio makes programming in R much easier, and we suggest that you use it!
 
-You can navigate to the official R and RStudio to download and install R [here.](https://posit.co/download/rstudio-desktop/) Please watch the video below on how to download and install R.
+You can navigate to the official RStudio site to download and install [RStudio](https://posit.co/download/rstudio-desktop/)
+
+Please watch the video below on how to download and install R.
 
 ![](https://vimeo.com/203516968)
 
+<! -- Migrate this to our own site rather than Anthony's -->
 For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
 
-If you need help installing R, please contact UT OIT at XX.
+For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
 
 ### Test your knowledge
 
 ```{r quiz3, echo=FALSE}
 quiz(caption = "Quiz - Install RStudio",
   question("What is the RStudio?",
-    answer("An application that makes it easier to use R.", correct = TRUE, message = "RStudio organizes your workspace and makes it easier to write, use, debug, and save R code. I highly recommend it and will rely on the RStudio IDE in several tutorials."),
-    answer("An application that let's you use R without writing any code", message = "And thank goodness! Code provides a reproducible record of your work, which is essential for data science."),
-    answer("A spreadsheet program like Microsoft Excel."),
+    answer("An application that makes it easier to use R.", correct = TRUE, message = "RStudio organizes your workspace and makes it easier to write, use, and save R code. We will rely on the RStudio IDE in several tutorials."),
+    answer("An application that let's you use R without writing any code", message = "No, you'll still need to write code. And thank goodness! Code provides a reproducible record of your work, which is essential for data science."),
+    answer("A spreadsheet program like Microsoft Excel.", message = "No, RStudio is not a spreadsheet program like Microsoft Excel"),
     answer("Another name for R", message = "R and RStudio are two separate things. R is a language, like English. Think of RStudio as a program that helps you use the language, kind of like how a word processing program helps you write in English."),
     allow_retry = TRUE
   ),
-  question("Is the RStudio free to download and use?",
+  question("Is RStudio free to download and use?",
     answer("Yes!", correct = TRUE, message = "Like R, RStudio is free and open-source. There do exist professional versions of RStudio with enhanced features, but we will not rely on those features in these tutorials."),
     answer("No.", message = "Like R, RStudio is free and open-source. There do exist professional versions of RStudio with enhanced features, but we will not rely on those features in these tutorials.")
   ),
@@ -180,76 +243,62 @@ quiz(caption = "Quiz - Install RStudio",
 
 ## Getting Started with R and RStudio
 
-Great! Now that you have successfully installed R and RStudio onto your computer. Let's take a little tour to get you familiar with the software.
+Great!
+Now that you have successfully installed R and RStudio onto your computer.
+Let's take a little tour to get you familiar with the software.
 
 ## RStudio Tour
 
-Before we begin, please save the project file in Canvas titled microcred.Rproj in this current module. Save this .Rproj file in the folder you would like to keep your course materials for this class.
+Before we begin, please save the project file in Canvas titled `microcred.Rproj` in this current module.
+Save this `.Rproj` file in the folder you would like to keep your course materials for this class.
 
-Once you have successfully saved the .Rproj file in your preferred location on your computer. Double click on the .RProj file to open up this file in RStudio (RStudio will automatically open when you double click the file).
+Once you have successfully saved the `.Rproj` file in your preferred location on your computer.
+Double click on the `.RProj` file to open up this file in RStudio (RStudio will automatically open when you double click the file).
 
 Once RStudio is open, in the bottom right window pane, double click on the `intro to R.R` file.
 
-The video below will give you a tour of the RStudio environment using the `intro to R. R` file. Please follow along :)
+The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
+Please follow along :)
 
 INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
 
-## Working Directory and RProjects
+## Working Directory and R Projects
 
-We hope you enjoyed our virtual tour of RStudio. The next thing we want to cover are working directories and RProjects. Both let RStudio know where on your computer your saving your files or opening files from. These are important to use and set up at the beginning when creating R files/scripts (otherwise you will get errors messages because RStudio doesn't know what file location you're working off of).
+We hope you enjoyed our virtual tour of RStudio.
+The next thing we want to cover are working directories and R Projects.
+Both let RStudio know where on your computer your saving your files or opening files from.
+These are important to use and set up at the beginning when creating R files/scripts (otherwise you will get errors messages because RStudio doesn't know what file location you're working off of).
 
-The video below will give you a brief tutorial of setting your file location using a working directory or RProjects.
+The video below will give you a brief tutorial of setting your file location using a working directory or R Projects.
 
 INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
 
-You may have already figured out that you don't need to use `getwd()` for the `intro to R` file you're using in RStudio right now since it's part of an R Project. Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project. 
+You may have already figured out that you don't need to use `getwd()` for the `intro to R` file you're using in RStudio right now since it's part of an R Project.
+Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project.
 
-We will do into more detail on R projects in the 1.2 Foundational Skills module. 
+We will dig into more detail on R projects in the 1.2 Foundational Skills module.
 
 Pretty cool, huh?
 
 
-### Test your knowledge
-
-```{r quiz4, echo = FALSE}
-quiz(caption = "Quiz - Working with Packages",
-  question("What command do you use to install packages?",
-    answer("`library()`", message = "We will see what `library()` does later."),
-    answer("`install.packages()`", correct = TRUE),
-    answer("`install_packages()`"),
-    answer("There is no command. You must visit [cran.r-project.org](http://cran.r-project.org) and download packages manually.", message = "R makes it easy to download packages. You connect to the internet and then run one of the commands above."),
-    allow_retry = TRUE
-  ),
-  question("How often do you need to install a package on your computer?",
-    answer("Every time you restart R"),
-    answer("Every time you restart your computer"),
-    answer("Only once. Afterwards, R can find it on your hard drive as needed.", correct = TRUE),
-    answer("Never, as long as you are connected to the internet.", message = "This could be true if you are using R over a cloud service. However, if you are using R locally on your own computer, you will need to install each package that you use on your computer."),
-    allow_retry = TRUE
-  ),
-  question("What is the tidyverse?",
-    answer("A collection of packages that work well together and provide tools for common data science tasks.", correct = TRUE, message = 'You can install all of the tidyverse packages at once with `install.packages("tidyverse")`.'),
-    answer("A word processing program for R"),
-    answer("A code style that reads like poetry"),
-    answer("An alternate universe where everyone is an R programmer."),
-    allow_retry = TRUE
-  )
-)
-```
-
 ## Tasks
+
 Now that you have R and RStudio installed on your machine and you have been acquainted with RStudio, we have provided a few tasks below for you to complete.
 
-1. Choose a preferred appearance theme for RStudio
-2. Change the default setting that saves the workspace
-3. Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523. 
-4. Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
-5. Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
+1.  Choose a preferred appearance theme for RStudio
+2.  Change the default setting that saves the workspace
+3.  Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523.
+4.  Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
+5.  Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
 
 ### Reflect
-Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
+
+Let's take some time to reflect before moving on.
+What is one thing that surprised you?
+What is one thing that confused you?
+Did you learn anything that might be useful in the type of work you do?
 
 ### El Fin
-Good job on completing the first of three tutorials within the first module of this course! Please move onto the next tutorial within this module on Canvas where we will learn foundational R and data analytic skills.
 
-
+Good job on completing the first of three tutorials within the first module of this course!
+Please move onto the next tutorial within this module on Canvas where we will learn foundational R and data analytic skills.
