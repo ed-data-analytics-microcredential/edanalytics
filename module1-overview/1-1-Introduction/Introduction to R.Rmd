@@ -32,7 +32,7 @@ The R Project for Statistical Computing (<https://www.r-project.org>) supports a
 **Why learn R?**
 
 -   R is free and open-source. Because it is free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can can audit the code and edit any bugs (i.e., there is no black box).
--   R is the lingua franca of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go.
+-   R is the *lingua franca* of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go.
 -   R has beautiful data visualization capabilities. We will learn the basics of making graphs in R in this microcredential.
 -   R has a great community! There are many talented R programmers that have contributed helpful R packages. In addition, there are great R mailing lists and Stack Overflow (<https://stackoverflow.com>) where you can find help using R.
 
@@ -42,7 +42,7 @@ The R community is made up of people passionate about the intersection of number
 It was invented by scientists for statistical computing and a community of specialized packages has been built around the language.
 In this first section, you will be introduced to some basic R syntax and discuss how R classifies data types so that it can mathematically process them in analysis.
 
-*Background Information:* Unlike with other programing languages, most beginners who want to learn R do so because they want to analyze data.
+*Background Information:* Unlike with other programming languages, most beginners who want to learn R do so because they want to analyze data.
 In this way, R is more of a tool to understand data than a programming language used to build software applications.
 However, what we are learning will build the foundation for you to start programming in R.
 
@@ -63,7 +63,7 @@ Run the following code using the blue "Run Code" button on the right.
 
 Mathematical operations in R follow the standard mathematical order of operations.
 Let's write your first line of R code and calculate some basic math!
-Solve 3+10/2 by writing code below and pressing "Run Code".
+Solve 3+10/2 by writing code below and pressing "Run Code". The answer should be 8 (i.e., 10/2 = 5 and 3+5 = 8). Remember with order of operations division comes before addition. If you are not familiar with the order of operation or need a refresher, click [here](https://en.wikipedia.org/wiki/Order_of_operations).
 
 ```{r  math2, exercise = TRUE, exercise.eval = TRUE}
 
@@ -87,13 +87,14 @@ A brief example is provided below demonstrating the use of comments.
 As you can see, the sum of 12 and 21 is shown when you run the code, but the comment is not displayed in the output.
 
 **Data Types.** Now that you know how to calculate basic math and add comments explaining your code, let's dive into how R "thinks about" different types of data.
-In R and in programming, data types are the classifications we give different kinds of information pieces.
+In R and in programming in general, data types are the classifications we give different pieces of information.
 In this lesson, we will explore the following R data types:
 
--   Numeric: Any number with or without a decimal point: 23, 0.03 and the numeric null value `NA`.
--   Character: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) or text. Most strings are surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Sometimes you will hear this type referred to as a "string".
--   Logical: This data type only has two possible values--- either `TRUE` or `FALSE` (without quotes). It's helpful to think of logical types, or booleans, as on and off switches or as the answers to a "yes" or "no" question.
--   `NA`: This data type represents the absence of a value, and is represented by the keyword NA (without quotes) but it has its own significance in the context of the different types. That is there is a numeric NA, a character NA, and a logical NA.
+-   **Numeric**: Any number with or without a decimal point: 23, -0.03 and the numeric null value `NA`.
+-   **Character**: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) or text. Most strings are surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Sometimes you will hear this type referred to as a "string".
+-   **Logical**: This data type only has two possible values--- either `TRUE` or `FALSE` (without quotes). It's helpful to think of logical types, or Boolean values, as on and off switches or as the answers to a "yes" or "no" question.
+-   **Factor**: Used to represent groups or categories. R internally stores factors as an integer with an associated label. We will discuss factors in more detail later. 
+-  `NA`: This data type represents the absence of a value, and is represented by the keyword `NA` (without quotes) but it has its own significance in the context of the different types. That is there is a numeric NA, a character NA, and a logical NA. There is also `NaN` which stands for "not a number"
 
 **Variables and Objects.** Now that you know how R classifies some of the basic information types, we will almost always want to 'store' this information as a variable or as an object.
 In programming, variables allow us to store information and associate that information with a name.
@@ -255,12 +256,15 @@ Save this `.Rproj` file in the folder you would like to keep your course materia
 Once you have successfully saved the `.Rproj` file in your preferred location on your computer.
 Double click on the `.RProj` file to open up this file in RStudio (RStudio will automatically open when you double click the file).
 
-Once RStudio is open, in the bottom right window pane, double click on the `intro to R.R` file.
 
+<<<<<<< HEAD
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
 Please follow along :)
 
 INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
+=======
+INSERT VIDEO LINK HERE FOR microcred-1.1.01-tour.mp4
+>>>>>>> 7b93d387cbdf0e5cd3b5166f589384caf0e775ef
 
 ## Working Directory and R Projects
 
@@ -279,6 +283,10 @@ Using R Projects can be advantageous since RStudio recognizes the location of al
 We will dig into more detail on R projects in the 1.2 Foundational Skills module.
 
 Pretty cool, huh?
+
+## Disable Save Workspace Image
+
+INSERT VIDEO LINK HERE FOR microcred- 1.1.03-disableworkspace.mp4
 
 
 ## Tasks

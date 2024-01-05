@@ -84,6 +84,8 @@ You can think of the functions within `dplyr` to manipulate data as verbs. The f
 - `arrange()` arranges how observations in a column are displayed
 - `rename()` renames a column
 - `mutate()` mutates/changes values in a column and creates new columns
+- `group_by()` groups rows in dataframe by columns
+- `summarise()` creates a new dataframe by returning one row for each combination of grouping variable(s) and the specified summary statistic for each group
 
 Before we begin, we need to learn about the pipe.
 
@@ -216,6 +218,54 @@ gss |>
 
 ```
 
+#### `group_by`()`
+
+The `group_by()` function is aptly named as you can group data in a dataframe by one or more variables through the use of `group_by()`
+
+```{r group, exercise=TRUE}
+gss |>
+  group_by(marital)
+```
+
+In looking at the output, you can see that `group_by()` doesnt' change the data, but if you look closely at the output, you can see that the data is grouped by marital status `Groups: marital[6]` Great, this is exactly what we wanted! `group_by()` is often used in tandem with another function such as `summarise()` so let's learn about the `summarise()` function.
+
+#### `summarise`()`
+
+The `summarise()` function creates a new dataframe and returns one row for each combination of grouping variable(s) with a column showing a specified summary statistic for each of these groups. This function is often used in tandem with the `group_by()` function, however is there is no grouping variable, the output produced by `summarise()` will providde the summary statistic for all observations.
+
+```{r summarise, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise
+gss |>
+  group_by(marital) |>
+  summarise(
+    avg_age = mean(complete.cases(age))
+  )
+```
+
+Oh no! R is trying to calculate the mean of each marital groups' age but there are NAs in the `age` column so it's returning NAs. Let's remove those `NA`s and then calculate the average age by using `na.rm = TRUE` inside the `mean()` function.
+```{r summarise2, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise for complete cases only
+gss |>
+  group_by(marital) |>
+  summarise(
+    avg_age = mean(age, na.rm=TRUE)
+  )
+```
+
+Perfect, this is exactly what we wanted. 
+
+Let's look at an example of how `summarise()` works by itself without creating groups with `group_by()`.
+
+```{r summarise3, exercise=TRUE}
+#finding the average age of each marital group using group_by and summarise for complete cases only
+gss |>
+  summarise(
+    avg_age = mean(age, na.rm=TRUE)
+  )
+```
+
+This gives us the average age of all respondents in the dataset who provided their age on the survey.
+
 ### Reflect
 
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
@@ -244,7 +294,7 @@ glimpse(gss)
 
 #### `describe()`
 
-The `describe()` functin is also a useful function in first getting to know your data. Like the `glimpse()` function (and all other data checking functions we will cover), you provide the name of the data frame as the first argument of the function. However, you're provided with a different output compared to the output given from using `glimpse()`. It provides each variable in the data set the number of observations (n), and a few descriptive statistics (e.g., mean, standard deviation, standard error, etc.). 
+The `describe()` function is also a useful function in first getting to know your data. Like the `glimpse()` function (and all other data checking functions we will cover), you provide the name of the data frame as the first argument of the function. However, you're provided with a different output compared to the output given from using `glimpse()`. It provides each variable in the data set the number of observations (n), and a few descriptive statistics (e.g., mean, standard deviation, standard error, etc.). 
 
 Can you guess why certain variable names have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the GSS data set, it shows that marital, race, rincome, partyid, relig, and denom are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! We'll cover this more in the third module. However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
 

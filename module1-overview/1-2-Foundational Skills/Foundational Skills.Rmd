@@ -84,9 +84,9 @@ You can think of R packages as a collection of useful tools. Alternatively, you 
 
 More on this in the video below where you will learn about packages, how to install packages, and how to load packages :)
 
-INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
+INSERT VIDEO LINK HERE FOR microcred- 1.2.01-packages.mp4
 
-As a brief note, when you load RStudio, you can still use the default language which is called base R. Base R is already pre-loaded when you open RStudio. For example, you can use the following line of code below which is considered Base R.
+As a brief note, when you load RStudio, you can still use the default language which is called base R. Base R microcred- 1.1.02-getwdis already pre-loaded when you open RStudio. For example, you can use the following line of code below which is considered Base R.
 
 ```{r  baseR, exercise = TRUE}
 2*18
@@ -212,7 +212,7 @@ In order to make functions useful, you must know:
 
 A good way to find know the purpose, type of input(s) required by the function, and the structure of these input(s), you can look up the function's documentation. You can use the `help()` function (e.g., `help(mean)`) or use a `?` before the function name (e.g., `?mean`). We made a brief video below showing you how to get help. *Note:* `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
 
-[INSERT VIDEO ON LOOKING UP FUNCTION DOCUMENTATION]
+INSERT VIDEO LINK HERE FOR microcred- 1.2.02-doc.mp4
 
 Perhaps you remembered learning that packages have R functions within them? This is true! Different R packages will have different R functions within them that do different things. One of the reasons why we load our packages first using the `library()` function is so R can read in all the items contained in that package including the functions you are planning to use. 
 
