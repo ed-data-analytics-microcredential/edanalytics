@@ -1,0 +1,13 @@
+name: 2-1-data-wrangling
+title:
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10873549
+bundleId: 8112884
+url: https://ed-analytics.shinyapps.io/2-1-data-wrangling/
+when: 1704477412.71842
+lastSyncTime: 1704477412.71843
+asMultiple: FALSE
+asStatic: FALSE

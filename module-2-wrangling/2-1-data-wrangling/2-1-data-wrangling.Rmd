@@ -480,7 +480,7 @@ Now that you are more acquainted with basic data manipulation, process in checki
 6. Save R script as lastname-R-task4
 7. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
 
-### Note:
+### Note
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
 
 ### Reflect

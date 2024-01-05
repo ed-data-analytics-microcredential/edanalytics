@@ -31,7 +31,7 @@ Welcome back to the Tidyverse! As noted before, in this module we will learn how
 Let's review the data science process figure once more (below). We start by **importing** data (which we learned in the previous module), we then **tidy** our data by ensuring each column in a variable and each row is an observation (which we will learn in this tutorial). We then **transform** our data by modifying and creating new variables within our dataset (which we learned in the previous tutorial!). The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
 
 
-```{r process, echo=FALSE}
+```{r process, echo=FALSE, out.width="50%"}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
 
 ```
@@ -279,7 +279,7 @@ Now that you are more acquainted with tidy data and data transformation, let's e
 5. Save R script as lastname-R-task5
 6. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
 
-#### Note:
+#### Note
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
 
 ### Reflect
