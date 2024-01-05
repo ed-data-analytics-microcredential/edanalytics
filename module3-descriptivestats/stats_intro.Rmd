@@ -67,22 +67,22 @@ Independent variables can be experimental, that is directly manipulated by the r
 
 ### Dependent Variable
 
-A **dependent variable** is also called the **outcome variable** and is hypothesized to change as a result of changing/manipulating the **independent variable**. In other words, the dependent variable is dependent on the independent variable. A dependent variable is the outcome of interest in which a researcher wishes to examine how the dependent variable changes as the independent is manipulated or varied. 
+A **dependent variable**, also called the *outcome variable*, is hypothesized to change as a result of changing or manipulating the **independent variable**. In other words, the dependent variable's changes are contingent upon the independent variable. The dependent variable is the outcome of interest. A researcher aims to examine how the dependent variable changes as the independent is manipulated or varied. 
 
 ### Example
 
-A classic example of independent and dependent variables is examining the relationship between students' study hours and their test score. If a researcher wishes to examine the relationship between a study hours and test scores, the main independent variable would be study hours and the dependent (or outcome) variable would be test scores. 
+A classic example of independent and dependent variables is examining the relationship between students' study hours and their test score. In other words, if students study more, do their test scores increase? If a researcher wishes to examine the relationship between study hours and test performance, the independent variable would be study hours and the dependent (or outcome) variable would be test scores. 
 
 ## Levels of Measurement
 
-In statistics, variables can be measured on one of four levels of measurement:
+In statistics, variables can be quantified based four levels of measurement:
 
 - Nominal
 - Ordinal
 - Interval 
 - Ratio
 
-These types of measurement are listed in increasing order of detail information they provide starting with nominal variables.
+The levels of measurement are listed in ascending order, starting with nominal variables, based on the progressively detailed information they provide. 
 
 ### Nominal Variables
 
