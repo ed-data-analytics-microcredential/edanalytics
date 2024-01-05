@@ -16,8 +16,7 @@ Welcome to the Tidyverse! In this module we will learn how to **transform** data
 
 In this tutorial we will learn how to wrangle data using `dplyr` functions within the tidyverse package.
 
-The typical data science process is outlined in the figure below. We start by **importing** data (which we learned in the previous module), we then **tidy** our data by ensuring each column in a variable and each row is an observation. We then **transform** our data by modifying and creating new variables within our dataset. The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
-
+The typical data science process is outlined in the figure below. We start by **importing** data (which we learned in the previous module), then **tidy** our data by ensuring each column in a variable and each row is an observation. We then **transform** our data by modifying and creating new variables within our dataset. The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
 
 ```{r tidychart, echo=FALSE}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
@@ -32,7 +31,6 @@ Now that we know where we've been and where we're headed, let's go ahead and jum
 
 We will be relying on the dplyr package within the tidyverse to introduce you to data transformation. If you already installed the `tidyverse` package, you automatically have `dplyr` installed as it is a subpackage within the `tidyverse` package. Likewise, when you load your packages at the beginning of your R script, you can use `library(tidyverse)` and the `dply` package and all it's functions will also be loaded into your RStudio environment. 
 
-
 ### The General Social Survey
 
 To get you acquainted with the different dplyr functions to use for data transformation, we will be using the GSS data set built into the tidyverse package. This data set is a sample data set from the General Social Survey (GSS).
@@ -44,11 +42,11 @@ gss
 
 Since the data set is already built into R, we don't have to use the data import methods we learned above in module 1. All we have to do is load the `tidyverse` package and assign the data set `gss_cat` to an object (in this case, we assigned it to an object data frame called `gss`).
 
-Note: If you want to check out the other toy data sets that are built into R, simply run the following code in your console: `tidyverse::data()`.
+*Note*. If you want to check out the other toy data sets that are built into R, simply run the following code in your console: `tidyverse::data()`.
 
-A little bit about the GSS data set: It's a nationally representative survey of adults in the U.S. While this is a toy data set, the full GSS has been collecting data on U.S. adults since the 1970s and collects the following types of data: demographic, behavioral, attitudinal, and special interest topics.  
+Here's a little bit more about the GSS data set: It's a nationally representative survey of adults in the U.S. While this is a toy data set, the full GSS has been collecting data on U.S. adults since the 1970s and collects the following types of data: demographic, behavioral, attitudinal, and special interest topics.  
 
-GSS Codebook
+**GSS Codebook**
 
 - year: Year survey was given
 - age: Respondent age
@@ -243,6 +241,7 @@ gss |>
 ```
 
 Oh no! R is trying to calculate the mean of each marital groups' age but there are NAs in the `age` column so it's returning NAs. Let's remove those `NA`s and then calculate the average age by using `na.rm = TRUE` inside the `mean()` function.
+
 ```{r summarise2, exercise=TRUE}
 #finding the average age of each marital group using group_by and summarise for complete cases only
 gss |>
@@ -330,7 +329,7 @@ str(gss)
 
 Great! Now that we know basic ways to check our data in R, let's discuss more in-depth checks.
 
-##### Missing Data Checks
+#### Missing Data Checks
 
 Let's check the different ways we can examine missing data in our data set.
 
@@ -372,7 +371,7 @@ As you can see, the only variables with missing values is `age` and `tvhours`. H
 
 This is why it's helpful checking your data first!
 
-##### Checking Factor Variables
+#### Checking Factor Variables
 
 So we can now check the data structure of a data frame and examine missing data, great! But we still haven't discussed how we know the levels of factors in a factor variable. We have several factor variables in the `gss` data set, but how do we know the categories and number of categories in these variables?
 
@@ -462,7 +461,7 @@ levels(gss$partyid)
 
 Now that you are more acquainted with basic data manipulation, process in checking data, and advanced data manipulation, let's engage in a task! Please follow the steps outlined below.
 
-1. Open the R script you created in the previous module (lastname-R-task3) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+1. Open the R script you created in the previous module (lastname-R-task3) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
 2. Use the processes outlined above to check your data.
 - how much missing data is the data set?
 - check to ensure all variables that should be factors are factors (if not, make them factors)
@@ -481,7 +480,7 @@ Now that you are more acquainted with basic data manipulation, process in checki
 6. Save R script as lastname-R-task4
 7. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
 
-#### Note:
+### Note:
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
 
 ### Reflect
@@ -489,8 +488,3 @@ Let's take some time to reflect before moving on. What is one thing that surpris
 
 ### El Fin
 Good job on completing the first of three tutorials within the second module of this course! Please move onto the next tutorial on Canvas where we will learn about tidy data.
-
-
-
-
-
