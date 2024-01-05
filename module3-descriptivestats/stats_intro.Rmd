@@ -13,9 +13,9 @@ tutorial_options(exercise.timelimit = 60)
 
 ## Introduction
 
-Welcome back to the final module of this mini course. In the previous module we learned how to **transform**, **tidy**, and **visualize** data using the tidyverse package. 
+Welcome back to the final module of this mini course. In the previous module we learned how to **transform**, **tidy**, and **visualize** data using the `tidyverse` package. 
 
-In this course we learned how to **import**, **wrangle**, and **visualize** our data. In this final module, we will learn how to generate basic descriptives statistics.
+In this course we learned how to **import**, **wrangle**, and **visualize** our data. In this final module, we will learn how to generate basic descriptive statistics.
 
 ```{r process, echo=FALSE}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
@@ -36,22 +36,22 @@ Now that we know where we've been and where we're headed, let's go ahead and jum
 
 ## Population vs. Sample
 
-The difference between a population and sample is one of the first concepts taught in statistics and research methods courses. A **population** is a whole and complete group you want to make conclusions about and a **sample** is a subset of the population you're interested in. Researchers often collect data from a sample to make conclusions (or draw inferences) about the entire population of interest.
+The difference between a population and sample is one of the first concepts taught in statistics and research methods courses. A **population** is the complete group you want to make conclusions about and a **sample** is a subset of the population you're interested in. Researchers often collect data from a sample to make conclusions (or draw inferences) about the entire population of interest.
 
 ```{r tidychart, echo=FALSE}
 knitr::include_graphics(paste0(getwd(), "/images/population.png"))
 
 ```
 
-For example, all undergraduate students at the University of Tennessee, Knoxville would be considered the entire undergraduate population of UTK. However, a selection of 200 undergraduate students from UTK would be considered a sample of the population.
+For example, all undergraduate students at the University of Tennessee (UT) would be considered the entire undergraduate population of UT. However, a random selection of 200 undergraduate students from UT would be considered a sample of the population.
 
 Now that we know the difference between a population and a sample, we can discuss the difference between a parameter and a statistic.
 
 ## Parameter vs. Statistic
 
-Parameters are numbers that describe the properties of an entire population and statistics are numbers that describe the properties of a sample. 
+**Parameters** are numbers that describe the properties of an entire population and **statistics** are numbers that describe the properties of a sample. 
 
-Let's turn back to our example of undergraduate students at UTK. In [Fall 2022](https://irsa.utk.edu/reporting/fact-book/), 27,039 undergraduate students were enrolled at UTK which represents the entire undergraduate population at UTK. Let's say we have the average age of all 27,039 undergraduate students and the average age is 22 years old. The average age of the entire undegraduate student body at UTK would be considered a parameter as it describes the average age of a population of interest. Let's say we didn't have access to the age of all 27,039 undergraduate students but collected a sample of 200 students and asked how old they were. We averaged the age of the 200 student sample and found the average age of this sample to be 21 years old. The average age of this sample would be considered a statistic as it describes a properties of a sample of interest.
+Let's turn back to our example of undergraduate students at UT. In [Fall 2022](https://irsa.utk.edu/reporting/fact-book/), 27,039 undergraduate students were enrolled at UT which represents the entire undergraduate population at UT. Let's say we have the average age of all 27,039 undergraduate students and the average age is 22 years old. The average age of the entire undegraduate student body at UT would be considered a parameter as it describes the average age of a population of interest. Let's say we didn't have access to the age of all 27,039 undergraduate students but collected a sample of 200 students and asked how old they were. We averaged the age of the 200 student sample and found the average age of this sample to be 21 years old. The average age of this sample would be considered a statistic as it describes a properties of a sample of interest.
 
 In most research cases, it is difficult to collect data for an entire population so we instead take a sample in which we can make inferences about the population. 
 
@@ -61,9 +61,9 @@ Researchers often examine relationships between variables in a sample of interes
 
 ### Independent Variable
 
-Researchers want to examine relationship between variables as guided by their specific research question. This examination is done by specifying an independent variable and a dependent variable. An **independent variable** is a variable that varies or can be manipulated to explore the effect/relationship it has with a **dependent variable**. As the name implies, independent variables are variables are independent of other variables/characteristics. Meaning that no other variables in the research study impact the independent variable. 
+Researchers want to examine relationship between variables as guided by their specific research question. This examination is done by specifying an independent variable and a dependent variable. An **independent variable** is a variable that varies or can be manipulated to explore the effect or relationship it has with a **dependent variable**. As the name implies, independent variables are variables that are independent of other variables/characteristics. Meaning that no other variables in the research study impact the independent variable. 
 
-There are two primary types of independent variables: 1) experimental independent variables and 2) subject variables. An experiment independent variable is controlled and can be directly manipulated by a researcher (treatment conditions, for example). A subject variable is not controlled nor can be manipulated by a researcher but is a natural occuring variable within a subject/participant (e.g., height, weight, education, age).
+Independent variables can be experimental, that is directly manipulated by the researcher (e.g., treatment conditions in an experiment), or naturally occurring characteristics of a subject such as height, weight, education, age. 
 
 ### Dependent Variable
 
@@ -194,6 +194,6 @@ No tasks for this tutorial
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
 ### El Fin
-Good job on completing the second of two tutorials in the final module of this course! Please move onto the next tutorial within this module on Canvas where we will learn how generate descriptive statistics in R.
+Good job on completing the first of two tutorials in the final module of this course! Please move onto the next tutorial within this module on Canvas where we will learn how generate descriptive statistics in R.
 
 

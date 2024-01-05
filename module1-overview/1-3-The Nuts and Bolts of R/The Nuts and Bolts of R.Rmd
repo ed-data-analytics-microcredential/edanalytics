@@ -86,7 +86,7 @@ When we use `typeof()` and `str()`, the output tells us that the object `name` i
 
 ### Logical
 
-Yay!We made it to the final data type: logical data. Logical data types in R are known as boolean data types. Logical data can only have two values: `TRUE` and `FALSE`.
+Yay! We made it to the final data type: logical data. Logical data types in R are known as Boolean data types. Logical data can only have two values: `TRUE` and `FALSE`.
 
 ```{r  logical_char, echo=TRUE}
 
