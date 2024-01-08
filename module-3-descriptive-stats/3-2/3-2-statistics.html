@@ -14,7 +14,7 @@
 <meta name="allow-skip" content="false" />
 <meta name="learnr-version-prerender" content="0.11.5" />
 
-<title>Descriptive Statistics in R</title>
+<title>Descriptive Statistics</title>
 
 <!-- header-includes START -->
 <!-- HEAD_CONTENT -->
@@ -148,17 +148,18 @@ observations (n), and several descriptive statistics (e.g., mean,
 standard deviation, standard error, etc.).</p>
 <p>Do you remember why certain variables have asterisk next to their
 names? The asterisk is an indicator that these variables are factor
-variables! In the GSS data set, it shows that marital, race, rincome,
-partyid, relig, and denom are all factor variables. But isn’t it strange
-that these variables still have descriptive statistics associated with
-them? Good point. The descriptive statistics provided by
-<code>describe()</code> for each of these variables is meaningless so it
-would be best to ignore these statistics. It’s like trying to take the
-mean of the colors in a crayon box, you can’t! We’ll cover this more in
-the third module. However, the descriptive statistics provided for the
-variables of integer values is quite useful. For example, the average
-age of respondents in this sample data set is approximately 47 years
-old.</p>
+variables! In the <code>gss</code> data set, it shows that
+<code>marital</code>, <code>race</code>, <code>rincome</code>,
+<code>partyid</code>, <code>relig</code>, and <code>denom</code> are all
+factor variables. But isn’t it strange that these variables still have
+descriptive statistics associated with them? Good point. The descriptive
+statistics provided by <code>describe()</code> for each of these
+variables is meaningless so it would be best to ignore these statistics.
+It’s like trying to take the mean of the colors in a crayon box, you
+can’t! We’ll cover this more in the third module. However, the
+descriptive statistics provided for the variables of integer values is
+quite useful. For example, the average age of respondents in this sample
+data set is approximately 47 years old.</p>
 <div class="tutorial-exercise" data-label="dsecribe" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -231,7 +232,7 @@ of tendency include mean (the average), median, and mode. While these
 are all valid measures of central tendency, there are certain conditions
 were some of these measures are more appropriate than others.</p>
 <div id="section-mean" class="section level3">
-<h3><code>mean()</code></h3>
+<h3>Mean</h3>
 <p>We can find the mean by providing a vector of numeric values to the
 built in R function <code>mean()</code>. Note, this function does not
 exlude <code>NA</code> cases so we have to tell R to only include
@@ -248,10 +249,10 @@ the data is skewed, median is a more appropriate measure of central
 tendency to calculate for interval/ratio variables.</p>
 </div>
 <div id="section-median" class="section level3">
-<h3><code>median()</code></h3>
+<h3>Median</h3>
 <p>Like the <code>mean()</code> function, we can find the median by
 providing a vector of numeric values to the built in R function
-<code>median()</code>. Note, this function does not exlude
+<code>median()</code>. Note, this function does not exclude
 <code>NA</code> cases so we have to tell R to only include complete
 observations.</p>
 <div class="tutorial-exercise" data-label="median" data-completion="1"
@@ -265,12 +266,12 @@ of central tendency for skewed interval/ratio data as well as ordinal
 data.</p>
 </div>
 <div id="section-mode" class="section level3">
-<h3><code>mode()</code></h3>
+<h3>Mode</h3>
 <p>Unlike <code>mean()</code> there is no built in R function to
 calculate the mode. However, you can install and load the package
 <code>DescTools</code> package and use their <code>Mode()</code>
 function to calculate the mode. Alternatively, the descriptive
-statistics functions we have discusssed provides the modes for numeric
+statistics functions we have discussed provides the modes for numeric
 variables. Mode is the most appropriate measure of central tendency when
 we have nominal (count) data.</p>
 </div>
@@ -279,12 +280,12 @@ we have nominal (count) data.</p>
 <h2>Measures of Dispersion</h2>
 <p>Measures of dispersion describes the spread of data. Common measures
 of data dispersion include variance, standard deviation, and range.</p>
-<div id="section-var" class="section level3">
-<h3><code>var()</code></h3>
+<div id="section-variance" class="section level3">
+<h3>Variance</h3>
 <p>The <code>var()</code> function calculates the variance of a numeric
 vector. Variance measures how much data are spread out and is
 mathematically defined as the average of squared differences from the
-mean. Note, this function does not exlude <code>NA</code> cases so we
+mean. Note, this function does not exclude <code>NA</code> cases so we
 have to tell R to only include complete observations.</p>
 <div class="tutorial-exercise" data-label="var" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
@@ -297,12 +298,12 @@ Instead we take the square root of the variance to calculate the
 standard deviation (which is the most commonly used measure of
 dispersion).</p>
 </div>
-<div id="section-sd" class="section level3">
-<h3><code>sd()</code></h3>
+<div id="section-standard-deviation" class="section level3">
+<h3>Standard Deviation</h3>
 <p>The <code>sd()</code> function calculates the standard deviation of a
 numeric vector. Standard deviation also measures how much data are
 spread out and is mathematically defined as each data point’s deviation
-relative to the mean. Note, this function does not exlude
+relative to the mean. Note, this function does not exclude
 <code>NA</code> cases so we have to tell R to only include complete
 observations.</p>
 <div class="tutorial-exercise" data-label="sd" data-completion="1"
@@ -313,8 +314,8 @@ data-pipe="|&gt;">
 </div>
 </div>
 <div id="section-range" class="section level3">
-<h3><code>range()</code></h3>
-<p>The range is also another meausure of disperstion and be calculated
+<h3>Range</h3>
+<p>The range is also another measure of dispersion and be calculated
 using <code>range()</code> function. The output of this functions tells
 us the minimum value of a numeric vector as well as the maximum
 value.</p>
@@ -338,16 +339,16 @@ the shape of a classic bell curve where the left side of the data is
 identical to the right side up until the middle point (if you were to
 fold the distribution vertically in half). A symmetric distribution is
 where the mean, median, and mode for the data are all the same.</p>
-<p><img src="images/norm-dist.png" width="480" /></p>
+<p><img src="images/norm-dist.png" width="75%" /></p>
 <p>A right-skewed distribution (positively skewed) has a long right tail
 with the mean closest to the tail compared to the mode and median.</p>
-<p><img src="images/rskew-dist.png" width="480" /></p>
+<p><img src="images/rskew-dist.png" width="75%" /></p>
 <p>A left-skewed distribution (negatively skewed) has a long left tail
 with the mean closest to the tail compared to the mode and median.</p>
-<p><img src="images/lskew-dist.png" width="480" /></p>
+<p><img src="images/lskew-dist.png" width="75%" /></p>
 <p>The best way we can examine the distribution of a dataset is to plot
 it using the <code>hist()</code> function! Let’s examine the density of
-the age variable in the gss dataset.</p>
+the <code>age</code> variable in the <code>gss</code> dataset.</p>
 <div class="tutorial-exercise" data-label="skew" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -355,8 +356,8 @@ data-pipe="|&gt;">
 lines(density(gss$age, na.rm= TRUE), col = &quot;blue&quot;)   </code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-Let’s now examine the density of the tvhours variable in the gss
-dataset.
+Let’s now examine the density of the <code>tvhours</code> variable in
+the <code>gss</code> dataset.
 <div class="tutorial-exercise" data-label="skew2" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -387,7 +388,7 @@ psych::describe(gss$tvhours)  </code></pre>
 <p>Kurtosis measures the tailedness of data distribution. In other
 words, kurtosis measures the degree to which data points cluster in the
 tails or peak of the distribution.</p>
-<p><img src="images/kurt.png" width="480" /></p>
+<p><img src="images/kurt.png" width="75%" /></p>
 <p>There are 3 types of kurtosis:</p>
 <ul>
 <li>Mesokurtic: Normally distributed data. Kurtosis value of 0 indicates
@@ -408,8 +409,9 @@ data-pipe="|&gt;">
 psych::describe(gss$tvhours)  </code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<p>What do you think of the kurtosis values of the data for the age and
-tvhours variables in the gss dataset?</p>
+<p>What do you think of the kurtosis values of the data for the
+<code>age</code> and <code>tvhours</code> variables in the
+<code>gss</code> dataset?</p>
 </div>
 </div>
 <div id="section-frequency-tables" class="section level2">
@@ -420,7 +422,7 @@ distribution (or counts) of observations that occur based on the option
 within a variable. They are helpful to understand which options occur
 more or less often in a dataset.</p>
 <div id="section-table" class="section level3">
-<h3><code>table()</code></h3>
+<h3>Table</h3>
 <p>We can generate a frequency table by using the <code>table()</code>
 function in base R. Frequency tables can be used for nominal, ordinal,
 interval, and ratio data. However, frequency tables may be more
@@ -463,19 +465,19 @@ data-pipe="|&gt;">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>Much better and more informative!</p>
-Great, let’s generate a frequency table for tvhours.
+Great, let’s generate a frequency table for <code>tvhours</code>.
 <div class="tutorial-exercise" data-label="table3" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>table(gss$tvhours)  </code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<p>The frequency table for the tvhours variable isn’t too clutered like
-the age variable was in the initial frequency table we created. The
-output is useful as is for tvhours.</p>
+<p>The frequency table for the <code>tvhours</code> variable isn’t too
+clustered like the age variable was in the initial frequency table we
+created. The output is useful as is for <code>tvhours</code>.</p>
 </div>
 <div id="section-count" class="section level3">
-<h3><code>count()</code></h3>
+<h3>Count</h3>
 <p>We can also generate frequency tables by using the
 <code>count()</code> function in the tidyverse :)</p>
 <div class="tutorial-exercise" data-label="count" data-completion="1"
@@ -1314,7 +1316,7 @@ learnr:::store_exercise_cache(structure(list(label = "count3", global_setup = st
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","ggthemes","glue","graphics","grDevices","grid","gtable","highr","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","png","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.2","2.1-0","4.3.1","4.3.1","0.6.33","1.1.2","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.3","5.0.0","1.6.2","4.3.1","4.3.1","4.3.1","0.3.3","0.10","1.1.3","0.5.7","1.6.4","1.6.13","0.1.4","1.8.8","1.45","1.3.2","0.11.5","1.0.4","1.9.2","2.0.3","4.3.1","0.12","0.5.0","1.9.0","2.0.3","0.1-8","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.2","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.41","1.8-4","2.3.8"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","ggthemes","glue","graphics","grDevices","grid","gtable","highr","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.1","2.1-0","4.3.1","4.3.1","0.6.33","1.1.3","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.4","5.0.0","1.6.2","4.3.1","4.3.1","4.3.1","0.3.4","0.10","1.1.3","0.5.7","1.6.4","1.6.11","0.1.4","1.8.7","1.45","1.3.1","0.11.5","1.0.4","1.9.3","2.0.3","4.3.1","0.12","0.5.0","1.9.0","2.0.3","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.1","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.40","1.8-4","2.3.7"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>
@@ -1330,7 +1332,7 @@ learnr:::store_exercise_cache(structure(list(label = "count3", global_setup = st
 <!-- begin doc-metadata -->
 <div id="doc-metadata">
 <h1 class="title toc-ignore" style="display:none;">Descriptive
-Statistics in R</h1>
+Statistics</h1>
 </div>
 <!-- end doc-metadata -->
 

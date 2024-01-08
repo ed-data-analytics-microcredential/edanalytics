@@ -1,5 +1,5 @@
 ---
-title: "Descriptive Statistics in R"
+title: "Descriptive Statistics"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -34,13 +34,13 @@ gss <- forcats::gss_cat
 gss
 ```
 
-#### `describe()`
+#### Describe
 
 We've introduced the `describe()` function in the second module, but we will review it once more in this tutorial.
 
 The `describe()` function is a useful function in first getting to know your data. For this function, you provide the name of the data frame as the first argument of the function. The output provides the following for each variable in the dataset: the number of observations (n), and several descriptive statistics (e.g., mean, standard deviation, standard error, etc.). 
 
-Do you remember why certain variables  have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the GSS data set, it shows that marital, race, rincome, partyid, relig, and denom are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! We'll cover this more in the third module. However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
+Do you remember why certain variables  have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the `gss` data set, it shows that `marital`, `race`, `rincome`, `partyid`, `relig`, and `denom` are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! We'll cover this more in the third module. However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
 
 ```{r dsecribe, exercise = TRUE}
 psych::describe(gss)
@@ -62,7 +62,7 @@ Here's a list of all the descriptive statistics given when using `describe()`
 - kurtosis: kurtosis (if applicable)
 - se: standard error (if applicable)
 
-#### `summary()`
+#### Summary
 
 The `summary()` function is a base R function that can be used to generate quick descriptive statistics. Similar to the `describe()` function, you provide the name of the dataframe you wish to generate descriptive statistics.
 
@@ -72,14 +72,14 @@ summary(gss)
 
 The `summary()` function calculate and returns the minimum value, the 1st quartile value (25th percentile), the median value, the 3rd quartile value (75th percentile), and the maximum value for numeric values. If there are factors in the dataset, the function returns the counts for each of the factor levels (or groups) for each variable. If there are `NA`s in the dataset, `summary()` excludes these cases from being counted in the output. 
 
-#### `fivenum()`
+#### Five-Number Summary
 
 The `fivenum()` function returns Tukey's five number summary: minimum value, lower-hinge (25th percentile), upper-hinge (75th percentile), and maximum value for the input data. Let's use the `fivenum()` function for the age variable in the gss dataset. 
 
 ```{r fivenum, exercise = TRUE}
 fivenum(gss$age)
 ```
-Please note, that the `fivenum()` function only accepts numeric input values. You will recieve an error if you provide data that are factors or characters.
+Please note, that the `fivenum()` function only accepts numeric input values. You will receive an error if you provide data that are factors or characters.
 
 Great! These are quick and easy ways to generate a comprehensive output of descriptive statistics.
 
@@ -87,9 +87,9 @@ Great! These are quick and easy ways to generate a comprehensive output of descr
 
 A measure of central tendency is a single value that describes the central position of a dataset with numeric values. Measures of central of tendency include mean (the average), median, and mode. While these are all valid measures of central tendency, there are certain conditions were some of these measures are more appropriate than others.
 
-### `mean()`
+### Mean
 
-We can find the mean by providing a vector of numeric values to the built in R function `mean()`. Note, this function does not exlude `NA` cases so we have to tell R to only include complete observations.
+We can find the mean by providing a vector of numeric values to the built in R function `mean()`. Note, this function does not exclude `NA` cases so we have to tell R to only include complete observations.
 
 ```{r mean, exercise = TRUE}
 mean(gss$age, na.rm = TRUE)
@@ -97,9 +97,9 @@ mean(gss$age, na.rm = TRUE)
 
 Using mean as a measure of central tendency is appropriate if we have interval/ratio variables that normally distributed with no outliers. If the data is skewed, median is a more appropriate measure of central tendency to calculate for interval/ratio variables.
 
-### `median()`
+### Median
 
-Like the `mean()` function, we can find the median by providing a vector of numeric values to the built in R function `median()`. Note, this function does not exlude `NA` cases so we have to tell R to only include complete observations.
+Like the `mean()` function, we can find the median by providing a vector of numeric values to the built in R function `median()`. Note, this function does not exclude `NA` cases so we have to tell R to only include complete observations.
 
 ```{r median, exercise = TRUE}
 median(gss$age, na.rm = TRUE)
@@ -107,17 +107,17 @@ median(gss$age, na.rm = TRUE)
 
 As mentioned previously, the median is the most appropriate measure of central tendency for skewed interval/ratio data as well as ordinal data.
 
-### `mode()`
+### Mode
 
-Unlike `mean()` there is no built in R function to calculate the mode. However, you can install and load the package `DescTools` package and use their `Mode()` function to calculate the mode. Alternatively, the descriptive statistics functions we have discusssed provides the modes for numeric variables. Mode is the most appropriate measure of central tendency when we have nominal (count) data.
+Unlike `mean()` there is no built in R function to calculate the mode. However, you can install and load the package `DescTools` package and use their `Mode()` function to calculate the mode. Alternatively, the descriptive statistics functions we have discussed provides the modes for numeric variables. Mode is the most appropriate measure of central tendency when we have nominal (count) data.
 
 ## Measures of Dispersion
 
 Measures of dispersion describes the spread of data. Common measures of data dispersion include variance, standard deviation, and range.
 
-### `var()`
+### Variance
 
-The `var()` function calculates the variance of a numeric vector. Variance measures how much data are spread out and is mathematically defined as the average of squared differences from the mean. Note, this function does not exlude `NA` cases so we have to tell R to only include complete observations.
+The `var()` function calculates the variance of a numeric vector. Variance measures how much data are spread out and is mathematically defined as the average of squared differences from the mean. Note, this function does not exclude `NA` cases so we have to tell R to only include complete observations.
 
 ```{r var, exercise = TRUE}
 var(gss$age, na.rm = TRUE)
@@ -125,17 +125,17 @@ var(gss$age, na.rm = TRUE)
 
 Overall, variance is difficult to interpret to describe dispersion. Instead we take the square root of the variance to calculate the standard deviation (which is the most commonly used measure of dispersion). 
 
-### `sd()`
+### Standard Deviation
 
-The `sd()` function calculates the standard deviation of a numeric vector. Standard deviation also measures how much data are spread out and is mathematically defined as each data point's deviation relative to the mean. Note, this function does not exlude `NA` cases so we have to tell R to only include complete observations.
+The `sd()` function calculates the standard deviation of a numeric vector. Standard deviation also measures how much data are spread out and is mathematically defined as each data point's deviation relative to the mean. Note, this function does not exclude `NA` cases so we have to tell R to only include complete observations.
 
 ```{r sd, exercise = TRUE}
 sd(gss$age, na.rm = TRUE)
 ```
 
-### `range()`
+### Range
 
-The range is also another meausure of disperstion and be calculated using `range()` function. The output of this functions tells us the minimum value of a numeric vector as well as the maximum value. 
+The range is also another measure of dispersion and be calculated using `range()` function. The output of this functions tells us the minimum value of a numeric vector as well as the maximum value. 
 
 ```{r range, exercise = TRUE}
 range(gss$age, na.rm = TRUE)
@@ -149,33 +149,33 @@ The shape of the distribution of data can have important implications on our dat
 
 Skewness measures the symmetry of our data. Symmetrical data follows the shape of a classic bell curve where the left side of the data is identical to the right side up until the middle point (if you were to fold the distribution vertically in half). A symmetric distribution is where the mean, median, and mode for the data are all the same.
 
-```{r normdist, echo=FALSE}
+```{r normdist, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/norm-dist.png"))
 
 ```
 
 A right-skewed distribution (positively skewed) has a long right tail with the mean closest to the tail compared to the mode and median. 
 
-```{r rskewdist, echo=FALSE}
+```{r rskewdist, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/rskew-dist.png"))
 
 ```
 
 A left-skewed distribution (negatively skewed) has a long left tail with the mean closest to the tail compared to the mode and median. 
 
-```{r lskewdist, echo=FALSE}
+```{r lskewdist, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/lskew-dist.png"))
 
 ```
 
-The best way we can examine the distribution of a dataset is to plot it using the `hist()` function! Let's examine the density of the age variable in the gss dataset.
+The best way we can examine the distribution of a dataset is to plot it using the `hist()` function! Let's examine the density of the `age` variable in the `gss` dataset.
 
 ```{r skew, exercise = TRUE}
 hist(gss$age, freq = FALSE)
 lines(density(gss$age, na.rm= TRUE), col = "blue")   
 ```
 
-Let's now examine the density of the tvhours variable in the gss dataset.
+Let's now examine the density of the `tvhours` variable in the `gss` dataset.
 ```{r skew2, exercise = TRUE}
 hist(gss$tvhours, freq = FALSE)
 lines(density(gss$tvhours, na.rm= TRUE), col = "blue")   
@@ -200,7 +200,7 @@ Below is a brief guideline for skewness benchmarks.
 
 Kurtosis measures the tailedness of data distribution. In other words, kurtosis measures the degree to which data points cluster in the tails or peak of the distribution. 
 
-```{r kurt, echo=FALSE}
+```{r kurt, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/kurt.png"))
 
 ```
@@ -218,13 +218,13 @@ psych::describe(gss$age)
 psych::describe(gss$tvhours)  
 ```
 
-What do you think of the kurtosis values of the data for the age and tvhours variables in the gss dataset?
+What do you think of the kurtosis values of the data for the `age` and `tvhours` variables in the `gss` dataset?
 
 ## Frequency Tables
 
 Frequency tables are important to generate when trying to get a better understanding of a dataset. Frequency tables show the distribution (or counts) of observations that occur based on the option within a variable. They are helpful to understand which options occur more or less often in a dataset. 
 
-### `table()`
+### Table
 We can generate a frequency table by using the `table()` function in base R. Frequency tables can be used for nominal, ordinal, interval, and ratio data. However, frequency tables may be more appropriate for nominal, ordinal, and (at times) interval data.
 
 Let's walk through a few examples.
@@ -258,14 +258,14 @@ table(d$age_groups)
 
 Much better and more informative!
 
-Great, let's generate a frequency table for tvhours.
+Great, let's generate a frequency table for `tvhours`.
 ```{r table3, exercise = TRUE}
 table(gss$tvhours)  
 ```
 
-The frequency table for the tvhours variable isn't too clutered like the age variable was in the initial frequency table we created. The output is useful as is for tvhours.
+The frequency table for the `tvhours` variable isn't too clustered like the age variable was in the initial frequency table we created. The output is useful as is for `tvhours`.
 
-### `count()`
+### Count
 
 We can also generate frequency tables by using the `count()` function in the tidyverse :)
 

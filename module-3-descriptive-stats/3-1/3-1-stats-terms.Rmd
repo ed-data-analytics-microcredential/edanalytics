@@ -17,7 +17,7 @@ Welcome back to the final module of this mini course. In the previous module we 
 
 In this course we learned how to **import**, **wrangle**, and **visualize** our data. In this final module, we will learn how to generate basic descriptive statistics.
 
-```{r process, echo=FALSE}
+```{r process, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
 
 ```
@@ -38,7 +38,7 @@ Now that we know where we've been and where we're headed, let's go ahead and jum
 
 The difference between a population and sample is one of the first concepts taught in statistics and research methods courses. A **population** is the complete group you want to make conclusions about and a **sample** is a subset of the population you're interested in. Researchers often collect data from a sample to make conclusions (or draw inferences) about the entire population of interest.
 
-```{r tidychart, echo=FALSE}
+```{r tidychart, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/population.png"))
 
 ```
@@ -160,13 +160,13 @@ Randomization techniques are often used in research settings in efforts to achie
 
 Random selection is also known as random sampling and is a technique used to randomly select members of a population to be used as the study's sample. There are four common types of random selection techniques that are used.
 
-- Simple random sampling (SRS): Each member of a population has an equal and fair probability of being selected. This is one of the most convenience and simple random selection techniques.
+- **Simple random sampling**: Each member of a population has an equal and fair probability of being selected. This is one of the most convenience and simple random selection techniques.
 
-- Systematic sampling: The selection criteria follows a predetermined interval (k) to determine the members of a population that will be selected. For example, every 12th person in list of alphabetized last names will be selected. 
+- **Systematic sampling**: The selection criteria follows a predetermined interval (k) to determine the members of a population that will be selected. For example, every 12th person in list of alphabetized last names will be selected. 
 
-- Stratified sampling: This technique first divides the population into subgroups with notable distinctions as predetermined by a researcher. For example, a researcher might want to interview teachers across the U.S. If the researcher has a list of teachers within all schools, the researcher can divide and categorize the schools by geographic urbanality (e.g., rural, suburban, urban) and then randomly teachers a specific number of teachers within each school. This technique allows researchers to ensure respective subgroups are adequately represented in the sample (creating a representative sample of teachers in the US).
+- **Stratified sampling**: This technique first divides the population into subgroups with notable distinctions as predetermined by a researcher. For example, a researcher might want to interview teachers across the U.S. If the researcher has a list of teachers within all schools, the researcher can divide and categorize the schools by geographic urbanality (e.g., rural, suburban, urban) and then randomly teachers a specific number of teachers within each school. This technique allows researchers to ensure respective subgroups are adequately represented in the sample (creating a representative sample of teachers in the US).
 
-- Cluster sampling: This technique is similar to stratified sampling but instead it includes all members of a subgroup instead of randomly selected members inside of a subgroup. 
+- **Cluster sampling**: This technique is similar to stratified sampling but instead it includes all members of a subgroup instead of randomly selected members inside of a subgroup. 
 
 ### Random Assignment
 

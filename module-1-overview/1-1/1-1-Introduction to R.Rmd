@@ -177,11 +177,12 @@ You can navigate to the official R and RStudio sites to download and install:
 Please watch the video below on how to download and install R.
 
 ### Video: How to install R
+<!--- Migrate this to our own site rather than Anthony's -->
+For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
+
 
 ![](https://vimeo.com/203516510)
 
-<! -- Migrate this to our own site rather than Anthony's -->
-For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
 
 For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
 
@@ -211,11 +212,12 @@ RStudio makes programming in R much easier, and we suggest that you use it!
 
 You can navigate to the official RStudio site to download and install [RStudio](https://posit.co/download/rstudio-desktop/)
 
-Please watch the video below on how to download and install R.
+Please watch the video below on how to download and install RStudio.
 
 ![](https://vimeo.com/203516968)
 
-<! -- Migrate this to our own site rather than Anthony's -->
+<!--- Migrate this to our own site rather than Anthony's -->
+
 For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
 
 For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
@@ -257,14 +259,10 @@ Once you have successfully saved the `.Rproj` file in your preferred location on
 Double click on the `.RProj` file to open up this file in RStudio (RStudio will automatically open when you double click the file).
 
 
-<<<<<<< HEAD
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
 Please follow along :)
 
-INSERT VIDEO LINK HERE FOR microcred- 1.1.01-rstudiotour.mp4
-=======
-INSERT VIDEO LINK HERE FOR microcred-1.1.01-tour.mp4
->>>>>>> 7b93d387cbdf0e5cd3b5166f589384caf0e775ef
+![](https://youtu.be/x55FsvAbylQ)
 
 ## Working Directory and R Projects
 
@@ -275,7 +273,7 @@ These are important to use and set up at the beginning when creating R files/scr
 
 The video below will give you a brief tutorial of setting your file location using a working directory or R Projects.
 
-INSERT VIDEO LINK HERE FOR microcred- 1.1.02-getwd.mp4
+![](https://youtu.be/bRi33zu8bdk)
 
 You may have already figured out that you don't need to use `getwd()` for the `intro to R` file you're using in RStudio right now since it's part of an R Project.
 Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project.
@@ -286,7 +284,7 @@ Pretty cool, huh?
 
 ## Disable Save Workspace Image
 
-INSERT VIDEO LINK HERE FOR microcred- 1.1.03-disableworkspace.mp4
+![](https://youtu.be/2TC7_yKCByE)
 
 
 ## Tasks
