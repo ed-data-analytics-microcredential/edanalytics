@@ -1,0 +1,11 @@
+name: 0-1-getting-started
+title:
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10901612
+bundleId: 8130568
+url: https://ed-analytics.shinyapps.io/0-1-getting-started/
+when: 1704921232.92089
+lastSyncTime: 1704921232.92091

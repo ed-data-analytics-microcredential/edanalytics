@@ -1,0 +1,13 @@
+name: 0-1-Introduction-to-R
+title: 0-1-Introduction-to-R
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10901550
+bundleId: 8130456
+url: https://ed-analytics.shinyapps.io/0-1-Introduction-to-R/
+when: 1704919592.23798
+lastSyncTime: 1704919592.238
+asMultiple: FALSE
+asStatic: FALSE
