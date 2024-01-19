@@ -8,6 +8,16 @@ description: >
   install R packages from CRAN. 
 ---
 
+
+```{css, echo=FALSE}
+.notice {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-left: 6px solid #ffcc00;
+  margin-bottom: 15px;
+}
+
+
 ```{r setup, include=FALSE}
 library(learnr)
 tutorial_options(exercise.timelimit = 60)
@@ -252,7 +262,9 @@ Let's take a little tour to get you familiar with the software.
 
 ## RStudio Tour
 
-**Are you completing this tutorial as a part of a _microcredential_? If so, please read and complete the following.**
+<div class="notice">
+<b>Are you completing this tutorial as a part of a <i>microcredential</i>? If so, please read and complete the following.</b>
+</div>
 
 Before we begin, please save the project file in Canvas titled `microcred.Rproj` in this current module.
 Save this `.Rproj` file in the folder you would like to keep your course materials for this class.
@@ -266,7 +278,9 @@ Please follow along as you work to complete the microcredential :)
 
 ![](https://youtu.be/x55FsvAbylQ)
 
-**Are you completing this in a stand-alone manner (not as a part of a microcredential)? If so, simply view the fole below**
+<div class="notice">
+<b>Are you completing this in a stand-alone manner (not as a part of a microcredential)? If so, simply view the fole below</b>
+</div>
 
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
 Please follow along :)
