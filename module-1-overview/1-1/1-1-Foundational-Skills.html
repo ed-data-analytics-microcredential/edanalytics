@@ -501,42 +501,41 @@ vocational)</li>
 Foundational Skills framework, let’s engage in a task! Please follow the
 steps outlined below.</p>
 <ol style="list-style-type: decimal">
-<li>Create a new R script (lastname-R-task2) and save in your project
-folder for this course.</li>
-<li>Load the tidyverse and psych libraries in your R script</li>
-<li>Find the hsb dataset in the R project for this course named
-hsb-data.csv and upload it into R within your script using the
+<li>Create a new R script (your-last-name-R-task-1-1) and save in your
+project folder for this course. If you haven’t created a project yet,
+check out the instructions on how to do so in the <a
+href="https://ed-analytics.shinyapps.io/1-1-foundational-skills/#section-projects">first
+tutorial</a></li>
+<li>Load the tidyverse and psych packages in your R script</li>
+<li>Find the hsb dataset for this course named hsb-data.csv (on Canvas)
+save it to the folder your project is it.</li>
+<li>Read this data set into R within your script using the
 <code>read_csv()</code> function within tidyverse. Assign the dataset to
-an object called <code>hsb-raw</code> using the assignment operator. If
-this is successfully done, you will see an object in your environment
-pane within RStudio called <code>hsb-raw</code>.</li>
+an object called <code>hsb</code> using the assignment operator. If this
+is successfully done, you will see an object in your environment pane
+within RStudio called <code>hsb</code>.</li>
 <li>Use the <code>describe()</code> function within the psych library
 and type the name of your dataset within the parenthesis and press
 run.</li>
 <li>Using comments within R, write a few notes about the results
 produced from the <code>describe()</code> function. In addition, please
 make sure you have left brief comments on all written code within this
-file (future you will thank you later :-)).</li>
-<li>Read the brief resource in Canvas titled:
-base-r-cheat-sheet.pdf</li>
+file—future you will thank you later!</li>
+<li>Upload this completed file to receive credit!</li>
 </ol>
 <div id="section-note" class="section level4">
 <h4>Note:</h4>
-<p>You may run into issues in completing the tasks listed above. Please
-refer to this document as well as the introduction to R document. Google
-is also a great resource when you run into issues in R.</p>
+<p>You may run into issues in completing the tasks listed above. This is
+normal! Please see the troubleshooting document linked through
+Canvas—and also linked <a
+href="https://docs.google.com/document/d/14Jc-KG3m5k1BvyKWqw7KmDD21IugU5nV5edfJkZyspY/edit?usp=drive_web&amp;ouid=110969489876425298430">here</a>.
+Also, reach out for help!</p>
 </div>
 <div id="section-reflect" class="section level3">
 <h3>Reflect</h3>
 <p>Let’s take some time to reflect before moving on. What is one thing
 that surprised you? What is one thing that confused you? Did you learn
-anything that might be useful in the type of work you do?</p>
-</div>
-<div id="section-el-fin" class="section level3">
-<h3>El Fin</h3>
-<p>Good job on completing the second of three tutorials within the first
-module of this course! Please move onto the next tutorial within this
-module on Canvas where we will begin to explore the hsb dataset.
+anything that might be useful in the type of work you do?
 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
@@ -568,22 +567,22 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letter-a", question = structure("Which of the following is not a benefit of creating a Project in RStudio?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8be06e9", 
+"character")), answers = list(structure(list(id = "lnr_ans_4c8a6e4", 
     option = "Projects allow you to open and use related files", 
     value = "Projects allow you to open and use related files", 
     label = structure("Projects allow you to open and use related files", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5d39dae", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1e8012a", 
     option = "Projects allow you to easily switch between the things you are working on", 
     value = "Projects allow you to easily switch between the things you are working on", 
     label = structure("Projects allow you to easily switch between the things you are working on", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_94e8146", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_aaced5", 
     option = "Projects provide ready-made templates for analyses", 
     value = "Projects provide ready-made templates for analyses", 
     label = structure("Projects provide ready-made templates for analyses", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_453bff", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_891c4e2", 
     option = "Projects make it easy to collaborate", value = "Projects make it easy to collaborate", 
     label = structure("Projects make it easy to collaborate", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -594,7 +593,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "letter-a-answer", question = "letter-a"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 95530239.9555153, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1065374442.0039, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -644,11 +643,11 @@ learnr:::store_exercise_cache(structure(list(label = "baseR", global_setup = str
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz5-1", question = structure("Were you able to install the 7 packages listed above in R", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_625cc8c", 
+"character")), answers = list(structure(list(id = "lnr_ans_3342226", 
     option = "Yes!", value = "Yes!", label = structure("Yes!", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_740b06c", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d38d1b2", 
     option = "No.", value = "No.", label = structure("No.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -658,18 +657,18 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz5-1-answer", question = "quiz5-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1823166697.65102, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 202906019.905515, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz6-1", question = structure("Do you know what the function above does", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_bcd5792", 
+"character")), answers = list(structure(list(id = "lnr_ans_d0ceb5c", 
     option = "Yes!", value = "Yes!", label = structure("Yes!", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job! This function takes the square root of a number!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_76be682", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7709003", 
     option = "No.", value = "No.", label = structure("No.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Don’t worry about it! This function takes the square root of a number!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -680,7 +679,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz6-1-answer", question = "quiz6-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 395940610.315626, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 967185363.549619, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -772,19 +771,19 @@ learnr:::store_exercise_cache(structure(list(label = "mean", global_setup = stru
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-1", question = structure("What command do you use to install packages?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_50dbb99", 
+"character")), answers = list(structure(list(id = "lnr_ans_765462f", 
     option = "`library()`", value = "`library()`", label = structure("<code>library()<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("We will see what <code>library()<\u002fcode> does later.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_315380", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fd63575", 
     option = "`install.packages()`", value = "`install.packages()`", 
     label = structure("<code>install.packages()<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4bbc4ca", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ddf602c", 
     option = "`install_this_package()`", value = "`install_this_package()`", 
     label = structure("<code>install_this_package()<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d4baa91", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_65b15fa", 
     option = "There is no command. You must visit [cran.r-project.org](http://cran.r-project.org) and download packages manually.", 
     value = "There is no command. You must visit [cran.r-project.org](http://cran.r-project.org) and download packages manually.", 
     label = structure("There is no command. You must visit <a href=\"http://cran.r-project.org\">cran.r-project.org<\u002fa> and download packages manually.", html = TRUE, class = c("html", 
@@ -797,27 +796,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz4-1-answer", question = "quiz4-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 2051951737.54449, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1333941430.87884, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-2", question = structure("How often do you need to install a package on your computer?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_406e227", 
+"character")), answers = list(structure(list(id = "lnr_ans_931a61e", 
     option = "Every time you restart R", value = "Every time you restart R", 
     label = structure("Every time you restart R", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7124132", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ae54eca", 
     option = "Every time you restart your computer", value = "Every time you restart your computer", 
     label = structure("Every time you restart your computer", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bde6c52", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5d68118", 
     option = "Only once. Afterwards, R can find it on your hard drive as needed.", 
     value = "Only once. Afterwards, R can find it on your hard drive as needed.", 
     label = structure("Only once. Afterwards, R can find it on your hard drive as needed.", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6657aed", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e383518", 
     option = "Never, as long as you are connected to the internet.", 
     value = "Never, as long as you are connected to the internet.", 
     label = structure("Never, as long as you are connected to the internet.", html = TRUE, class = c("html", 
@@ -830,7 +829,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz4-2-answer", question = "quiz4-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 1250339105.91777, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1057173440.50772, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -838,21 +837,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-3", question = structure("What is the tidyverse?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_2c1c821", 
+"character")), answers = list(structure(list(id = "lnr_ans_bb2f5fb", 
     option = "A collection of packages that work well together and provide tools for common data science tasks.", 
     value = "A collection of packages that work well together and provide tools for common data science tasks.", 
     label = structure("A collection of packages that work well together and provide tools for common data science tasks.", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("You can install all of the tidyverse packages at once with <code>install.packages(&quot;tidyverse&quot;)<\u002fcode>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6a2f638", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb0031d", 
     option = "A word processing program for R", value = "A word processing program for R", 
     label = structure("A word processing program for R", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d9f9c5f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2a0adba", 
     option = "A code style that reads like poetry", value = "A code style that reads like poetry", 
     label = structure("A code style that reads like poetry", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4560e53", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3133dce", 
     option = "An alternate universe where everyone is an R programmer.", 
     value = "An alternate universe where everyone is an R programmer.", 
     label = structure("An alternate universe where everyone is an R programmer.", html = TRUE, class = c("html", 
@@ -864,23 +863,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz4-3-answer", question = "quiz4-3"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 409937734.309108, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 2075166131.03368, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-4", question = structure("What is the typical assignment operator used to store the loaded data into a variable?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_5f32cb7", 
+"character")), answers = list(structure(list(id = "lnr_ans_5bd1052", 
     option = "`==`", value = "`==`", label = structure("<code>==<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4f1e39d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4420731", 
     option = "`<-`", value = "`<-`", label = structure("<code>&lt;-<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a53891e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c7e9f34", 
     option = "`->`", value = "`->`", label = structure("<code>-&gt;<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_76295cf", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b839d7", 
     option = "`:`", value = "`:`", label = structure("<code>:<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -890,41 +889,41 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz4-4-answer", question = "quiz4-4"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1034856898.01811, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 852550824.603, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz4-5", question = structure("How can you access documentation for a specific package?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_abe23f7", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-5", question = structure("How can you access documentation for a specific package?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_ecc6bc4", 
     option = "Through the R Help tab", value = "Through the R Help tab", 
     label = structure("Through the R Help tab", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3462a66", 
-    option = "Using the `help()` function, followed by the package name", 
-    value = "Using the `help()` function, followed by the package name", 
-    label = structure("Using the <code>help()<\u002fcode> function, followed by the package name", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cd697fe", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a04901a", 
+    option = "Using the `?help()` function, followed by the package name", 
+    value = "Using the `?help()` function, followed by the package name", 
+    label = structure("Using the <code>?help()<\u002fcode> function, followed by the package name", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8e1af0f", 
     option = "Using the ? operator, followed by the package name", 
     value = "Using the ? operator, followed by the package name", 
     label = structure("Using the ? operator, followed by the package name", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d03f4fa", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_376905e", 
     option = "Using the `assist()` function", value = "Using the `assist()` function", 
     label = structure("Using the <code>assist()<\u002fcode> function", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
 "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
 "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect. Be sure to select every correct answer.", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz4-5-answer", question = "quiz4-5"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 2117705898.01387, 
-    options = list()), class = c("learnr_checkbox", "tutorial_question"
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 735204806.657644, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
 </p>

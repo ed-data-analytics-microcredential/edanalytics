@@ -344,12 +344,14 @@ quiz(caption = "Quiz - Working with Packages",
     answer("`==`"),
     answer("`<-`", correct = TRUE),
     answer("`->`"),
-    answer("`:`")),
+    answer("`:`"),
+    allow_retry = TRUE),
   question("How can you access documentation for a specific package?",
            answer("Through the R Help tab"),
-           answer("Using the `help()` function, followed by the package name", correct = TRUE),
+           answer("Using the `?help()` function, followed by the package name"),
            answer("Using the ? operator, followed by the package name", correct = TRUE),
-           answer("Using the `assist()` function"))
+           answer("Using the `assist()` function"),
+           allow_retry = TRUE)
 )
 ```
 
@@ -358,18 +360,17 @@ quiz(caption = "Quiz - Working with Packages",
 Now that you are more acquainted with R, RStudio, and the Foundational Skills framework, let's engage in a task!
 Please follow the steps outlined below.
 
-1.  Create a new R script (lastname-R-task2) and save in your project folder for this course.
-2.  Load the tidyverse and psych libraries in your R script
-3.  Find the hsb dataset in the R project for this course named hsb-data.csv and upload it into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb-raw` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb-raw`.
-4.  Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.
-5.  Using comments within R, write a few notes about the results produced from the `describe()` function. In addition, please make sure you have left brief comments on all written code within this file (future you will thank you later :-)).
-6.  Read the brief resource in Canvas titled: base-r-cheat-sheet.pdf 
+1.  Create a new R script (your-last-name-R-task-1-1) and save in your project folder for this course. If you haven't created a project yet, check out the instructions  on how to do so in the [first tutorial](https://ed-analytics.shinyapps.io/1-1-foundational-skills/#section-projects)
+2.  Load the tidyverse and psych packages in your R script
+3.  Find the hsb dataset for this course named hsb-data.csv (on Canvas) save it to the folder your project is it. 
+4. Read this data set into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb`.
+5.  Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.
+6.  Using comments within R, write a few notes about the results produced from the `describe()` function. In addition, please make sure you have left brief comments on all written code within this file---future you will thank you later!
+7. Upload this completed file to receive credit!
 
 #### Note:
 
-You may run into issues in completing the tasks listed above.
-Please refer to this document as well as the introduction to R document.
-Google is also a great resource when you run into issues in R.
+You may run into issues in completing the tasks listed above. This is normal! Please see the troubleshooting document linked through Canvas---and also linked [here](https://docs.google.com/document/d/14Jc-KG3m5k1BvyKWqw7KmDD21IugU5nV5edfJkZyspY/edit?usp=drive_web&ouid=110969489876425298430). Also, reach out for help! 
 
 ### Reflect
 
@@ -377,8 +378,3 @@ Let's take some time to reflect before moving on.
 What is one thing that surprised you?
 What is one thing that confused you?
 Did you learn anything that might be useful in the type of work you do?
-
-### El Fin
-
-Good job on completing the second of three tutorials within the first module of this course!
-Please move onto the next tutorial within this module on Canvas where we will begin to explore the hsb dataset.

@@ -274,7 +274,7 @@ Double click on the `.RProj` file to open up this file in RStudio (RStudio will 
 
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
 
-Please follow along as you work to complete the microcredential :)
+Please follow along as you work to complete the microcredential.
 
 ![](https://youtu.be/x55FsvAbylQ)
 
@@ -283,7 +283,6 @@ Please follow along as you work to complete the microcredential :)
 </div>
 
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
-Please follow along :)
 
 ![](https://youtu.be/x55FsvAbylQ)
 

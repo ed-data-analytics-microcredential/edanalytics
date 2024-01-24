@@ -642,7 +642,7 @@ There's a lot we can do with logical comparisons but we wanted to introduce you 
 Now that you are more acquainted with data types and structures, let's engage in a task!
 Please follow the steps outlined below.
 
-1.  Open the R script you created in the previous submodule (lastname-R-task2) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+1.  Open the R script you created in the previous submodule (your-lastname-R-task-1-1) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
 2.  Using comments within R, write notes on the names for each of the variables in the hsb dataset.
 3.  Using comments, write notes on the types of data for each variable in the hsb dataset.
 4.  Ensure the following 4 variables are classified as factors: gender, race, ses, schtype, prog. Save these changes to another data frame object called `hsbclean`.
@@ -658,8 +658,9 @@ Please follow the steps outlined below.
 #### Note:
 
 You may run into issues in completing the tasks listed above.
-Please refer to this document as well as the previous Learnr documents.
-Google is also a great resource when you run into issues in R.
+Please refer to this document as well as the previous tutorials,
+Please see the troubleshooting document linked through Canvas---and also linked [here](https://docs.google.com/document/d/14Jc-KG3m5k1BvyKWqw7KmDD21IugU5nV5edfJkZyspY/edit?usp=drive_web&ouid=110969489876425298430).
+
 
 ### Reflect
 
@@ -667,8 +668,3 @@ Let's take some time to reflect before moving on.
 What is one thing that surprised you?
 What is one thing that confused you?
 Did you learn anything that might be useful in the type of work you do?
-
-### El Fin
-
-Good job on completing the final tutorials within the first module of this course!
-Please move onto the next module on Canvas where we will learn about data wrangling.

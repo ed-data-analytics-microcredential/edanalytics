@@ -1,0 +1,13 @@
+name: 1-1-foundational-skills
+title: 1-1-foundational-skills
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10901837
+bundleId: 8180853
+url: https://ed-analytics.shinyapps.io/1-1-foundational-skills/
+when: 1706134867.19192
+lastSyncTime: 1706134867.19193
+asMultiple: FALSE
+asStatic: FALSE

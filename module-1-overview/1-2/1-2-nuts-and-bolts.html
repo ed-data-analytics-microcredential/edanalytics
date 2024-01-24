@@ -962,11 +962,11 @@ handy when we begin to wrangle our data in the next module.</p>
 let’s engage in a task! Please follow the steps outlined below.</p>
 <ol style="list-style-type: decimal">
 <li>Open the R script you created in the previous submodule
-(lastname-R-task2) that is saved in your project folder for this course.
-You should have code written to load the tidyverse and psych libraries
-and to read in your hsb dataset.Go ahead and run this script to make
-sure your code works (we are going to pick up where we left off last
-time).</li>
+(your-lastname-R-task-1-1) that is saved in your project folder for this
+course. You should have code written to load the tidyverse and psych
+libraries and to read in your hsb dataset.Go ahead and run this script
+to make sure your code works (we are going to pick up where we left off
+last time).</li>
 <li>Using comments within R, write notes on the names for each of the
 variables in the hsb dataset.</li>
 <li>Using comments, write notes on the types of data for each variable
@@ -997,13 +997,8 @@ is also a great resource when you run into issues in R.</p>
 <h3>Reflect</h3>
 <p>Let’s take some time to reflect before moving on. What is one thing
 that surprised you? What is one thing that confused you? Did you learn
-anything that might be useful in the type of work you do?</p>
-</div>
-<div id="section-el-fin" class="section level3">
-<h3>El Fin</h3>
-<p>Good job on completing the final tutorials within the first module of
-this course! Please move onto the next module on Canvas where we will
-learn about data wrangling. 
+anything that might be useful in the type of work you do?
+
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
@@ -1011,35 +1006,35 @@ tutorial_options(exercise.eval = TRUE)
 library(tidyverse)
 gradethis::gradethis_setup()
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::register_http_handlers(session, metadata = NULL)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::prepare_tutorial_state(session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::i18n_observe_tutorial_language(input, session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 session$onSessionEnded(function() {
         learnr:::event_trigger(session, "session_stop")
       })
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-num_vectors-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-num_vectors-code-editor`)), session)
 output$`tutorial-exercise-num_vectors-output` <- renderUI({
   `tutorial-exercise-num_vectors-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "num_vectors", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1074,15 +1069,15 @@ learnr:::store_exercise_cache(structure(list(label = "num_vectors", global_setup
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-int_vectors-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-int_vectors-code-editor`)), session)
 output$`tutorial-exercise-int_vectors-output` <- renderUI({
   `tutorial-exercise-int_vectors-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "int_vectors", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1117,15 +1112,15 @@ learnr:::store_exercise_cache(structure(list(label = "int_vectors", global_setup
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-log_vector-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-log_vector-code-editor`)), session)
 output$`tutorial-exercise-log_vector-output` <- renderUI({
   `tutorial-exercise-log_vector-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "log_vector", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1160,15 +1155,15 @@ learnr:::store_exercise_cache(structure(list(label = "log_vector", global_setup 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-char_vector-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-char_vector-code-editor`)), session)
 output$`tutorial-exercise-char_vector-output` <- renderUI({
   `tutorial-exercise-char_vector-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "char_vector", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1203,15 +1198,15 @@ learnr:::store_exercise_cache(structure(list(label = "char_vector", global_setup
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-list-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-list-code-editor`)), session)
 output$`tutorial-exercise-list-output` <- renderUI({
   `tutorial-exercise-list-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "list", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1245,15 +1240,15 @@ learnr:::store_exercise_cache(structure(list(label = "list", global_setup = stru
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-matrix-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-matrix-code-editor`)), session)
 output$`tutorial-exercise-matrix-output` <- renderUI({
   `tutorial-exercise-matrix-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "matrix", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1287,15 +1282,15 @@ learnr:::store_exercise_cache(structure(list(label = "matrix", global_setup = st
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-array-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-array-code-editor`)), session)
 output$`tutorial-exercise-array-output` <- renderUI({
   `tutorial-exercise-array-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "array", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1330,15 +1325,15 @@ learnr:::store_exercise_cache(structure(list(label = "array", global_setup = str
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-dataframe-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-dataframe-code-editor`)), session)
 output$`tutorial-exercise-dataframe-output` <- renderUI({
   `tutorial-exercise-dataframe-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "dataframe", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1376,15 +1371,15 @@ learnr:::store_exercise_cache(structure(list(label = "dataframe", global_setup =
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-index_vec-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-index_vec-code-editor`)), session)
 output$`tutorial-exercise-index_vec-output` <- renderUI({
   `tutorial-exercise-index_vec-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "index_vec", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1418,15 +1413,15 @@ learnr:::store_exercise_cache(structure(list(label = "index_vec", global_setup =
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-index_vec2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-index_vec2-code-editor`)), session)
 output$`tutorial-exercise-index_vec2-output` <- renderUI({
   `tutorial-exercise-index_vec2-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "index_vec2", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
@@ -1464,15 +1459,15 @@ learnr:::store_exercise_cache(structure(list(label = "index_vec2", global_setup 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-index_matrix2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-index_matrix2-code-editor`)), session)
 output$`tutorial-exercise-index_matrix2-output` <- renderUI({
   `tutorial-exercise-index_matrix2-result`()
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "index_matrix2", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
