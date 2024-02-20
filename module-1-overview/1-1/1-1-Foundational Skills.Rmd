@@ -41,10 +41,8 @@ Furthermore, even if the only person you ever collaborate with is a future versi
 
 ### Setting Up Your Project
 
-Note: We have already given you a project file with the different R-related files needed for this course so you will not need to create a R Project for this course.
-However, R Projects are important in terms of file management in R so we provided you with information below on how to create R Projects if you intend to use R for other data related projects outside this course.
+R Projects play a critical role in managing files in R. Therefore, we've included instructions on how to create an R Project. Creating a Project is one of the first steps in working on an R-based data science project in RStudio.
 
-Creating a Project is one of the first steps in working on an R-based data science project in RStudio.
 To create a Project you will need to first open RStudio.
 
 From within RStudio, follow these steps:
@@ -63,10 +61,10 @@ knitr::include_graphics("images/project-window.png")
 -   Click “Create Project”
 
 You've done it!
-There are a number of benefits to projects in RStudio.
-They allow you to open and use related files.
-They also allow you to easily switch between the things you are working on.
-Last, they make it easy to collaborate.
+There are a number of benefits to projects in RStudio:
+- They allow you to open and use related files.
+- They also allow you to easily switch between the things you are working on.
+- Last, they make it easy to collaborate.
 
 ### Quiz Questions
 
@@ -182,7 +180,7 @@ We will use these packages throughout the course.
 quiz(caption = "Quiz - Installing Packages",
   question("Were you able to install the 7 packages listed above in R",
     answer("Yes!", correct = TRUE, message = "Good job!"),
-    answer("No.")
+    answer("No.", message = "Try again. Is the package name spelled correctly? Is the package name in quotes?"),
   )
 )
 ```

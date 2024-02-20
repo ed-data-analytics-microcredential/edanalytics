@@ -8,6 +8,7 @@ runtime: shiny_prerendered
 library(learnr)
 library(tidyverse)
 library(ggthemes)
+library(psych)
 tutorial_options(exercise.timelimit = 60)
 ```
 
@@ -40,7 +41,7 @@ We've introduced the `describe()` function in the second module, but we will rev
 
 The `describe()` function is a useful function in first getting to know your data. For this function, you provide the name of the data frame as the first argument of the function. The output provides the following for each variable in the dataset: the number of observations (n), and several descriptive statistics (e.g., mean, standard deviation, standard error, etc.). 
 
-Do you remember why certain variables  have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the `gss` data set, it shows that `marital`, `race`, `rincome`, `partyid`, `relig`, and `denom` are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! We'll cover this more in the third module. However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
+Do you remember why certain variables  have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the `gss` data set, it shows that `marital`, `race`, `rincome`, `partyid`, `relig`, and `denom` are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
 
 ```{r dsecribe, exercise = TRUE}
 psych::describe(gss)
@@ -74,7 +75,7 @@ The `summary()` function calculate and returns the minimum value, the 1st quarti
 
 #### Five-Number Summary
 
-The `fivenum()` function returns Tukey's five number summary: minimum value, lower-hinge (25th percentile), upper-hinge (75th percentile), and maximum value for the input data. Let's use the `fivenum()` function for the age variable in the gss dataset. 
+The `fivenum()` function returns five summary statistics: the minimum value, 25th percentile, median (or 50th percentile) 75th percentile, and maximum value for the input data. Let's use the `fivenum()` function for the age variable in the gss dataset. 
 
 ```{r fivenum, exercise = TRUE}
 fivenum(gss$age)
@@ -95,7 +96,7 @@ We can find the mean by providing a vector of numeric values to the built in R f
 mean(gss$age, na.rm = TRUE)
 ```
 
-Using mean as a measure of central tendency is appropriate if we have interval/ratio variables that normally distributed with no outliers. If the data is skewed, median is a more appropriate measure of central tendency to calculate for interval/ratio variables.
+Using mean as a measure of central tendency is appropriate if we have interval/ratio variables that normally distributed with no outliers. If the data are skewed, the median is a more appropriate measure of central tendency to calculate for interval/ratio variables.
 
 ### Median
 
@@ -109,7 +110,19 @@ As mentioned previously, the median is the most appropriate measure of central t
 
 ### Mode
 
-Unlike `mean()` there is no built in R function to calculate the mode. However, you can install and load the package `DescTools` package and use their `Mode()` function to calculate the mode. Alternatively, the descriptive statistics functions we have discussed provides the modes for numeric variables. Mode is the most appropriate measure of central tendency when we have nominal (count) data.
+Unlike `mean()` there is no built in R function to calculate the mode. However, you can install and load the package `DescTools` package and use their `Mode()` function to calculate the mode. Alternatively, we could write a simple function to compute the mode. Mode is the most appropriate measure of central tendency when we have nominal (categorical) data.
+
+```{r mode, exercise = TRUE}
+compute_mode <- function(x) {
+  unique_x <- unique(x)
+  counts <- tabulate(match(x, unique_x))
+  unique_x[which.max(counts)]
+}
+
+compute_mode(gss$age)
+
+```
+
 
 ## Measures of Dispersion
 
@@ -123,7 +136,7 @@ The `var()` function calculates the variance of a numeric vector. Variance measu
 var(gss$age, na.rm = TRUE)
 ```
 
-Overall, variance is difficult to interpret to describe dispersion. Instead we take the square root of the variance to calculate the standard deviation (which is the most commonly used measure of dispersion). 
+Variance is difficult to interpret since it is in squared units. Instead we take the square root of the variance to calculate the standard deviation (which is the most commonly used measure of dispersion). 
 
 ### Standard Deviation
 

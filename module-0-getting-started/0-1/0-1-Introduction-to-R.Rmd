@@ -279,7 +279,7 @@ Please follow along as you work to complete the microcredential.
 ![](https://youtu.be/x55FsvAbylQ)
 
 <div class="notice">
-<b>Are you completing this in a stand-alone manner (not as a part of a microcredential)? If so, simply view the fole below</b>
+<b>Are you completing this in a stand-alone manner (not as a part of a microcredential)? If so, simply view the file below</b>
 </div>
 
 The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
@@ -317,7 +317,7 @@ Now that you have R and RStudio installed on your machine and you have been acqu
 2.  Change the default setting that saves the workspace
 3.  Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523.
 4.  Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
-5.  Read the following article in Canvas titled: Torfs+Brauer-Short-R-Into.pdf in preparation for the next tutorial.
+5.  Read [Torfs & Brauer (2014 A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) for the next tutorial.
 
 ### Reflect
 
@@ -326,7 +326,7 @@ What is one thing that surprised you?
 What is one thing that confused you?
 Did you learn anything that might be useful in the type of work you do?
 
-### El Fin
+### Wrap-up
 
 Good job on completing the first of three tutorials within the first module of this course!
-Please move onto the next tutorial within this module on Canvas where we will learn foundational R and data analytic skills.
+Please move onto the next tutorial where we will learn foundational R and data analytic skills.
