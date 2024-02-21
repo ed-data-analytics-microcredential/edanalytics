@@ -28,8 +28,7 @@ We will be covering the following in this tutorial:
 
 ## Data Types
 
-Data types are the types of data supported and can be used with R and within RStudio.
-While there are different data types that can be used within R, we will cover the 4 basic data types:
+Data types are the types of data that are supported in R. While there are different data types that can be used within R, we will cover the 4 basic data types:
 
 -   Numeric
 -   Integer
@@ -38,7 +37,7 @@ While there are different data types that can be used within R, we will cover th
 
 ### Numeric
 
-Numeric data types are real number values that are allowed to have decimal points and are not considered whole numbers.
+Numeric data types are real number values that are allowed to have decimal points.
 
 ```{r  numerictypes, echo=TRUE}
 # Numeric atomic vector
@@ -64,7 +63,7 @@ typeof(grade2)
 str(grade2)
 ```
 
-You're probably wondering why 93 is considered a double numerical value and not an whole number integer.
+You're probably wondering why 93 is considered a double numerical value and not an integer.
 That's a good curiosity to have which leads us to discuss integer values.
 
 ### Integer
@@ -80,7 +79,8 @@ str(integer)
 ```
 
 As you can see when we use `typeof()` and `str()`, the output tells us that the object `integer` is an integer data type.
-You will seldom use integer data types in your work (probably never), however, we wanted to provide you a brief review of this data type.
+Integers can be beneficial when you are certain that the numbers you are dealing with will never contain decimals. For example, you are counting the number of students in a class, these will always be whole numbers and can be represented as integers. Using integers in such cases can make your code more precise and can help prevent errors that could arise from unexpected fractional values. For instance, you wouldn’t want to end up with 30.5 students! In addition, R stores and processes integers and numeric data differently which can lead to differences in memory usage and performance. In general, integers use less memory and are faster to process than numeric data, so using integers when appropriate can make your R program more efficient.
+
 
 ### Character
 
@@ -121,7 +121,7 @@ str(logical2)
 ```
 
 Additionally, logical data types can also be represented as `T` and `F` which is shorthand for `TRUE` and `FALSE`.
-R accepts both form of logical data types, however, it's standard practice to use `TRUE` and `FALSE` rather than `T` and `F`.
+R accepts both form of logical data types, however, it is standard practice to use `TRUE` and `FALSE` rather than `T` and `F`.
 
 ## Data Structures
 
@@ -171,7 +171,7 @@ num_vector
 
 Note: For the lines of code in the exercise above, remember that the arrow "\<-" is assigning 'something' to an object.
 In this case, we are assigning/storing a vector to an object called `num_vector`.
-When we only run the line of code with the object `num_vector` we are able to see/access the stored data inside of the object which is a vector in this case.
+When we only run the line of code with the object `num_vector` we are able to access the stored data inside of the object which is a vector in this case.
 
 Another note: Whenever we want to make an object that contains more than one value, we have to use the `c()` and separate each value with a comma.
 The `c()` stands for combine.
@@ -179,7 +179,7 @@ So in the example above, we are combining the numerical values of 1.4, 9.7, and 
 
 #### Integer atomic vectors
 
-Integer atomic vectors can handle numerical values that are considered whole integers.
+Integer atomic vectors can handle numerical values that are considered integers.
 The `L` after each numerical value provided in the exercise below tells R that these values are integers and not numeric.
 Go ahead and use the exercise below to create an atomic vector that is storing integers.
 What do you think your output will be when you run the `int_vector` line of code?
@@ -193,13 +193,13 @@ int_vector
 #### Logical atomic vectors
 
 Logical atomic vectors can handle logical values.
-In R (and other programming languages), logical vectors are expressed by `TRUE`, `FALSE`, `T`, and `F`.
+In R (and other programming languages), logical vectors are expressed by `TRUE`, `FALSE`, `TRUE`, and `FALSE`.
 Logical values will come in handy when we talk about logical comparisons later in this tutorial.
 Go ahead and use the exercise below to create a logical vector.
 
 ```{r  log_vector, exercise = TRUE}
 # Logical atomic vector
-log_vector <- c(TRUE, FALSE, T, F)
+log_vector <- c(TRUE, FALSE, TRUE, FALSE)
 log_vector
 ```
 
@@ -207,7 +207,7 @@ log_vector
 
 Lastly, character atomic vectors can handle character values in R.
 Character values can be anything that is wrapped in quotations (this is also known as a string).
-Go ahead and use the exercise below to create a character vectors with four unique strings stores inside (in this case, these are names of schools).
+Go ahead and use the exercise below to create a character vectors with four unique strings stores inside (in this case, these are names of made-up schools).
 
 ```{r  char_vector, exercise = TRUE}
 # Character atomic vector
@@ -236,10 +236,10 @@ Let's walk through the code in the exercise.
 First, we are using the function `list()` to create an object that's a list.
 Within this function, we are providing different arguments to tell R what to include in the list.
 The first argument given `100:105` tells R to create the first element in the list which includes numbers from 100 to 105.
-The `:` notation between 100 and 105 tells R to include values between those two numbers, thus providing the following output for the first element within this list: 100, 101, 102, 103, 104, 105.
+The `:` notation between 100 and 105 tells R to include values between those two numbers, thus providing the following output for the first element within this list: `100, 101, 102, 103, 104, 105`.
 The second argument tells R to create the second element in this list which includes the character type `apple`.
 The third argument tells R to create the third element in this list which are logical values.
-The last argument tells R to create the fourth element in this list which includes 99.8, 87.0, and 88.3.
+The last argument tells R to create the fourth element in this list which includes `99.8, 87.0, and 88.3`.
 
 When we use the `str()` function to check the structure of the list, the output tells us that the object `list_example` is a list that contains 4 elements and provides us with the data types for each of these elements as well as the contents inside of each element.
 
@@ -257,43 +257,42 @@ matrix_example
 
 In walking through the code, we are using the function `matrix()` to create an object that's a matrix.
 The first argument provided in the function, we are telling R that we want to include numbers 1 through 9 in the matrix (all numeric) and that we want to have 3 columns and 3 rows.
-So when we run `matrix_example` on the second line, you can see that a matrix is produced with the values 1 through 9 and is organized by 3 columns and 3 rows.
+So when we run `matrix_example` on the second line, you can see that a matrix is produced with the values 1 through 9 and is organized by 3 columns and 3 rows. 
+You can input data into a matrix by rows or columns using the `byrow = TRUE` or `byrow = FALSE` argument in the `matrix()` function.
 
 ### Array
 
-Arrays are similar to a matrix (or matrices) in the sense that they store homogeneous elements but they allowed to have more than 2 dimensions if needed/necessary.
+An array is similar to a matrix in the sense that it stores homogeneous elements but an Array is allowed to have more than 2 dimensions, if needed.
 We can make an array by using `array()`.
 The exercise below provides an example of an array with 3 dimensions.
 
 ```{r  array, exercise = TRUE}
 #  4 rows,2 columns and 3 arrays
-array_example <- array(c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19), dim = c(4,2,3))
+array_example <- array(c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19), dim = c(4, 2, 3))
 array_example
 
 ```
 
 When walking through the code, we are using the function `array()` to create an object that's an array.
-The first argument provided in the function, we are giving R the elements we want displayed in the array.
+In the first argument, we are giving R the elements we want displayed in the array.
 These are all numeric (homogeneous) elements.
 The second argument provided in the function `array()` is the dimensions needed for the array to be created (e.g., `dim =`).
 So for `dim = c(4, 2, 3)` we are saying we want each dimension of the array to have 4 rows, 2 columns, and 3 dimensions.
 When you run the line of code `array_example` you can see that three dimensions are provided (matrices) and each of these have 4 rows and 2 columns.
-The placement of the numerical elements `c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19)` starts in the first matrix (`, , 1`) at the first row and first column and continues to place the numerical elements provided in a row wise manner until all numerical elements have been listed (the last value (19) provided in the second matrix in the fourth row, first column.
-But in order to continue to build the array as specified by the dimensions given in the `dim` argument, R continues to starts to loop the numerical elements provided by starting again at placing 1 in the second matrix in the first row, second column and continues on until the full array is created as specified.
+The placement of the numerical elements `c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19)` starts in the first matrix (`, , 1`) at the first row and first column and continues to place the numerical elements provided in a row wise manner until all numerical elements have been listed. For example, the last value in the elements list (19) is located in the second matrix in the fourth row, first column.
+But in order to continue to build the array as specified by the dimensions given in the `dim` argument, R starts to loop the numerical elements provided by starting again at placing 1 in the second matrix in the first row, second column and continues on until the full array is created as specified.
 
 ### Data frames
 
 Yay!
 We made it to the final data structure: data frames.
-Data frames will more than likely be the most common data structure you will use in the education research field, and is the most common way to store data in R.
+Data frames will likely be the most common data structure you will use in the education research field, and is the most common way to store data in R.
 Data frames are 2-dimensional (rows and columns) and can store heterogeneous elements.
-For data frames, columns are typically variables and rows are cases/observations.
-We can make a data frame from scratch using `data.frame()`, however, more often than not, you will have a data file (e.g., .csv) and will read it into R (much like you did in the past module when reading in the hsb data set.).
+For data frames, columns are typically variables and rows are cases or observations.
+We can make a data frame from scratch using `data.frame()`, however, more often than not, you will have a data file (e.g., .csv) and will read it into R (much like you did in the past module when reading in the `hsb` data set.).
 Regardless, let's make a data frame in the example below.
 
 ```{r  dataframe, exercise = TRUE}
-# pass these vectors as input to the array.
-#  4 rows,2 columns and 3 arrays
 class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),
                   gender = c("Female", "Female", "Male", "Female", "Male"),
                   test1 = c(98, 82, 85, 97, 92),
@@ -308,8 +307,8 @@ As you can see when you run the line of code that read `class_data` the data fra
 
 ## Data Indexing
 
-Now that we know about data types and data structures, we can now talk about how to access specific values/elements inside of a data structure.
-This process is also referred to as data indexing.
+Now that we know about data types and data structures, we can now talk about how to access specific values or elements inside of a data structure.
+This process is also referred to as *data indexing*.
 
 ### Indexing for Vectors
 
@@ -417,7 +416,6 @@ Which is perfect since we want to dedicate more time and training to indexing an
 
 ### Indexing for Data Frames
 
-Yay!
 We made it to the portion of this module where we will learn how to index and access data within data frames.
 Let's use the data frame we created earlier in the example below.
 
@@ -455,7 +453,7 @@ colnames(class_data) <- c("id", "sex", "test", "major")
 class_data
 ```
 
-Please be careful if you alter data and save it back into the original data frame (like we did above) because the assignment operator `<-` can at times serve as a save function.
+Please be careful if you alter data and save it back into the original data frame (like we did above) because the assignment operator `<-` will overwrite the original object.
 If you wanted to change the colnames but save this updated data frame as a differently named object, we can achieve this by saving the changed data frame to different named data frame.
 
 Let's take the recently altered `class_data` data frame and change the column names back to the original column names but save it as a data frame called `class_data_raw`.
@@ -474,9 +472,10 @@ In the last two lines of code, we can see that `class_data_raw` has the original
 
 #### Accessing specific elements of a data frame
 
-Since data frames are 2 dimensional structures, we can access specific element(s) within a data frame by specifying the rows and/or column.
+Since data frames are 2 dimensional structures, we can access specific elements within a data frame by specifying the rows and columns.
 
-Let's access the `test1` grade for `studentid` 104 using the data frame from our example.
+Let's access the `test1` grade for `studentid` 104 using the data frame from our example. Since we know this is the third row and third column, we can access this value by using `class_data_raw[3, 3]`. 
+Note that we index a data frame using brackets `[r,c]` where `r` and `c` are the row and column numbers, respectively.
 
 ```{r echo=TRUE}
 class_data_raw[3, 3]
@@ -506,7 +505,7 @@ If you were to use `class_data_raw$Test1` you will either receive an error messa
 
 ## Special Data Type: Factors
 
-Before we close out this sub module, there are two additional topics we wanted to cover that don't fit neatly into the basic framework outlined above when it comes to data considerations but will be helpful for when we get into data wrangling.
+Before we close out this module, there are two additional topics we wanted to cover that don't fit neatly into the basic framework outlined above when it comes to data considerations but will be helpful for when we get into data wrangling.
 
 The first special topic is understanding factors.
 
@@ -517,11 +516,8 @@ When discussing data types earlier, we noted the following as the four basic dat
 -   Character
 -   Logical
 
-When working with education-related data in R, you will also be working with a specific data type called factors.
-Factors are a special case of character variables that represent categorical variables.
-For example, you will be working with demographic data that often contains categorical variables such as sex or race/ethnicity.
-If you are working with a data set, you may have a sex categorical variable that may have a limited number of values (e.g., female, male).
-This is different from a data set with a variable (or column) of names as a column of names will have numerous different possibilities to where this variable would not be considered a categorical variables (or factor) and is instead just considered a character variable.
+When you use R for analyzing education data, you’ll often deal with a data type known as `factors`. Factors are a type of character variable used to represent categories. These categories have a limited number of values, like ‘female’ or ‘male’.
+For example, demographic data often includes categories such as gender or race. However, this is different from a column of student names in a dataset. The column of student names can have many unique values, so it’s not considered a category (or factor). Instead, it’s just a regular character variable.
 
 We can create a factor variable using `factor()`.
 
@@ -537,7 +533,7 @@ str(classification)
 ```
 
 In the output above, you can see that R tells us that the object called `classification` is a factor with four levels.
-When you create factors in R, you automatically defines the factor levels based on alphabetical order.
+When you create factors, R automatically defines the factor levels based on alphabetical order.
 As you can see in the output, R is labeling `freshman` as level 1, `sophomore` as level 4, `junior` as level 2, and `senior` as level 3.
 
 The ordering of levels in this case is not intuitive so let's go ahead and change it!
@@ -576,6 +572,11 @@ school_type <- as.factor(school_type)
 str(school_type)
 ```
 
+Let's revise the the order of the levels of the factor `school_type` so that public is first, private is second, and charter is third.
+
+```{r echo=TRUE}
+school_type <- factor(school_type, levels = c("public", "private", "charter"))
+```
 Yay!
 Now you know about factors :)
 
@@ -588,18 +589,19 @@ This will come in handy once we get into more advanced data wrangling in the nex
 
 The chart below shows a cheatsheet of possible logical comparisons that can occur in R.
 
-| Operator    | Description              |
-|:------------|:-------------------------|
-| `<`         | less than                |
-| `<=`        | less than or equal to    |
-| `>`         | greater than             |
-| `>=`        | greater than or equal to |
-| `==`        | exactly equal to         |
-| `!=`        | not equal to             |
-| `!x`        | Not x                    |
-| `x|y`       | x OR y                   |
-| `x&y`       | x AND y                  |
-| `isTrue(x)` | test if `x` is TRUE      |
+| Operator     | Description              |
+|:-------------|:-------------------------|
+| `<`          | less than                |
+| `<=`         | less than or equal to    |
+| `>`          | greater than             |
+| `>=`         | greater than or equal to |
+| `==`         | exactly equal to         |
+| `!=`         | not equal to             |
+| `!x`         | Not x                    |
+| `x|y`        | x OR y                   |
+| `x&y`        | x AND y                  |
+| `isTRUE(x)`  | test if `x` is TRUE      |
+| `isFALSE(x)` | test if `x` is FALSE     |
 
 For example, if we want to know if two objects are equal we can use the following:
 
@@ -635,17 +637,17 @@ list1 == list2
 
 In the output we can see that the first element in `list1` and `list1` are equal values, the second element are not equal (remember, R is case sensitive), third element is not equal, and the fourth element is equal.
 
-There's a lot we can do with logical comparisons but we wanted to introduce you to logical comparisons and operators as they will come in handy when we begin to wrangle our data in the next module.
+There's a lot more we can do with logical comparisons, but we wanted to simply introduce you to logical comparisons and operators as they will come in handy when we begin to wrangle our data in the next module.
 
 ## Tasks
 
 Now that you are more acquainted with data types and structures, let's engage in a task!
 Please follow the steps outlined below.
 
-1.  Open the R script you created in the previous submodule (your-lastname-R-task-1-1) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
-2.  Using comments within R, write notes on the names for each of the variables in the hsb dataset.
-3.  Using comments, write notes on the types of data for each variable in the hsb dataset.
-4.  Ensure the following 4 variables are classified as factors: gender, race, ses, schtype, prog. Save these changes to another data frame object called `hsbclean`.
+1.  Open the R script you created in the previous module (your-lastname-R-task-1-1) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your `hsb` dataset.Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+2.  Using comments within R, write notes on the names for each of the variables in the `hsb` dataset.
+3.  Using comments, write notes on the types of data for each variable in the `hsb` dataset.
+4.  Ensure the following 5 variables are classified as factors: gender, race, ses, schtype, prog. Save these changes to another data frame object called `hsbclean`.
 5.  Change the following column names and save these changes to another data frame object called `hsbclean`.
 
 -   schtype `->` schooltype
@@ -653,7 +655,7 @@ Please follow the steps outlined below.
 -   socst `->` socialst
 
 6.  Save R script as lastname-R-task3
-7.  Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
+7.  Read the brief resource in Canvas titled: [datawrangling-r-cheat-sheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 #### Note:
 
