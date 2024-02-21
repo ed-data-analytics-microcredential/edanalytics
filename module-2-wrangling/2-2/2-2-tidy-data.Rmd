@@ -28,10 +28,10 @@ amas <- data.frame (studentid  = c(106, 104, 102, 101, 105),
 Welcome back to the Tidyverse! As noted before, in this module we will learn how to **transform** data, **tidy** data, and create **data visualizations** using the tidyverse package. 
 
 
-Let's review the data science process figure once more (below). We start by **importing** data (which we learned in the previous module), we then **tidy** our data by ensuring each column in a variable and each row is an observation (which we will learn in this tutorial). We then **transform** our data by modifying and creating new variables within our dataset (which we learned in the previous tutorial!). The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
+Let's review the data science process figure once more (below). We start by **importing** data (which we learned in the previous module), we then **tidy** our data by ensuring each column in a variable and each row is an observation (which we will learn in this tutorial). We then **transform** our data by modifying and creating new variables within our dataset (which we learned in the previous tutorial!). The process of tidying and transforming our data is called *data wrangling*, or *data cleaning*, because we are getting our data in a structure that we can work with in order to visualize and model our data.
 
 
-```{r process, echo=FALSE, out.width="50%"}
+```{r process, echo=FALSE, out.width="65%"}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
 
 ```
@@ -52,7 +52,7 @@ Let's first start by understanding what tidy data is. There are three rules that
 
 The figure below illustrate these rules visually :-D
 
-```{r tidychart, echo=FALSE}
+```{r tidychart, echo=FALSE, out.width="75%"}
 knitr::include_graphics(paste0(getwd(), "/images/tidy.png"))
 
 ```
@@ -65,7 +65,7 @@ You might be wondering why we should aim to keep tidy data. Good question! There
 
 2. Placing variables in columns naturally creates vectors, and the majority of R functions works well with values of vectors.
 
-3. Other packages in the `tidyverse`, such as `dplyr` (we already learned about this package!)and `ggplot2` (we will learn about this in the next tutorial!) are designed to work with tidy data.
+3. Other packages in the `tidyverse`, such as `dplyr` (we already learned about this package) and `ggplot2` (we will learn about this in the next tutorial) are designed to work with tidy data.
 
 ### Is the gss dataset tidy?
 
@@ -92,7 +92,7 @@ billboard <- tidyr::billboard
 billboard
 ```
 
-This dataset shows the billboard rank of songs in the year 2000. Each observation in this dataset is a sing, the first three columns (`artist`, `track`, and `date.entered`) are variables that describe the song, and there are 76 columns (`wk1` - `wk76`) that describe the rank of the song in each week. The column names are one variable (represented by the week) and the cell values are another variable (represented by the rank)
+This dataset shows the billboard rank of songs in the year 2000. Each observation in this dataset is a song, the first three columns (`artist`, `track`, and `date.entered`) are variables that describe the song, and there are 76 columns (`wk1` - `wk76`) that describe the rank of the song in each week after it entered to top 100. The column names are one variable (represented by the week) and the cell values are another variable (represented by the rank)
 
 #### Pause and reflect. 
 
@@ -112,12 +112,12 @@ We can make this dataset tidy by using `pivot_longer`!
 
 ## Pivot Longer
 
-In order to make this dataset tidy, we will need to pivot the data to columns `wk1` - `wk76` a single column that lists the weeks and make another variable that links the song rank with their associated week.
+In order to make this dataset tidy, we will need to pivot the data in columns `wk1` - `wk76` into a single column that lists the weeks and make another variable that links the song rank with their associated week.
 
 Below is a visual representation in how we will want to pivot our data.
 
 
-```{r pivotlongerchart, echo=FALSE}
+```{r pivotlongerchart, echo=FALSE, out.width="65%"}
 knitr::include_graphics(paste0(getwd(), "/images/pivotlonger.png"))
 
 ```
@@ -148,59 +148,60 @@ Let's make a toy dataset to demonstrate the use of `pivot_wider()`.
 
 ```{r gradebook, include=TRUE}
 
-gradebook <- tribble(
-  ~student, ~quiz, ~value,
-  "Josh",        "q1",    92,
-  "Anna",        "q1",    94,
-  "Anna",        "q2",    89, 
-  "Trey",        "q1",    93,
-  "Josh",        "q2",    91,
-  "Anna",        "q3",    105,
-  "Trey",        "q2",    90,
-  "Josh",        "q3",    89,
-  "Trey",        "q3",    89,
+gradebook <- data.frame(
+  student = c("Josh", "Anna", "Anna", "Trey", "Josh", "Anna", "Trey", "Josh", "Trey"),
+  quiz = c("q1", "q1", "q2", "q1", "q2", "q3", "q2", "q3", "q3"),
+  value = c(92, 94, 89, 93, 91, 105, 90, 89, 89),
+  stringsAsFactors = FALSE
 )
-```
-
-For this dataset, we have the different quiz grades (3 quizzes total) for 3 students. For this dataset, each observation is each student's quiz, but each observation is spread across two rows. The goal for this dataset is to have one row for each student and a separate column for each of the quizzes. We can achieve this using `pivot_wider()` to widen the data. 
-
-```{r gradebook2, exercise=TRUE, exercise.setup = "gradebook"}
-
 gradebook
-
 ```
+
+For this dataset, we have the quiz grades (3 quizzes total) for 3 students. Each observation represents a student's quiz, but each observation is spread across two rows. The goal for this dataset is to have one row for each student and a separate column for each of the quizzes. We can achieve this using `pivot_wider()` to widen the data. 
 
 Below is a visual representation in how we will want to pivot our data.
 
 
-```{r pivotwiderchart, echo=FALSE}
+```{r pivotwiderchart, echo=FALSE, out.width="65%"}
 knitr::include_graphics(paste0(getwd(), "/images/wider.png"))
 
 ```
-
 
 Go ahead and give it a try below on your own!
 ```{r wider, include=TRUE, exercise=TRUE, exercise.lines = 8, exercise.setup = "gradebook"}
 
 ```
 
+
+```{r  wider-hint-1}
+# You can use the pivot_wider() function from the tidyverse package
+gradebook_wide <- gradebook |> 
+  pivot_wider() #finish the syntax
+```
+
+```{r  wider-hint-2}
+gradebook_wide <- gradebook |> 
+  pivot_wider(names_from = quiz, values_from = value) 
+gradebook_wide
+```
+
 The `pivot_wider()` function requires a few arguments: a data frame to pivot, column(s) to make wider (called `names_from`), and the name of the column to get the cell values from (called `values_from`). You can look up the documentation for `pivot_wider()` or use `?pivot_wider()` in your R console to learn more.
 
 ## Tidy Data Recap
 
-Good job on learning the basics on tidy data! As a review, tidy data has variables in columns and observations in rows. The primary advantage of using tidy data is that it works well within the tidyverse due to it's consistent structure and the primary disadvantage is transforming the data into tidy data if it's already untidy. To achieve tidy data, we learned about `pivot_longer()` and `pivot_wider()` to help pivot our data to a tidy dataset. 
+Good job on learning the basics of tidy data! As a review, tidy data has variables in columns and observations in rows. The primary advantage of using tidy data is that it works well within the tidyverse due to it's consistent structure and the primary disadvantage is transforming the data into tidy data if it's already untidy. To achieve tidy data, we learned about `pivot_longer()` and `pivot_wider()` to help pivot our data to a tidy dataset. 
 
 The application of tidy data can be sometimes ambiguous as you are the decider of what is actually a variable and what is considered an observation. To this end, your planned analysis might dictate how you want to structure your data. 
 
-While we learned the basics of tidy data within the tidyverse, we also want to cover how to merge two datasets that need to be merged together. This is not considered part of the tidy data framework, but it does require transformation of the data structure! So let's go ahead and jump into it :) 
+While we learned the basics of tidy data within the tidyverse, we also want to cover how to merge two datasets that need to be merged together. This is not considered part of the tidy data framework, but it does require transformation of the data structure! So let's go ahead and jump into it. 
 
 ## Joining Datasets
 
-It's a common practice in data analysis to join different datasets together to get the full dataset you're interested in. We can easily accomplish joining datasets by using a few functions within the tidyverse!
+Often times with educational data we need to join, or merge, different dataset together. We can easily join datasets by using a few functions within the tidyverse!
 
-In order to join two (or multiple) datasets, we need keys in both datasets that will allow the datasets to be joined together. A **primary key** is a key that serves as a unique identifier for each observation in a dataset. Within the education research field, a common unique identifier is student ID or some ID of sorts.
+In order to join two (or more) datasets, we need *keys* in both datasets that will allow the datasets to be joined together. A **key** is a variable that serves as a unique identifier for each observation in a dataset. Within the education research field, a common unique identifier is student ID or some other ID variable.
 
-There are a couple of different functions within the tidyverse to use to join data together, but for the sake of introductory purposes, we will review the commonly used function: `inner_join()`.
+There are few different functions within the tidyverse to use to join data together, but for the sake of introductory purposes, we will review the commonly used function: `inner_join()`.
 
 But overall, the `dplyr` function provides six join functions:
 
@@ -213,7 +214,7 @@ But overall, the `dplyr` function provides six join functions:
 
 ### `left_join()`
 
-Let's go ahead and use a toy dataset we created 
+Let's use a toy dataset we will create to illustrate the use of `left_join()`. The `left_join()` function keeps all the rows in the first dataset and only adds columns from the second dataset that are not present in the first dataset.
 ```{r classtoydata, exercise=TRUE,eval=TRUE}
 class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),
                   gender = c("Female", "Female", "Male", "Female", "Male"),
@@ -223,7 +224,7 @@ class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),
 class_data
 ```
 
-Great! So we would probably classify this toy dataset as administrative data. Now imagine we collected survey data from these students that measured their perceived math anxiety levels using the [Abbreviated Math Anxiety Scale (AMAS)](https://pubmed.ncbi.nlm.nih.gov/12801189/) (it's a real scale!). The scores on the AMAS can range from 9 to 45 with higher numbers on the scale showing illustrating that a student has higher levels of math anxiety.
+Great! So we would probably classify this toy `class_data` as administrative data. Now imagine we collected survey data from these students that measured their perceived math anxiety levels using the [Abbreviated Math Anxiety Scale (AMAS)](https://pubmed.ncbi.nlm.nih.gov/12801189/) (it's a real scale!). The scores on the AMAS can range from 9 to 45 with higher numbers on the scale showing illustrating that a student has higher levels of math anxiety.
 
 The data we collected from the AMAS looks a little like this:
 ```{r classtoydata2, exercise=TRUE, eval=TRUE}
@@ -233,9 +234,9 @@ amas <- data.frame (studentid  = c(106, 104, 102, 101, 105),
 amas
 ```
 
-But in order to get a full dataset and answer research questions looking at gender, major, and test scores, we want to combine or **join** these tow datasets together using a **primary key** that will be able to connect both datasets togther. In this case, the **primary key** is the student id.
+In order to merge the `amas` data with the `class_data`, we need to identify the *primary key*, or a variable that identifies unique observations in each dataset. In this case, the primary key is the student id.
 
-In order to accomplish this task, we will use `left_join()`!
+To accomplish this task, we will use `left_join()` and we enter our key variable in the `by = ` argument. 
 
 ```{r leftjoin, exercise=TRUE, exercise.setup = "setup"}
 class_data_full <-
@@ -245,18 +246,18 @@ class_data_full <-
 class_data_full
 ```
 
-Nice! Let's break down the code we used above. The `left_join()` function required three arguments. The first argument is the first dataset (called `x` in the function documentation), the second argument is the second dataset (called `y` in the function documentation), and a vector of **primary keys** present in both datasets (called `by=` which means join these datasets by this column present in both datasets). In this case, we want to join these two datasets and assign to a different dataframe object called `class_data_full`. 
+Nice! Let's break down the code we used above. The `left_join()` function required three arguments. The first argument is the first dataset (called `x` in the function documentation), the second argument is the second dataset (called `y` in the function documentation), and a vector of *primary keys* present in both datasets (called `by=` which means join these datasets by this column present in both datasets). In this case, we want to join these two datasets and assign to a different dataframe object called `class_data_full`. 
 
-There can be importance in determining which dataset to use first (as designated by `x`) using the `left_join()` function and which to use second (as designated by the 'y'). The first dataset (`x`) will retain it's current structure and simply append the columns listed in the second column that the first dataset does not have as linked by the **primary keys**.
+It is important to note which dataset to use first when using the `left_join()` function and which to use second. The first dataset (as designated `x` in the `left_join` documentation) will retain its current structure and simply append the columns listed in the second argument that the first dataset does not have as linked by the *primary keys*.
 
 The difference in placing the `class_data` dataset first and then placing the `amas` dataset first is visually presented below.
 
-```{r leftjoinchart, echo=FALSE}
+```{r leftjoinchart, echo=FALSE, out.width="90%"}
 knitr::include_graphics(paste0(getwd(), "/images/leftjoin.png"))
 
 ```
 
-In the code snippet on the left, we set `class_data` as the first argument of the `left_join()` function which retains the structure of the dataset and appends the `amas` dataset as the last column as linked by `studentid`. In the code snippet on the right, we set `amas` as the first argument of the `left_join()` which retains the structure of the dataset. You can see that the output structure is slightly different between these two code snippets in terms of the ordering of columns as well as the ordering of rows, but in all, they contain the exact same data.
+In the code snippet on the right in the image above, we set `class_data` as the first argument of the `left_join()` function which retains the structure of the dataset and appends the `amas` dataset as the last column as linked by `studentid`. In the code snippet on the right, we set `amas` as the first argument of the `left_join()` which retains the structure of the dataset. You can see that the output structure is slightly different between these two code snippets in terms of the ordering of columns as well as the ordering of rows, but in all, they contain the exact same data.
 
 ### Other joins
 
@@ -266,7 +267,7 @@ The following joins have the same interface as `left_join()`; the only differenc
 - `full_join()`
 - `inner_join()`
 
-For example, `left_join()` keeps all the rows in 'x' (as we discussed), `right_join()` keeps all rows in 'y', `full_join()` keeps all rows in either `x` or `y`y, and `inner)join()` keeps rows that occur in both 'x' and 'y'. For more information on these you can look up the function documentation within your console using `?FUNCTIONNAME` and replace `FUNCTIONNAME` with the name of the function you're interested in.
+For example, `left_join()` keeps all the rows in 'x' (as we discussed), `right_join()` keeps all rows in 'y', `full_join()` keeps all rows in either `x` or `y`, and `inner_join()` keeps rows that occur in both 'x' and 'y'. For more information on these you can look up the function documentation within your console using `?FUNCTIONNAME` and replace `FUNCTIONNAME` with the name of the function you're interested in.
 
 ## Tasks
 
@@ -277,15 +278,17 @@ Now that you are more acquainted with tidy data and data transformation, let's e
 3. Using the `hsb_join`dataframe, make this dataset longer by creating a new column called `test` and listing all the different test subjects under this column (e.g., `read`, `write`, etc.) and creating a new column called `testscore` and listing the associated test score for each of these tests. You should have 1000 observations after this is complete. Save this as a new object called `hsb_long`.
 4. To get practice transforming datasets to be wider, select the `id` and `gender` variables in the `hsb_join` to create a wider dataframe and save this as `hsb_wider`. For the newly created columns (`female` and `male`), recode the values within these columns as `1` for being the gender in that specified column or `0` for not being the gender in that specified column. Try do do this by using multiple pipes in your block of code. 
 5. Save R script as lastname-R-task5
-6. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
+6. Read the brief resource: [datawrangling-r-cheat-sheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 #### Note
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
 
+You can read more about tidy data in this [article](https://doi.org/10.18637/jss.v059.i10). 
+
 ### Reflect
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
-### El Fin
-Good job on completing the first of three tutorials within the second module of this course! Please move onto the next tutorial on Canvas where we will learn about tidy data.
+### Wrap-up
+Good job on completing the tidy data tutorial! Please move onto the next tutorial where we will learn about descriptive statistics.
 
 

@@ -7,18 +7,19 @@ runtime: shiny_prerendered
 ```{r load, include=FALSE}
 library(learnr)
 library(tidyverse)
+library(psych)
 tutorial_options(exercise.timelimit = 60)
 ```
 
 ## Introduction
 
-Welcome to the Tidyverse! In this module we will learn how to **transform** data, **tidy** data, and create **data visualizations** using the tidyverse package. 
+Welcome to the Tidyverse! In this module we will learn how to **transform** data, **tidy** or clean data, and create **data visualizations** using the tidyverse package. 
 
 In this tutorial we will learn how to wrangle data using `dplyr` functions within the tidyverse package.
 
 The typical data science process is outlined in the figure below. We start by **importing** data (which we learned in the previous module), then **tidy** our data by ensuring each column in a variable and each row is an observation. We then **transform** our data by modifying and creating new variables within our dataset. The process of tidying and transforming our data is called **wrangling** because we are getting our data in a structure that we can work with in order to visualize and model our data.
 
-```{r tidychart, echo=FALSE}
+```{r tidychart, echo=FALSE, out.width='75%', out.height='75%'}
 knitr::include_graphics(paste0(getwd(), "/images/base.png"))
 
 ```
@@ -29,7 +30,7 @@ Now that we know where we've been and where we're headed, let's go ahead and jum
 
 ## Transforming Data with dplyr
 
-We will be relying on the dplyr package within the tidyverse to introduce you to data transformation. If you already installed the `tidyverse` package, you automatically have `dplyr` installed as it is a subpackage within the `tidyverse` package. Likewise, when you load your packages at the beginning of your R script, you can use `library(tidyverse)` and the `dply` package and all it's functions will also be loaded into your RStudio environment. 
+We will be relying on the dplyr package within the tidyverse to introduce you to data transformation. If you already installed the `tidyverse` package, you automatically have `dplyr` installed as it is a sub-package within the `tidyverse` package. Likewise, when you load your packages at the beginning of your R script, you can use `library(tidyverse)` and the `dplyr` package and all it's functions will also be loaded into your RStudio environment. 
 
 ### The General Social Survey
 
@@ -48,17 +49,17 @@ Here's a little bit more about the GSS data set: It's a nationally representativ
 
 **GSS Codebook**
 
-- year: Year survey was given
-- age: Respondent age
-- marital: Respondent marital status
-- race: Respondent race
-- rincome: Reported income 
-- partyid: Party affiliation
-- relig: Religion
-- denom: Religious denomination
-- tvhours: Hours per day watching tv
+- **year**: Year survey was given
+- **age**: Respondent age
+- **marital**: Respondent marital status
+- **race**: Respondent race
+- **rincome**: Reported income 
+- **partyid**: Party affiliation
+- **relig**: Religion
+- **denom**: Religious denomination
+- **tvhours**: Hours per day watching tv
 
-The first rule of data analysis is to view your data. This is important to ensure the data was read in properly and nothing odd is going on. We can accomplish this task with a few different functions in and outside of the tidyverse. Our favorite functions to view our data are the following:
+The first rule of data analysis is to view your data. This is important to ensure the data were read in properly and nothing odd is going on. We can accomplish this task with a few different functions in and outside of the tidyverse. Our favorite functions to view our data are the following:
 
 - `glimpse()` in the `tidyverse` package
 - `head()` in base R
@@ -73,21 +74,21 @@ glimpse(gss)
 
 As you can see, `glimpse()` provides us with the first 10 observations (aka rows) of data for each of the 9 variables. It even tells us the data type for each of the variables. For example, the `marital` variable is being read as a factor and the variable `age` is being read as an integer.
 
-### Basic dplyr Verbs
+### Basic `dplyr` verbs
 
-You can think of the functions within `dplyr` to manipulate data as verbs. The function names tells you what they do in terms of data manipulation. We've provided you with the basic functions below along with their actions.
+You can think of the functions within `dplyr` to manipulate data as *verbs*. The function names tells you what they do in terms of data manipulation. We've provided you with the basic functions below along with their actions.
 
 - `filter()` filters columns based on a given value
 - `select()` selects columns to display in a data set
 - `arrange()` arranges how observations in a column are displayed
 - `rename()` renames a column
-- `mutate()` mutates/changes values in a column and creates new columns
-- `group_by()` groups rows in dataframe by columns
-- `summarise()` creates a new dataframe by returning one row for each combination of grouping variable(s) and the specified summary statistic for each group
+- `mutate()` mutates or changes values in a column and creates new columns
+- `group_by()` groups rows in data frame by columns
+- `summarise()` creates a new data frame by returning one row for each combination of grouping variable(s) and the specified summary statistic for each group
 
 Before we begin, we need to learn about the pipe.
 
-```{r pipe, echo=FALSE}
+```{r pipe, echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics(paste0(getwd(), "/images/pipe.png"))
 
 ```
@@ -96,7 +97,7 @@ Yes, that one!
 
 #### `pipe()`
 
-More often than not, you will use multiple dplyr functions to get the data in the format you want to have your data in. Given that all of the dplyr functions take a data frame as the first argument, it would be inefficient to use save your altered data frames to a new intermediate object (you'd have many different versions of a data frame in your global environment :( ). Instead, we can use the piper operator `%>%` OR `|>` to perform multiple data manipulations in one chunk of code. We like to think of the pipe operator as saying "and then do this." We will provide an example below using the `filter()` function.
+More often than not, you will use multiple `dplyr` functions to wrangle your data into the shape you need. Since the `dplyr` functions take a data frame as the first argument, it would be inefficient to save each step as a new object. Plus, you'd have many different versions of a data frame in your global environment! Instead, we can use the piper operator `%>%` or `|>` to perform multiple data manipulations in one chunk of code. We like to think of the pipe operator as saying "and then" do this. We will provide an example below using the `filter()` function.
 
 #### `filter()`
 
@@ -107,13 +108,13 @@ gss |>
   filter(marital == "Never married")
 ```
 
-Let's talk about the first line of code. In this line, we don't use the pipe operator; instead we provide the name of the data set as the first argument for the `filter()` function, and we use a logical comparison for the second argument of the function by asking R to filter and only display observations where the marital status equals "Never marrried." 
+Let's talk about the first line of code. In this line, we don't use the pipe operator; instead we provide the name of the data set as the first argument for the `filter()` function, and we use a logical comparison for the second argument of the function by asking R to filter and only display observations where the marital status equals "Never married." 
 
-In the second line of code, we provide the name of the data set and use the pipe operator to then filter the marital column by "Never married" cases. For this code structure, we tell R to take the `gss` object AND THEN (the pipe operator) filter the column `marital` by cases that have Never married.
+In the second line of code, we provide the name of the data set and use the pipe operator to then filter the marital column by "Never married" cases. For this code structure, we tell R to take the `gss` object AND THEN (the pipe operator) filter the column `marital` by cases that have never been married.
 
 We get the same result using both code structures above, but when we start to combine `dplyr` functions in a chunk of code, it will be more efficient to use the pipe operator.
 
-Remember the logical operators we learned about last module, they will start to come in handy when we manipulate data. For example, we can use `filter()` to filter out the cases that have Never married in the marital variable.
+Remember the logical operators we learned about last module, they will start to come in handy when we manipulate data. For example, we can use `filter()` to filter out the cases that have never been married in the marital variable.
 
 ```{r filter2, exercise=TRUE}
 gss |>
@@ -174,9 +175,9 @@ For this function, you first provide the new name of the column (in this case `i
 
 #### `mutate`()`
 
-Hold onto your hats, because `mutate()` is a fun function to use for data wrangling! Overall, mutate can mutate values in a certain column and it can create a new variable.
+Hold onto your hats, because `mutate()` is a fun function to use for data wrangling! Overall, mutate can alter values in a certain column and it can create a new variable.
 
-Let's first demonstrate how it can mutate a column's values. The variable `tvhours` is the number of hours a respondent reports watching in a day Well what if we want this variable to be in minutes instead of hours? We can use mutate to change the unit that measures respondent tv watching (the original unit being hours to minutes).
+Let's first demonstrate how it can mutate a column's values. The variable `tvhours` is the number of hours a respondent reports watching in a day. Well what if we want this variable to be in minutes instead of hours? We can use mutate to change from hours to minutes by multiplying the variable by 60.
 
 ```{r mutate, exercise=TRUE}
 gss |>
@@ -192,13 +193,13 @@ gss |>
   mutate(tvminutes = tvhours * 60)
 ```
 
-Nice! We create a new variable `tvminutes` by telling R to take all the values in the `tvhours` column, multiply them by 60, then save them in a new column named `tvminutes'.
+Nice! We create a new variable `tvminutes` by telling R to take all the values in the `tvhours` column, multiply them by 60, then save them in a new column named `tvminutes`.
 
-But what if you don't want to variables in your data set that reports the same information (tv watched) just in different units? Well we can chain our code with multiple dplyr functions.
+But what if you don't want two variables in your data set that reports the same information (tv watched) just in different units? Well we can chain our code with multiple dplyr functions.
 
 ```{r mutate3, exercise=TRUE}
 gss |>
-  mutate(tvhours = tvhours * 60) %>%
+  mutate(tvhours = tvhours * 60) |>
   rename(tvminutes = tvhours)
 ```
 
@@ -209,34 +210,36 @@ Nice! In the code above, we tell R to take the data set called `gss`, pipe the o
 Let's practice putting some of these things together
 ```{r extended, exercise=TRUE}
 gss |>
-  filter(rincome == "No answer",!is.na(tvhours)) %>%
-  arrange(age, tvhours) %>%
-  rename(religion = relig) %>%
+  filter(rincome == "No answer", !is.na(tvhours)) |>
+  arrange(age, tvhours) |>
+  rename(religion = relig) |>
   select(-c(rincome, denom))
 
 ```
 
+Can you name the steps in the code above? What is the output of the code above?
+
 #### `group_by`()`
 
-The `group_by()` function is aptly named as you can group data in a dataframe by one or more variables through the use of `group_by()`
+The `group_by()` function is aptly named as you can group data in a data frame by one or more variables through the use of `group_by()`
 
 ```{r group, exercise=TRUE}
 gss |>
   group_by(marital)
 ```
 
-In looking at the output, you can see that `group_by()` doesnt' change the data, but if you look closely at the output, you can see that the data is grouped by marital status `Groups: marital[6]` Great, this is exactly what we wanted! `group_by()` is often used in tandem with another function such as `summarise()` so let's learn about the `summarise()` function.
+In looking at the output, you can see that `group_by()` does not change the data, but if you look closely at the output, you can see that the data are grouped by marital status `Groups: marital[6]` Great, this is exactly what we wanted! `group_by()` is often used in tandem with another function such as `summarise()` so let's learn about the `summarise()` function.
 
 #### `summarise`()`
 
-The `summarise()` function creates a new dataframe and returns one row for each combination of grouping variable(s) with a column showing a specified summary statistic for each of these groups. This function is often used in tandem with the `group_by()` function, however is there is no grouping variable, the output produced by `summarise()` will providde the summary statistic for all observations.
+The `summarise()` function creates a new data frame and returns one row for each combination of grouping variable(s) with a column showing a specified summary statistic for each of these groups. This function is often used in tandem with the `group_by()` function, however where there is no grouping variable, the output produced by `summarise()` will provide the summary statistic for all observations.
 
 ```{r summarise, exercise=TRUE}
 #finding the average age of each marital group using group_by and summarise
 gss |>
   group_by(marital) |>
   summarise(
-    avg_age = mean(complete.cases(age))
+    avg_age = mean(age)
   )
 ```
 
@@ -256,7 +259,6 @@ Perfect, this is exactly what we wanted.
 Let's look at an example of how `summarise()` works by itself without creating groups with `group_by()`.
 
 ```{r summarise3, exercise=TRUE}
-#finding the average age of each marital group using group_by and summarise for complete cases only
 gss |>
   summarise(
     avg_age = mean(age, na.rm=TRUE)
@@ -271,7 +273,7 @@ Let's take some time to reflect before moving on. What is one thing that surpris
 
 ## Getting to Know Your Data
 
-As you can see, dplyr functions can be useful in data transformation tasks but it requires you to know about your data. One of the first rules of data science and data analysis to is check your data in order to get acquainted with it and check for obvious errors. We will discuss this more in depth in the final module of the course, but we thought it would be beneficial to start the conversation now. How can we sort and transform our data if we don't know it?
+As you can see, `dplyr` functions can be useful in data transformation tasks, but it requires you to know about your data. One of the first rules of data science and data analysis to is check your data in order to get acquainted with it and check for obvious errors. We will discuss this more in depth in the final module of the course, but we thought it would be beneficial to start the conversation now. How can we sort and transform our data if we don't know it?
 
 #### Basic Data Checks
 
@@ -301,25 +303,37 @@ Can you guess why certain variable names have asterisk next to their names? The 
 psych::describe(gss)
 ```
 
-#### `head()`
+### `table()` and `count()`
+The `table` function is useful when you want to know the frequency of each category in a factor variable. The `count` function is similar to the table function, but it returns a data frame instead of a table.
 
-The `head()` function provides you with the first 6 rows/observations of the data set for each of the columns within the data. This function is useful in a quick way to check if your data was imported correctly and nothing funny is going on.
+```{r table, exercise = TRUE}
+table(gss$marital)
+
+gss |> 
+  count(marital)
+
+# add proportions
+prop.table(table(gss$marital))
+
+gss |> 
+  count(marital) |> 
+  mutate(prop = n / sum(n))
+
+```
+
+
+#### `head()` and `tail()`
+
+The `head()` function provides you with the first 6 rows/observations of the data set for each of the columns within the data. This function is useful in a quick way to check if your data was imported correctly and nothing funny is going on. The `tail()` function is similar to the `head()` function, but instead of providing you with the first 6 rows/observations, it provides you with the last 6 rows/observations.
 
 ```{r checkhead, exercise = TRUE}
 head(gss)
-```
-
-#### `tail()`
-
-The `tail()` function is similar to the `head()` function, but instead of providing you with the first 6 rows/observations, it provides you with the LAST 6 rows/observations.
-
-```{r checktail, exercise = TRUE}
 tail(gss)
 ```
 
 #### `str()`
 
-The `str()` function provides you with the names of all the variables/columns in your data set as well as the data type. 
+The `str()` function provides you with the internal structure of your data frame. It provides the names of all the variables/columns in your data set as well as the data type. 
 
 ```{r checkstr, exercise = TRUE}
 str(gss)
@@ -356,12 +370,12 @@ The output above is kinda long so let's break it down. All the values are the ro
 We can achieve this by the code below. The first value that goes inside the bracket the row number (the 8th observation in this case), a comma, then the column number (`tvhours` in this case which is the 9th column).
 
 ```{r index, exercise = TRUE}
-gss[8, 9]
+gss[8, "tvhours"]
 ```
 
 While this is an advanced way to check missing data, it's a useful line of code.
 
-Let's walk through the code before getting into the results. We are using the `sapply()` function which is found in base R to help us apply a function to a list, vector, or data frame (data frame in our case), applies the function to all elements of the data frame (each column in our case), an returns a vector of the same length of the object that was given. In the first argument, we are providing `sapply()` with the name of our data frame. For the second argument, we are telling `sapply()` to apply an anonymous function which counts all the `NA` values for each column. Thus returning an object counting all of the `NA` values for each element in our data frame. 
+Let's walk through the code before getting into the results. We are using the `sapply()` function which is found in base R to help us apply a function to a list, vector, or data frame (data frame in our case). `sapply` applies the function to all elements of the data frame (each column in our case), and returns a vector of the same length of the object that was given. In the first argument, we are providing `sapply()` with the name of our data frame. For the second argument, we are telling `sapply()` to apply an anonymous function which counts all the `NA` values for each column. Thus returning an object counting all of the `NA` values for each element in our data frame. 
 
 ```{r missing4, exercise = TRUE}
 sapply(gss, function(x) sum(is.na(x)))
@@ -379,7 +393,6 @@ We can simply check the levels/categories of a variable.
 
 ```{r factor1, exercise = TRUE}
 levels(gss$marital)
-unique(gss$marital)
 ```
 
 We can also create a table of each of the category counts.
@@ -400,13 +413,13 @@ This line of code is helpful in getting an overall feel of what's in our data se
 
 ## Advanced Data Transformation
 
-Good job so far in completing this sub module! The final topic we will discuss is more advanced data transformations. We will still be relying on dplyr functions.
+Good job so far in completing this module! The final topic we will discuss is more advanced data transformations. We will still be relying on `dplyr` functions.
 
 Most of the time we assign IDs to observations in our data set. Let's go ahead and assign each observation an ID in the `gss` data set and save it back into the object `gss`.
 
 ### Assigning IDs using `mutate()`
 
-The code below says to use the mutate function to create an ID variable based on each row’s row number (i.e., id = row_number()). The .before=1 in the function places the ID variable as the first column.
+The code below says to use the mutate function to create an ID variable based on each row’s row number (i.e., `id = row_number()`). The `.before=1` in the function places the ID variable as the first column.
 
 ```{r id, exercise = TRUE}
 gss <- gss|> 
@@ -417,17 +430,23 @@ head(gss)
 
 ### Recode Values as `NA` Using `mutate()`
 
-Sometimes you will often want to recode values as `NA`.For example, there are some cases where respondents reported watching 24 hours of tv in a day. This is likely incorrect and not good/false data. So let's recode these values to `NA`.
+Sometimes you will often want to recode values as `NA`.For example, there are some cases where respondents reported watching 24 hours of tv in a day. This is likely incorrect and not good or false data. So let's recode these values to `NA`.
 
 ```{r mutate_na, exercise = TRUE}
+# Use this code to view the cases that have 24 hours of tv watched
 gss |>
   filter(tvhours > 23)
 
+# Use this code to make the recode in the data
 gss <- gss |>
   mutate(tvhours = na_if(tvhours, 24)) 
 ```
 
 Go ahead and check using the `filter()` function to make sure it worked!
+
+```{r filter_na, exercise = TRUE}
+
+```
 
 ### Recode Values Using `mutate()` and `recode()`
 
@@ -438,7 +457,7 @@ levels(gss$partyid)
 
 ```
 
-Let's go ahead and recode these values to only include: No answer, Don't know, Other party, Republican, Independent, and Democrat. We can achieve this by using `mutate()` and `recode`()`.
+Let's recode these values to only include: No answer, Don't know, Other party, Republican, Independent, and Democrat. We can achieve this by using `mutate()` and `recode`()`.
 
 ```{r recode, exercise = TRUE}
 gss <- gss %>% 
@@ -461,24 +480,24 @@ levels(gss$partyid)
 
 Now that you are more acquainted with basic data manipulation, process in checking data, and advanced data manipulation, let's engage in a task! Please follow the steps outlined below.
 
-1. Open the R script you created in the previous module (lastname-R-task3) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your hsb dataset. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+1. Open the R script you created in the previous module (lastname-R-task3) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your `hsb` dataset. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
 2. Use the processes outlined above to check your data.
-- how much missing data is the data set?
-- check to ensure all variables that should be factors are factors (if not, make them factors)
-3. Perform the following data cleaning tasks
-- recode the value academic in the program variable to advanced
-- recode all values in race as "IDK" as `NA`
-- recode values to `NA` if values are greater than 100 for the academic scores variables
+- How much missing data is in the data set?
+- Check to ensure all variables that should be factors are factors (if not, make them factors)
+3. Perform the following data cleaning tasks:
+- Recode the value 'academic' in the program variable to 'advanced'
+- Recode all values in race as "IDK" as `NA`
+- Recode values to `NA` if values are greater than 100 for the academic scores variables
 4. Create new variables
-- create a new variable called finalscore that sums the read, write, math, science, socst variables for each student
+- Create a new variable called 'finalscore' that sums the read, write, math, science, socst variables for each student
 5. Perform basic data transformations
-- How many hispanic females are enrolled in public schools?
-- How many hispanic females are enrolled in private schools?
-- What's the difference in the science scores for hispanic females enrolled in public schools vs. hispanic females enrolled in private schools?
-- Create a new data frame called `hsbprivate` which only has observations of students who attend private schools
-- Save your `hsbclean` data as a new data frame called `hsbtransformed`
+- How many Hispanic females are enrolled in public schools?
+- How many Hispanic females are enrolled in private schools?
+- What's the difference in the science scores for Hispanic females enrolled in public schools vs. Hispanic females enrolled in private schools?
+- Create a new data frame called `hsbprivate` which contains observations of students who attend private schools
+- Save your data as a new data frame called `hsbtransformed`
 6. Save R script as lastname-R-task4
-7. Read the brief resource in Canvas titled: datawrangling-r-cheat-sheet.pdf
+7. Read the brief resource: [datawrangling-r-cheat-sheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 ### Note
 You may run into issues in completing the tasks listed above. Please refer to this document as well as the previous Learnr documents. Google is also a great resource when you run into issues in R.
@@ -486,5 +505,5 @@ You may run into issues in completing the tasks listed above. Please refer to th
 ### Reflect
 Let's take some time to reflect before moving on. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
-### El Fin
+### Wrap-up
 Good job on completing the first of three tutorials within the second module of this course! Please move onto the next tutorial on Canvas where we will learn about tidy data.
