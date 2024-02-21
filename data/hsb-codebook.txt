@@ -1,0 +1,13 @@
+HSB Codebook
+
+- id: Student ID
+- gender: Student's gender (female, male)
+- race: Student's race (Hispanic, Asian, African-American, White)
+- ses: Socioeconomic status of student's family (low, middle, high)
+- schtyp: Type of school student is enrolled in (public, private)
+- prog: Type of program student is enrolled in (general, academic, vocational)
+- read: Standardized reading score
+- write: Standardized writing score
+- math: Standardized math score
+- science: Standardized science score
+- socst: Standardized social studies score

@@ -297,8 +297,8 @@ nameyourdataset <- read_dta('nameoffile.dta')
 
 For this course, we will be using data from the High School and Beyond (HSB) survey conducted by the National Center for Education Statistics.
 We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students with 11 variables.
-The HSB data can be found in your R project under the 'data' folder and is labeled hsb.csv.
-The codebook/data dictionary for the data set can also be found in the 'data' folder and is labeled hsb-codebook.txt.
+The HSB data can be found in your R project under the 'data' folder and is labeled [hsb.csv](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv).
+The codebook, or data dictionary, for the data set can also be found in the 'data' folder and is labeled hsb-codebook.txt.
 We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this course.
 
 **HSB Codebook**:
