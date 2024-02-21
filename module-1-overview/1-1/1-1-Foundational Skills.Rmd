@@ -260,6 +260,7 @@ RStudio supports a lot of different data files for data science procedures.
 We listed the common data files that are supported by RStudio below
 
 -   csv
+-   txt
 -   xls
 -   xlsx
 -   sav
@@ -271,9 +272,10 @@ We've provided some examples below.
 
 ### Example code to read in different data files
 
-We can use the `tidyverse` package to read in .csv files
+We can use the `read.csv` function in Base R or the `read_csv` from the `tidyverse` package to read in .csv files
 
 ```{r, eval=FALSE, echo=TRUE}
+nameyourdataset <- read.csv('nameoffile.csv')
 nameyourdataset <- read_csv('nameoffile.csv')
 ```
 
@@ -293,25 +295,25 @@ nameyourdataset <- read_dta('nameoffile.dta')
 
 ### The High School and Beyond Data
 
-For this course, we will be using the High School and Beyond (HSB) dataset provided by the National Center for Education Statistics.
-We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students students with 11 variables.
+For this course, we will be using data from the High School and Beyond (HSB) survey conducted by the National Center for Education Statistics.
+We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students with 11 variables.
 The HSB data can be found in your R project under the 'data' folder and is labeled hsb.csv.
 The codebook/data dictionary for the data set can also be found in the 'data' folder and is labeled hsb-codebook.txt.
 We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this course.
 
-HSB codebook:
+**HSB Codebook**:
 
--   id: Student ID
--   gender: Student's gender (female, male)
--   race: Student's race (african american, asian, hispanic, white)
--   ses: Socioeconomic status of student's family (low, middle, high)
--   schtyp: Type of school student is enrolled in (public, private)
--   prog: Type of program student is enrolled in (general, academic, vocational)
--   read: Standardized reading score
--   write: Standardized writing score
--   math: Standardized math score
--   science: Standardized science score
--   socst: Standardized social studies score
+-   **id**: Student ID
+-   **gender**: Student's gender (female, male)
+-   **race**: Student's race (Hispanic, Asian, African-American, White)
+-   **ses**: Socioeconomic status of student's family (low, middle, high)
+-   **schtyp**: Type of school student is enrolled in (public, private)
+-   **prog**: Type of program student is enrolled in (general, academic, vocational)
+-   **read**: Standardized reading score
+-   **write**: Standardized writing score
+-   **math**: Standardized math score
+-   **science**: Standardized science score
+-   **socst**: Standardized social studies score
 
 ## Test your knowledge
 
