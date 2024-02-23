@@ -1,6 +1,6 @@
 # Educational Data Analytics Using R
 
-**Authors**: Louis Rocconi (lrocconi@utk.edu), Josh Rosenberg, & Sarah Narvaiz  
+**Authors**: Louis Rocconi (lrocconi@utk.edu), Joshua Rosenberg, & Sarah Narvaiz  
 The University of Tennessee, Knoxville
 
 
@@ -32,7 +32,7 @@ We hope this microcredential will empower educators and analysts with valuable d
 We have a series of apps to help you learn and apply R in education. 
 
 1. **Introduction to R**
-Get started with R: https://ed-analytics.shinyapps.io/0-1-Introduction-to-R/  
+Get started with R: https://ed-analytics.shinyapps.io/0-1-getting-started/ 
 
 
 2. **Foundational Skills**
