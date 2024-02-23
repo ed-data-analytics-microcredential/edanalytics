@@ -111,72 +111,103 @@ if (window.hljs) {
 
 <div id="section-introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Welcome back to the final module of this mini course. In the previous
-module we learned how to <strong>transform</strong>,
-<strong>tidy</strong>, and <strong>visualize</strong> data using the
-<code>tidyverse</code> package.</p>
-<p>In this course we learned how to <strong>import</strong>,
-<strong>wrangle</strong>, and <strong>visualize</strong> our data. In
-this final module, we will learn how to generate basic descriptive
-statistics.</p>
+<p>Welcome back to the final module of this course. In the previous
+modules we learned how to import, transform, wrangle, and tidy data
+using the <code>tidyverse</code> package. In this final module, we will
+learn how to generate basic descriptive statistics.</p>
 <p><img src="images/base.png" width="75%" /></p>
-<p>Before jumping into descriptive statistics functions in R, we want to
-first introduce and review the following foundational statistics
+<p>Before we delve into the functions for descriptive statistics in R,
+let’s first introduce and review the following foundational statistics
 terminology:</p>
 <ul>
 <li>Population vs. Sample</li>
 <li>Parameter vs. Statistic</li>
-<li>Dependent and independent variables</li>
+<li>Dependent vs. Independent variables</li>
 <li>Levels of measurement</li>
 <li>Types of data</li>
 <li>Randomization</li>
 <li>Internal vs. External validity</li>
 </ul>
-<p>Now that we know where we’ve been and where we’re headed, let’s go
-ahead and jump into it!</p>
+<p>Now that we know where we’ve been and where we’re headed, let’s jump
+into it!</p>
 </div>
 <div id="section-population-vs.-sample" class="section level2">
 <h2>Population vs. Sample</h2>
 <p>The difference between a population and sample is one of the first
 concepts taught in statistics and research methods courses. A
-<strong>population</strong> is the complete group you want to make
-conclusions about and a <strong>sample</strong> is a subset of the
-population you’re interested in. Researchers often collect data from a
-sample to make conclusions (or draw inferences) about the entire
-population of interest.</p>
+<strong>population</strong> is the complete group about which you want
+to make conclusions, and a <strong>sample</strong> is a subset of the
+population of interest. Researchers often collect data from a sample to
+make conclusions (or draw inferences) about the entire population of
+interest.</p>
 <p><img src="images/population.png" width="75%" /></p>
 <p>For example, all undergraduate students at the University of
 Tennessee (UT) would be considered the entire undergraduate population
 of UT. However, a random selection of 200 undergraduate students from UT
 would be considered a sample of the population.</p>
+<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz1-1" class="tutorial-question panel-body">
+<div id="quiz1-1-answer_container" class="shiny-html-output"></div>
+<div id="quiz1-1-message_container" class="shiny-html-output"></div>
+<div id="quiz1-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz1-2" class="tutorial-question panel-body">
+<div id="quiz1-2-answer_container" class="shiny-html-output"></div>
+<div id="quiz1-2-message_container" class="shiny-html-output"></div>
+<div id="quiz1-2-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
 <p>Now that we know the difference between a population and a sample, we
 can discuss the difference between a parameter and a statistic.</p>
 </div>
 <div id="section-parameter-vs.-statistic" class="section level2">
 <h2>Parameter vs. Statistic</h2>
 <p><strong>Parameters</strong> are numbers that describe the properties
-of an entire population and <strong>statistics</strong> are numbers that
-describe the properties of a sample.</p>
+of an entire population, and <strong>statistics</strong> are numbers
+that describe the properties of a sample.</p>
 <p>Let’s turn back to our example of undergraduate students at UT. In <a
-href="https://irsa.utk.edu/reporting/fact-book/">Fall 2022</a>, 27,039
+href="https://irsa.utk.edu/reporting/fact-book/">Fall 2023</a>, 28,883
 undergraduate students were enrolled at UT which represents the entire
 undergraduate population at UT. Let’s say we have the average age of all
-27,039 undergraduate students and the average age is 22 years old. The
-average age of the entire undegraduate student body at UT would be
-considered a parameter as it describes the average age of a population
-of interest. Let’s say we didn’t have access to the age of all 27,039
-undergraduate students but collected a sample of 200 students and asked
-how old they were. We averaged the age of the 200 student sample and
-found the average age of this sample to be 21 years old. The average age
-of this sample would be considered a statistic as it describes a
-properties of a sample of interest.</p>
+28,883 undergraduate students, and the average age is 22 years old. The
+average age of the entire undergraduate student body at UT would be
+considered a <em>parameter</em> as it describes the average age of a
+population of interest. On the other hand, let’s say we didn’t have
+access to the age of all 28,883 undergraduate students but collected a
+sample of 200 students and asked how old they were. We averaged the age
+of the 200 student sample and found the average age of this sample to be
+21.7 years old. The average age of this sample would be considered a
+<em>statistic</em> as it describes a properties of a sample of
+interest.</p>
 <p>In most research cases, it is difficult to collect data for an entire
-population so we instead take a sample in which we can make inferences
+population, so we instead take a sample in which we can make inferences
 about the population.</p>
+<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz2-1" class="tutorial-question panel-body">
+<div id="quiz2-1-answer_container" class="shiny-html-output"></div>
+<div id="quiz2-1-message_container" class="shiny-html-output"></div>
+<div id="quiz2-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
-<div id="section-independent-and-dependent-variables"
+</div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz2-2" class="tutorial-question panel-body">
+<div id="quiz2-2-answer_container" class="shiny-html-output"></div>
+<div id="quiz2-2-message_container" class="shiny-html-output"></div>
+<div id="quiz2-2-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+<div id="section-independent-vs.-dependent-variables"
 class="section level2">
-<h2>Independent and Dependent Variables</h2>
+<h2>Independent vs. Dependent Variables</h2>
 <p>Researchers often examine relationships between variables in a sample
 of interest. Variables are characteristics of interest in a sample or
 population that can take on different values. For example, variables can
@@ -213,13 +244,31 @@ independent is manipulated or varied.</p>
 the relationship between students’ study hours and their test score. In
 other words, if students study more, do their test scores increase? If a
 researcher wishes to examine the relationship between study hours and
-test performance, the independent variable would be study hours and the
-dependent (or outcome) variable would be test scores.</p>
+test performance, the independent variable would be the amount of time a
+student studies and the dependent (or outcome) variable would be test
+scores.</p>
+<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz3-1" class="tutorial-question panel-body">
+<div id="quiz3-1-answer_container" class="shiny-html-output"></div>
+<div id="quiz3-1-message_container" class="shiny-html-output"></div>
+<div id="quiz3-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz3-2" class="tutorial-question panel-body">
+<div id="quiz3-2-answer_container" class="shiny-html-output"></div>
+<div id="quiz3-2-message_container" class="shiny-html-output"></div>
+<div id="quiz3-2-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
 </div>
 </div>
 <div id="section-levels-of-measurement" class="section level2">
 <h2>Levels of Measurement</h2>
-<p>In statistics, variables can be quantified based four levels of
+<p>In statistics, variables are often quantified based four levels of
 measurement:</p>
 <ul>
 <li>Nominal</li>
@@ -232,49 +281,44 @@ with nominal variables, based on the progressively detailed information
 they provide.</p>
 <div id="section-nominal-variables" class="section level3">
 <h3>Nominal Variables</h3>
-<p>Nominal variables are names of categories data can fall in. An easy
-way to remember what nominal variables are is to think nominal = names.
-For example, students’ major can be considered a nominal variable in a
+<p>Nominal variables are names of categories data can fall in. They are
+also known as <em>categorical data</em>. An easy way to remember what
+nominal variables are is to think <em>nominal</em> = <em>names</em>. For
+example, students’ major can be considered a nominal variable in a
 dataset with postsecondary student data (e.g., accounting major,
-statistics major, education major).</p>
-<p>Nominal variables do have a countable number of distinct groups so
-they cannot be unknown to the researcher or infinite. While nominal
-variables have a countable number of named categories, they don’t have a
-natural order. Going back to our example of students’ major, there is
-not natural order of accounting, statistics, or education majors as
-categories. Statistics is greater, equal, or less than the other
-majors.</p>
+statistics major, education major). Nominal variables do have a
+countable number of distinct groups so they cannot be unknown to the
+researcher or infinite. While nominal variables have a countable number
+of named categories, they don’t have a natural order. Going back to our
+example of students’ major, there is not natural order of accounting,
+statistics, or education majors as categories. Statistics is greater,
+equal, or less than the other majors.</p>
 <p>Other examples of nominal variables can be gender, race/ethnicity,
 college minors.</p>
 <p>Binary variables (also called dichotomous variables) are a type of
 nominal variables which can only have two distinct values. Examples of
-binary variables are male/female, pass/fail, control/treatment.</p>
-<p>Since you can’t calculate the mean, median, or standard deviation of
-nominal variables, the mode is the proper measure of central tendenct
-for nominal variables as you can identify the most common occuring
-category in a dataset.</p>
+binary variables are pass/fail, control/treatment.</p>
+<p>We often set nominal variables as <strong>factors</strong> in R to
+ensure that the data is treated as categorical data.</p>
 </div>
 <div id="section-ordinal-variables" class="section level3">
 <h3>Ordinal Variables</h3>
 <p>Ordinal variables are similar to nominal variables since they too
-have categories of data, however, they are different, and provide more
-information than nominal variables, since ordinal variables can be
-ranked following a natural order of values.</p>
+have categories of data, however, they provide more information than
+nominal variables, since ordinal variables can be ranked following a
+natural order of values.</p>
 <p>Example of ordinal variables are education levels (primary,
-secondary, post-secondary), income (low, middle, hight), class rank.</p>
-<p>While ordinal variables can be ranked, we don’t know the exact
-degrees of difference between these categories. Let’s take class rank
-for example. Person A might have a class rank of 10, Person B a class
-rank of 11, and Person C a class rank of 12. While we know the rank of
-these individuals, we don’t know the relative absolute different between
-these individuals. For example, Person A might have a GPA of 3.978,
-Person B a 3.969 GPA, and Person C a 3.900 GPA. While they’re class rank
-is ordered, they don’t have the same distance apart from each other in
+secondary, post-secondary), income (low, middle, high), class rank.</p>
+<p>While ordinal variables can be ranked, we don’t know the exact degree
+of difference between these categories. Let’s take class rank for
+example. Person A might have a class rank of 10, Person B a class rank
+of 11, and Person C a class rank of 12. While we know the rank of these
+individuals, we don’t know the relative absolute different between these
+individuals. For example, Person A might have a GPA of 3.978, Person B a
+3.969 GPA, and Person C a 3.900 GPA. While they’re class rank is
+ordered, they don’t have the same distance apart from each other in
 terms of GPA which is why we rank them if we don’t know the relative
 degrees of difference between them.</p>
-<p>Calculating the median is a valid measure of central tendency for
-ordinal variables since the median is the middle ranked value which is
-fitting for rank-order data.</p>
 </div>
 <div id="section-interval-variables" class="section level3">
 <h3>Interval Variables</h3>
@@ -284,10 +328,8 @@ continuous without a true zero. For example, SAT scores are measured on
 an interval scale where the distance between two points is meaningful
 (unlike ordinal variables) since we know the relative degrees of
 difference between these two points. However, SAT scores don’t have a
-true zero point (even if you answered every question on the SAT
-incorrectly, you wouldn’t receive a 0).</p>
-<p>With interval scales, we can calculate the mean and standard
-deviation to determine central tendency and measure of variation.</p>
+true zero point (or 0 does not represent the absense of the trait being
+measured).</p>
 </div>
 <div id="section-ratio-variables" class="section level3">
 <h3>Ratio Variables</h3>
@@ -300,155 +342,31 @@ no height, weight, speed, or time.</p>
 <p>Ratio variables are the top level of measurement as you can order the
 observations, know the difference between any two values, and be able to
 assess ratios between values as they have a true zero measurement</p>
-<p>You can calculate and assess frequency distributions, medians, means,
-standard deviations, and ratios with ratio variables.</p>
+<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz4-1" class="tutorial-question panel-body">
+<div id="quiz4-1-answer_container" class="shiny-html-output"></div>
+<div id="quiz4-1-message_container" class="shiny-html-output"></div>
+<div id="quiz4-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
-<div id="section-types-of-data" class="section level2">
-<h2>Types of Data</h2>
-<p>Now that we’ve started discussing the different scales our data can
-be measured on, let’s talk more about the different types of data we
-will encounter in the education research field.</p>
-<div id="section-qualitative-and-quantitative-data"
-class="section level3">
-<h3>Qualitative and Quantitative Data</h3>
-<p>In the education research field, you will hear a lot about
-qualitative and quantitative data.</p>
-<div id="section-qualitative-data" class="section level4">
-<h4>Qualitative data</h4>
-<p>Qualitative data is typically collected through interviews, focus
-groups, document analysis, and text analysis and is used to understand
-the context, nuances, and themes of a research context. It’s often
-represented and analyzed through text (including text from audio
-transcriptions) to describe a research phenomenon. Ultimately,
-qualitative data is non-numeric and cannot be counted, measured, or
-easily expressed through the use of numbers.</p>
-</div>
-<div id="section-quantitative-data" class="section level4">
-<h4>Quantitative data</h4>
-<p>On the other hand, quantitative data quantifies a research phenomenon
-through data that can be measured and counted through the use of
-numbers. Quantitative data can be collected through any means in which
-you can count or measure data (e.g., surveys, administrative data,
-observations, etc.). Quantitative data is used to establish
-generalization about a sample for to a larger population by testing
-theories and assumptions using statistics.</p>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz4-2" class="tutorial-question panel-body">
+<div id="quiz4-2-answer_container" class="shiny-html-output"></div>
+<div id="quiz4-2-message_container" class="shiny-html-output"></div>
+<div id="quiz4-2-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
-<div id="section-discrete-continuous-and-categorical-data"
-class="section level3">
-<h3>Discrete, Continuous, and Categorical Data</h3>
-<p>Qualitative and quantitative data can often be represented through
-discrete, continuous, and categorical data types.</p>
-<div id="section-discrete-data" class="section level4">
-<h4>Discrete data</h4>
-<p>Discrete data is a numeric variable is considered a quantitative data
-type as it represented by integers. Discrete data can be counted which
-can only take on specific values (which are infinite). For example, you
-can count the number of students that enter a classroom but they will
-only be represented through whole numbers, meaning you can’t have 24.5
-students in a classroom.</p>
-</div>
-<div id="section-continuous-data" class="section level4">
-<h4>Continuous data</h4>
-<p>Continuous data is also a numeric variable that is considered a
-quantitative data type that can be represented with decimal values or
-fractions. Continuous data can also have finite or infinite number of
-values. For example, student’s GPA would be considered as continuous
-data as it has meaningful decimal places. While discrete data is used to
-be counted, continuous data is used to measure a data point using a
-predetermined scale.</p>
-</div>
-<div id="section-categorical-data" class="section level4">
-<h4>Categorical data</h4>
-<p>Categorical data is data represented by a finite number of groups.
-It’s typically considered a qualitative data type as the data can be
-stored and grouped into categories rater than being measured
-numerically. However, categorical data can be counted and represented as
-discrete data. Examples of categorical data include typical demographic
-variables such as race/ethnicity, sex, educational attainment,
-socioeconomic status.</p>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz4-3" class="tutorial-question panel-body">
+<div id="quiz4-3-answer_container" class="shiny-html-output"></div>
+<div id="quiz4-3-message_container" class="shiny-html-output"></div>
+<div id="quiz4-3-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
-</div>
-<div id="section-randomization" class="section level2">
-<h2>Randomization</h2>
-<p>Randomization techniques are often used in research settings in
-efforts to achieve a research design which mitigates biases and
-strengthens internal or external validity (more on this in the next
-section). There are two primary ways randomization occurs: 1) Random
-selection and 2) Random assignment.</p>
-<div id="section-random-selection" class="section level3">
-<h3>Random Selection</h3>
-<p>Random selection is also known as random sampling and is a technique
-used to randomly select members of a population to be used as the
-study’s sample. There are four common types of random selection
-techniques that are used.</p>
-<ul>
-<li><p><strong>Simple random sampling</strong>: Each member of a
-population has an equal and fair probability of being selected. This is
-one of the most convenience and simple random selection
-techniques.</p></li>
-<li><p><strong>Systematic sampling</strong>: The selection criteria
-follows a predetermined interval (k) to determine the members of a
-population that will be selected. For example, every 12th person in list
-of alphabetized last names will be selected.</p></li>
-<li><p><strong>Stratified sampling</strong>: This technique first
-divides the population into subgroups with notable distinctions as
-predetermined by a researcher. For example, a researcher might want to
-interview teachers across the U.S. If the researcher has a list of
-teachers within all schools, the researcher can divide and categorize
-the schools by geographic urbanality (e.g., rural, suburban, urban) and
-then randomly teachers a specific number of teachers within each school.
-This technique allows researchers to ensure respective subgroups are
-adequately represented in the sample (creating a representative sample
-of teachers in the US).</p></li>
-<li><p><strong>Cluster sampling</strong>: This technique is similar to
-stratified sampling but instead it includes all members of a subgroup
-instead of randomly selected members inside of a subgroup.</p></li>
-</ul>
-</div>
-<div id="section-random-assignment" class="section level3">
-<h3>Random Assignment</h3>
-<p>Random assignment is a randomization technique used to assign
-individuals into experimental conditions. In the simplest design of an
-experimental study, you will have a treatment and a control group. In
-order to ensure there are no systematic differences of individuals
-between the treatment and control group, you will randomly assign
-participants to each group. Random assignment is the hallmark of a
-“true” experiment since any differences found between the treatment and
-control group are attributed to the treatment or intervention.</p>
-</div>
-</div>
-<div id="section-internal-vs.-external-validity" class="section level2">
-<h2>Internal vs. External Validity</h2>
-<p>The final concept we will cover is on study validity which can be
-assessed through internal and external validity.</p>
-<div id="section-internal-validity" class="section level3">
-<h3>Internal Validity</h3>
-<p>Internal validity is in reference to an experimental study’s design
-and methods. Internal validity is assessed through the controlling and
-accounting for confounding variables. Strong internal validity allows
-you have have confidence that your results of an experiment are caused
-by only one independent variable (the treatment or intervention). Random
-sampling is one way to establish strong internal validity for
-experimental designs.</p>
-</div>
-<div id="section-external-validity" class="section level3">
-<h3>External Validity</h3>
-<p>External validity references how your results can be generalized to
-the population beyond the sample used in your study. In other words, can
-the results from the study be generalized to the real world? External
-validity does not assess causality or ruling out confounding variables.
-There are two types of external validity to consider: 1) population
-validity and 2) ecological validity.</p>
-<p>Population validity considers how well your sample represents the
-population under study. A random sampling technique can establish
-population validity if used appropriately. Ecological validity considers
-how similar the study setting and the real-world setting are to each
-other. One method of assessing ecological validity is replicating the
-study at a different time, in a different setting, with different
-participants to assess if similar results are obtained.</p>
 </div>
 </div>
 <div id="section-tasks" class="section level2">
@@ -460,8 +378,8 @@ participants to assess if similar results are obtained.</p>
 that surprised you? What is one thing that confused you? Did you learn
 anything that might be useful in the type of work you do?</p>
 </div>
-<div id="section-el-fin" class="section level3">
-<h3>El Fin</h3>
+<div id="section-wrap-up" class="section level3">
+<h3>Wrap-up</h3>
 <p>Good job on completing the first of two tutorials in the final module
 of this course! Please move onto the next tutorial within this module on
 Canvas where we will learn how generate descriptive statistics in R.</p>
@@ -484,6 +402,298 @@ session$onSessionEnded(function() {
         learnr:::event_trigger(session, "session_stop")
       })
 </script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz1-1", question = structure("What is a population in research?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_d498412", 
+    option = "The complete group about which you want to make conclusions", 
+    value = "The complete group about which you want to make conclusions", 
+    label = structure("The complete group about which you want to make conclusions", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e2e2823", 
+    option = "A subset of the population of interest", value = "A subset of the population of interest", 
+    label = structure("A subset of the population of interest", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fae975f", 
+    option = "A group of individuals participating in a study", 
+    value = "A group of individuals participating in a study", 
+    label = structure("A group of individuals participating in a study", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e81967b", 
+    option = "A group of individuals from different backgrounds", 
+    value = "A group of individuals from different backgrounds", 
+    label = structure("A group of individuals from different backgrounds", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz1-1-answer", question = "quiz1-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 907647580.577344, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz1-2", question = structure("What is a sample in research?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_d51bef", 
+    option = "The complete group about which you want to make conclusions", 
+    value = "The complete group about which you want to make conclusions", 
+    label = structure("The complete group about which you want to make conclusions", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_113247d", 
+    option = "A subset of the population of interest", value = "A subset of the population of interest", 
+    label = structure("A subset of the population of interest", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_121beae", 
+    option = "A group of individuals participating in a study", 
+    value = "A group of individuals participating in a study", 
+    label = structure("A group of individuals participating in a study", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b5604c8", 
+    option = "A group of individuals from different backgrounds", 
+    value = "A group of individuals from different backgrounds", 
+    label = structure("A group of individuals from different backgrounds", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz1-2-answer", question = "quiz1-2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 437693002.796183, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("What is a parameter?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_e636b2", 
+    option = "A number that describes the properties of an entire population", 
+    value = "A number that describes the properties of an entire population", 
+    label = structure("A number that describes the properties of an entire population", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4854e65", 
+    option = "A number that describes the properties of a sample", 
+    value = "A number that describes the properties of a sample", 
+    label = structure("A number that describes the properties of a sample", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bffea51", 
+    option = "A variable that is manipulated in an experiment", 
+    value = "A variable that is manipulated in an experiment", 
+    label = structure("A variable that is manipulated in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_20fc9c9", 
+    option = "A variable that is measured in an experiment", 
+    value = "A variable that is measured in an experiment", label = structure("A variable that is measured in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz2-1-answer", question = "quiz2-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 683557734.181694, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-2", question = structure("What is a statistic?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_36c69e2", 
+    option = "A number that describes the properties of an entire population", 
+    value = "A number that describes the properties of an entire population", 
+    label = structure("A number that describes the properties of an entire population", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6a1d397", 
+    option = "A number that describes the properties of a sample", 
+    value = "A number that describes the properties of a sample", 
+    label = structure("A number that describes the properties of a sample", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_412f1b7", 
+    option = "A variable that is manipulated in an experiment", 
+    value = "A variable that is manipulated in an experiment", 
+    label = structure("A variable that is manipulated in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_812b6a1", 
+    option = "A variable that is measured in an experiment", 
+    value = "A variable that is measured in an experiment", label = structure("A variable that is measured in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz2-2-answer", question = "quiz2-2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1738768987.69032, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-1", question = structure("What is an independent variable?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_2d7ba4d", 
+    option = "A variable that varies or can be manipulated to explore the effect or relationship it has with a dependent variable", 
+    value = "A variable that varies or can be manipulated to explore the effect or relationship it has with a dependent variable", 
+    label = structure("A variable that varies or can be manipulated to explore the effect or relationship it has with a dependent variable", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_59764e5", 
+    option = "A variable that is dependent on other variables", 
+    value = "A variable that is dependent on other variables", 
+    label = structure("A variable that is dependent on other variables", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cdb64d", 
+    option = "A variable that is manipulated in an experiment", 
+    value = "A variable that is manipulated in an experiment", 
+    label = structure("A variable that is manipulated in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4ce11c8", 
+    option = "A variable that is measured in an experiment", 
+    value = "A variable that is measured in an experiment", label = structure("A variable that is measured in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz3-1-answer", question = "quiz3-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1653681895.22994, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-2", question = structure("What is a dependent variable?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_20ff22b", 
+    option = "A variable that varies or can be manipulated to explore the effect or relationship it has with an independent variable", 
+    value = "A variable that varies or can be manipulated to explore the effect or relationship it has with an independent variable", 
+    label = structure("A variable that varies or can be manipulated to explore the effect or relationship it has with an independent variable", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b78868", 
+    option = "A variable that is dependent on other variables", 
+    value = "A variable that is dependent on other variables", 
+    label = structure("A variable that is dependent on other variables", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a4afe2a", 
+    option = "A variable that is manipulated in an experiment", 
+    value = "A variable that is manipulated in an experiment", 
+    label = structure("A variable that is manipulated in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_56e72d5", 
+    option = "A variable that is measured in an experiment", 
+    value = "A variable that is measured in an experiment", label = structure("A variable that is measured in an experiment", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz3-2-answer", question = "quiz3-2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1766774401.67728, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-1", question = structure("What is a nominal variable?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_565d346", 
+    option = "Names of categories data can fall in", value = "Names of categories data can fall in", 
+    label = structure("Names of categories data can fall in", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ba9d0a3", 
+    option = "Variables that can be ranked following a natural order of values", 
+    value = "Variables that can be ranked following a natural order of values", 
+    label = structure("Variables that can be ranked following a natural order of values", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d2762fb", 
+    option = "Variables measured on an interval scale", value = "Variables measured on an interval scale", 
+    label = structure("Variables measured on an interval scale", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ed6c1fd", 
+    option = "Variables that have a true zero measurement", value = "Variables that have a true zero measurement", 
+    label = structure("Variables that have a true zero measurement", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz4-1-answer", question = "quiz4-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 686380013.680379, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-2", question = structure("What is an interval variable?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_c1d93c8", 
+    option = "Names of categories data can fall in", value = "Names of categories data can fall in", 
+    label = structure("Names of categories data can fall in", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e3b292c", 
+    option = "Variables that can be ranked following a natural order of values", 
+    value = "Variables that can be ranked following a natural order of values", 
+    label = structure("Variables that can be ranked following a natural order of values", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bc554d", 
+    option = "Variables measured on an interval scale", value = "Variables measured on an interval scale", 
+    label = structure("Variables measured on an interval scale", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c599686", 
+    option = "Variables that have a true zero measurement", value = "Variables that have a true zero measurement", 
+    label = structure("Variables that have a true zero measurement", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz4-2-answer", question = "quiz4-2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 353230140.335514, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz4-3", question = structure("Which of the following is an example of an ordinal variable?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_23b6a70", 
+    option = "Gender", value = "Gender", label = structure("Gender", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_81d6e58", 
+    option = "Eye color", value = "Eye color", label = structure("Eye color", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c832f5b", 
+    option = "Income level (low, middle, high)", value = "Income level (low, middle, high)", 
+    label = structure("Income level (low, middle, high)", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_11a29bb", 
+    option = "Height", value = "Height", label = structure("Height", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz4-3-answer", question = "quiz4-3"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 415436373.806547, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
 </p>
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
@@ -492,7 +702,7 @@ session$onSessionEnded(function() {
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","ggthemes","glue","graphics","grDevices","grid","gtable","highr","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.2","2.1-0","4.3.1","4.3.1","0.6.33","1.1.2","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.3","5.0.0","1.6.2","4.3.1","4.3.1","4.3.1","0.3.3","0.10","1.1.3","0.5.7","1.6.4","1.6.13","0.1.4","1.8.8","1.45","1.3.2","0.11.5","1.0.4","1.9.2","2.0.3","4.3.1","0.12","0.5.0","1.9.0","2.0.3","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.2","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.41","1.8-4","2.3.8"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","commonmark","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","ggthemes","glue","graphics","grDevices","grid","gtable","highr","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.1","2.1-0","1.9.0","4.3.1","4.3.1","0.6.33","1.1.3","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.4","5.0.0","1.6.2","4.3.1","4.3.1","4.3.1","0.3.4","0.10","1.1.3","0.5.7","1.6.4","1.6.11","0.1.4","1.8.7","1.45","1.3.1","0.11.5","1.0.4","1.9.3","2.0.3","1.12","4.3.1","0.12","0.5.0","1.9.0","2.0.3","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.1","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.40","1.8-4","2.3.7"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>

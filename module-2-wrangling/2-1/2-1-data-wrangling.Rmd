@@ -13,7 +13,7 @@ tutorial_options(exercise.timelimit = 60)
 
 ## Introduction
 
-Welcome to the Tidyverse! In this module we will learn how to **transform** data, **tidy** or clean data, and create **data visualizations** using the tidyverse package. 
+Welcome to the Tidyverse! In this module we will learn how to **transform** data and **tidy** data using the tidyverse package. 
 
 In this tutorial we will learn how to wrangle data using `dplyr` functions within the tidyverse package.
 

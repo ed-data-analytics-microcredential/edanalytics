@@ -6,6 +6,7 @@ runtime: shiny_prerendered
 
 ```{r load, include=FALSE}
 library(learnr)
+library(forcats)
 library(tidyverse)
 library(ggthemes)
 library(psych)
@@ -32,16 +33,17 @@ We're going to return back and use the General Social Survey (GSS) built in data
 
 ```{r setup, include=TRUE}
 gss <- forcats::gss_cat
+# Note: You may need to install the forcats package
 gss
 ```
 
 #### Describe
 
-We've introduced the `describe()` function in the second module, but we will review it once more in this tutorial.
+We've introduced the `describe()` function from the `psych` package in the second module, but we will review it once more in this tutorial.
 
 The `describe()` function is a useful function in first getting to know your data. For this function, you provide the name of the data frame as the first argument of the function. The output provides the following for each variable in the dataset: the number of observations (n), and several descriptive statistics (e.g., mean, standard deviation, standard error, etc.). 
 
-Do you remember why certain variables  have asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the `gss` data set, it shows that `marital`, `race`, `rincome`, `partyid`, `relig`, and `denom` are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
+Do you remember why certain variables have an asterisk next to their names? The asterisk is an indicator that these variables are factor variables! In the `gss` data set, it shows that `marital`, `race`, `rincome`, `partyid`, `relig`, and `denom` are all factor variables. But isn't it strange that these variables still have descriptive statistics associated with them? Good point. The descriptive statistics provided by `describe()` for each of these variables is meaningless so it would be best to ignore these statistics. It's like trying to take the mean of the colors in a crayon box, you can't! However, the descriptive statistics provided for the variables of integer values is quite useful. For example, the average age of respondents in this sample data set is approximately 47 years old. 
 
 ```{r dsecribe, exercise = TRUE}
 psych::describe(gss)
@@ -71,7 +73,7 @@ The `summary()` function is a base R function that can be used to generate quick
 summary(gss)
 ```
 
-The `summary()` function calculate and returns the minimum value, the 1st quartile value (25th percentile), the median value, the 3rd quartile value (75th percentile), and the maximum value for numeric values. If there are factors in the dataset, the function returns the counts for each of the factor levels (or groups) for each variable. If there are `NA`s in the dataset, `summary()` excludes these cases from being counted in the output. 
+The `summary()` function calculate and returns the minimum value, the 1st quartile value (25th percentile), the median value (50th percentile), the 3rd quartile value (75th percentile), and the maximum value for numeric values. If there are factors in the dataset, the function returns the frequency counts for each of the factor levels (or groups). If there are `NA`s in the dataset, `summary()` excludes these cases from being counted in the output. 
 
 #### Five-Number Summary
 
@@ -253,14 +255,13 @@ In looking at the youngest and oldest respondents, we have 91 respondents in the
 Let's wrangle the data.
 ```{r wrangle, exercise = TRUE}
 d <- gss |>
-  mutate(age_groups = case_when(age >= 20 & age <= 29 ~ "20s",
-                         age >= 30 & age <= 39 ~ "30s", 
-                         age >= 40 & age <= 49 ~ "40s",
-                         age >= 50 & age <= 59 ~ "50s",
-                         age >= 60 & age <= 69 ~ "60s",
-                         age >= 70 & age <= 79 ~ "70s",
-                         age >= 80 ~ "80s",
-                         TRUE ~ as.character(age)))
+  mutate(age_groups = ifelse(age >= 20 & age <= 29, "20s",
+                      ifelse(age >= 30 & age <= 39, "30s", 
+                      ifelse(age >= 40 & age <= 49, "40s",
+                      ifelse(age >= 50 & age <= 59, "50s",
+                      ifelse(age >= 60 & age <= 69, "60s",
+                      ifelse(age >= 70 & age <= 79, "70s",
+                      ifelse(age >= 80, "80s", as.character(age)))))))))
 
 ```
 
@@ -280,7 +281,7 @@ The frequency table for the `tvhours` variable isn't too clustered like the age 
 
 ### Count
 
-We can also generate frequency tables by using the `count()` function in the tidyverse :)
+We can also generate frequency tables by using the `count()` function in the tidyverse. 
 
 ```{r count, exercise = TRUE}
 gss |>
@@ -307,18 +308,18 @@ gss |>
 
 Now that we have completed the final module on descriptive statistics, let's engage in the final task for this course.
 
-1. Open the last R you created in the previous module. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
-2. Generate descriptive statistics for each variable in the `hsbtransformed` dataset
+1. Open the R script you created in the previous module. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+2. Generate descriptive statistics for each variable in the `hsbtransformed` dataset.
 3. Please list the level of measurement for each variable (e.g., nominal, ordinal, interval, ratio) and your justification.
 4. Please list and report the appropriate central tendency measure for each variable and your justification.
 5. Report the skewness and kurtosis for each variable.
 6. Please pick three variables and generate a frequency table for each of these variables. Is there anything interesting based on these frequency tables?
-7. What do you find interesting or are you curious about regarding the statistics generated from this dataset?
+7. What do you find interesting or curious about the statistics generated from this dataset?
 
 ### Reflect
 Now that you have completed the final task for the course, let's take some time to reflect. What is one thing that surprised you? What is one thing that confused you? Did you learn anything that might be useful in the type of work you do?
 
-Now let's reflect on the overall course. Please post your responses to the canvas discussion board.
+Now let's reflect on the overall course. Please post your responses to the Canvas discussion board.
 1. What is something you found the most challenging in this course? Why?
 2. What is something you found the most enjoyable in this course? Why?
 3. What is something you want to learn more about?
@@ -326,5 +327,5 @@ Now let's reflect on the overall course. Please post your responses to the canva
 5. How confident are you in your R skills after completing this course?
 6. Is there anything else you would like to include that we didn't ask?
 
-### El Fin
+### Wrap-up
 Good job on completing this course! We hope you enjoyed learning the basics of educational data analytics using R as much as we did!

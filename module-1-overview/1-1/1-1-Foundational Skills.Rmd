@@ -169,18 +169,14 @@ Let's practice installing packages in R.
 Open up RStudio and install the following packages.
 We will use these packages throughout the course.
 
--   here
--   janitor
--   lubridate
 -   psych
 -   tidyverse
--   skimr
 
 ```{r quiz5, echo=FALSE}
 quiz(caption = "Quiz - Installing Packages",
-  question("Were you able to install the 7 packages listed above in R",
+  question("Were you able to install the 2 packages listed above in R",
     answer("Yes!", correct = TRUE, message = "Good job!"),
-    answer("No.", message = "Try again. Is the package name spelled correctly? Is the package name in quotes?"),
+    answer("No.", correct = FALSE, message = "Try again. Is the package name spelled correctly? Is the package name in quotes?")
   )
 )
 ```
