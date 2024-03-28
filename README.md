@@ -56,4 +56,4 @@ Familiarize yourself with statistical terminology: https://ed-analytics.shinyapp
 
 
 7. **Descriptive Statistics**
-Learn about descriptive statistics: https://ed-analytics.shinyapps.io/3-2-descriptive-statistics/
+Learn about descriptive statistics: https://ed-analytics.shinyapps.io/3-2-statistics
