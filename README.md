@@ -51,9 +51,6 @@ Master the art of data wrangling: https://ed-analytics.shinyapps.io/2-1-data-wra
 Learn the basic principles of tidy data: https://ed-analytics.shinyapps.io/2-2-tidy-data/
 
 
-6. **An Overview of Statistical Concepts**
-Familiarize yourself with statistical terminology: https://ed-analytics.shinyapps.io/3-1-stats-terms/
+6. **Descriptive Statistics**
+Learn about descriptive statistics:https://ed-analytics.shinyapps.io/3-1-stats-terms/
 
-
-7. **Descriptive Statistics**
-Learn about descriptive statistics: https://ed-analytics.shinyapps.io/3-2-statistics

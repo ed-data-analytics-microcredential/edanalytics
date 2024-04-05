@@ -1,0 +1,9 @@
+name: 3-1-stats-terms
+title: 3-1-stats-terms
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10874579
+bundleId: 8459737
+url: https://ed-analytics.shinyapps.io/3-1-stats-terms/

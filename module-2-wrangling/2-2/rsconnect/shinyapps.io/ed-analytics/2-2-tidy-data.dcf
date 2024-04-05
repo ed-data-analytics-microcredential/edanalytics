@@ -1,0 +1,9 @@
+name: 2-2-tidy-data
+title: 2-2-tidy-data
+username:
+account: ed-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10874326
+bundleId: 8290806
+url: https://ed-analytics.shinyapps.io/2-2-tidy-data/
