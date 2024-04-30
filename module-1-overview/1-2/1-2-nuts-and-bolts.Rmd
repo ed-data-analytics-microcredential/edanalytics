@@ -654,7 +654,7 @@ Please follow the steps outlined below.
 -   prog `->` program
 -   socst `->` socialst
 
-6.  Save R script as lastname-R-task3
+6.  Save R script as lastname-R-task-1-2
 7.  Read the brief resource in Canvas titled: [datawrangling-r-cheat-sheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 #### Note:

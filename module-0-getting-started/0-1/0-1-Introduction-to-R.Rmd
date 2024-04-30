@@ -316,7 +316,7 @@ Now that you have R and RStudio installed on your machine and you have been acqu
 1.  Choose a preferred appearance theme for RStudio
 2.  Change the default setting that saves the workspace
 3.  Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523.
-4.  Save the R script in the project folder for this course. Please name the script the following: lastname-R-task1
+4.  Save the R script in the project folder for this course. Please name the script the following: lastname-R-task-0-1
 5.  Read [Torfs & Brauer (2014 A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) for the next tutorial.
 
 ### Reflect

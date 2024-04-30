@@ -414,7 +414,7 @@ gss |>
 
 ## Tasks
 
-Now that we have completed the final module on descriptive statistics, let's engage in the final task for this course.
+Now that we have completed the final module on descriptive statistics, let's engage in the final tasks for this course.
 
 1. Open the R script you created in the previous module. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
 2. Generate descriptive statistics for each variable in the `hsbtransformed` dataset.

@@ -129,9 +129,9 @@ this tutorial:</p>
 </div>
 <div id="section-data-types" class="section level2">
 <h2>Data Types</h2>
-<p>Data types are the types of data supported and can be used with R and
-within RStudio. While there are different data types that can be used
-within R, we will cover the 4 basic data types:</p>
+<p>Data types are the types of data that are supported in R. While there
+are different data types that can be used within R, we will cover the 4
+basic data types:</p>
 <ul>
 <li>Numeric</li>
 <li>Integer</li>
@@ -141,7 +141,7 @@ within R, we will cover the 4 basic data types:</p>
 <div id="section-numeric" class="section level3">
 <h3>Numeric</h3>
 <p>Numeric data types are real number values that are allowed to have
-decimal points and are not considered whole numbers.</p>
+decimal points.</p>
 <pre class="r"><code># Numeric atomic vector
 grade1 &lt;- 93.51
 typeof(grade1)</code></pre>
@@ -171,8 +171,8 @@ grade2</code></pre>
 <pre class="r"><code>str(grade2)</code></pre>
 <pre><code>##  num 93</code></pre>
 <p>You’re probably wondering why 93 is considered a double numerical
-value and not an whole number integer. That’s a good curiosity to have
-which leads us to discuss integer values.</p>
+value and not an integer. That’s a good curiosity to have which leads us
+to discuss integer values.</p>
 </div>
 <div id="section-integer" class="section level3">
 <h3>Integer</h3>
@@ -188,9 +188,18 @@ integer</code></pre>
 <pre><code>##  int 256</code></pre>
 <p>As you can see when we use <code>typeof()</code> and
 <code>str()</code>, the output tells us that the object
-<code>integer</code> is an integer data type. You will seldom use
-integer data types in your work (probably never), however, we wanted to
-provide you a brief review of this data type.</p>
+<code>integer</code> is an integer data type. Integers can be beneficial
+when you are certain that the numbers you are dealing with will never
+contain decimals. For example, you are counting the number of students
+in a class, these will always be whole numbers and can be represented as
+integers. Using integers in such cases can make your code more precise
+and can help prevent errors that could arise from unexpected fractional
+values. For instance, you wouldn’t want to end up with 30.5 students! In
+addition, R stores and processes integers and numeric data differently
+which can lead to differences in memory usage and performance. In
+general, integers use less memory and are faster to process than numeric
+data, so using integers when appropriate can make your R program more
+efficient.</p>
 </div>
 <div id="section-character" class="section level3">
 <h3>Character</h3>
@@ -236,8 +245,9 @@ logical2</code></pre>
 <p>Additionally, logical data types can also be represented as
 <code>T</code> and <code>F</code> which is shorthand for
 <code>TRUE</code> and <code>FALSE</code>. R accepts both form of logical
-data types, however, it’s standard practice to use <code>TRUE</code> and
-<code>FALSE</code> rather than <code>T</code> and <code>F</code>.</p>
+data types, however, it is standard practice to use <code>TRUE</code>
+and <code>FALSE</code> rather than <code>T</code> and
+<code>F</code>.</p>
 </div>
 </div>
 <div id="section-data-structures" class="section level2">
@@ -260,6 +270,7 @@ types.</p>
 five common data structures used within R and data science in general.
 Table 1 outlines these five different types and classifies their two
 attributes.</p>
+<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.3.2</code></pre>
 <table>
 <caption>Table 1: Data Structures</caption>
 <thead>
@@ -317,7 +328,7 @@ num_vector</code></pre>
 arrow “&lt;-” is assigning ‘something’ to an object. In this case, we
 are assigning/storing a vector to an object called
 <code>num_vector</code>. When we only run the line of code with the
-object <code>num_vector</code> we are able to see/access the stored data
+object <code>num_vector</code> we are able to access the stored data
 inside of the object which is a vector in this case.</p>
 <p>Another note: Whenever we want to make an object that contains more
 than one value, we have to use the <code>c()</code> and separate each
@@ -329,7 +340,7 @@ called <code>num_vector</code>.</p>
 <div id="section-integer-atomic-vectors" class="section level4">
 <h4>Integer atomic vectors</h4>
 <p>Integer atomic vectors can handle numerical values that are
-considered whole integers. The <code>L</code> after each numerical value
+considered integers. The <code>L</code> after each numerical value
 provided in the exercise below tells R that these values are integers
 and not numeric. Go ahead and use the exercise below to create an atomic
 vector that is storing integers. What do you think your output will be
@@ -348,15 +359,15 @@ int_vector</code></pre>
 <h4>Logical atomic vectors</h4>
 <p>Logical atomic vectors can handle logical values. In R (and other
 programming languages), logical vectors are expressed by
-<code>TRUE</code>, <code>FALSE</code>, <code>T</code>, and
-<code>F</code>. Logical values will come in handy when we talk about
+<code>TRUE</code>, <code>FALSE</code>, <code>TRUE</code>, and
+<code>FALSE</code>. Logical values will come in handy when we talk about
 logical comparisons later in this tutorial. Go ahead and use the
 exercise below to create a logical vector.</p>
 <div class="tutorial-exercise" data-label="log_vector"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code># Logical atomic vector
-log_vector &lt;- c(TRUE, FALSE, T, F)
+log_vector &lt;- c(TRUE, FALSE, TRUE, FALSE)
 log_vector</code></pre>
 <pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
@@ -368,7 +379,7 @@ log_vector</code></pre>
 Character values can be anything that is wrapped in quotations (this is
 also known as a string). Go ahead and use the exercise below to create a
 character vectors with four unique strings stores inside (in this case,
-these are names of schools).</p>
+these are names of made-up schools).</p>
 <div class="tutorial-exercise" data-label="char_vector"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -413,12 +424,13 @@ include in the list. The first argument given <code>100:105</code> tells
 R to create the first element in the list which includes numbers from
 100 to 105. The <code>:</code> notation between 100 and 105 tells R to
 include values between those two numbers, thus providing the following
-output for the first element within this list: 100, 101, 102, 103, 104,
-105. The second argument tells R to create the second element in this
-list which includes the character type <code>apple</code>. The third
-argument tells R to create the third element in this list which are
-logical values. The last argument tells R to create the fourth element
-in this list which includes 99.8, 87.0, and 88.3.</p>
+output for the first element within this list:
+<code>100, 101, 102, 103, 104, 105</code>. The second argument tells R
+to create the second element in this list which includes the character
+type <code>apple</code>. The third argument tells R to create the third
+element in this list which are logical values. The last argument tells R
+to create the fourth element in this list which includes
+<code>99.8, 87.0, and 88.3</code>.</p>
 <p>When we use the <code>str()</code> function to check the structure of
 the list, the output tells us that the object <code>list_example</code>
 is a list that contains 4 elements and provides us with the data types
@@ -451,20 +463,23 @@ argument provided in the function, we are telling R that we want to
 include numbers 1 through 9 in the matrix (all numeric) and that we want
 to have 3 columns and 3 rows. So when we run <code>matrix_example</code>
 on the second line, you can see that a matrix is produced with the
-values 1 through 9 and is organized by 3 columns and 3 rows.</p>
+values 1 through 9 and is organized by 3 columns and 3 rows. You can
+input data into a matrix by rows or columns using the
+<code>byrow = TRUE</code> or <code>byrow = FALSE</code> argument in the
+<code>matrix()</code> function.</p>
 </div>
 <div id="section-array" class="section level3">
 <h3>Array</h3>
-<p>Arrays are similar to a matrix (or matrices) in the sense that they
-store homogeneous elements but they allowed to have more than 2
-dimensions if needed/necessary. We can make an array by using
+<p>An array is similar to a matrix in the sense that it stores
+homogeneous elements but an Array is allowed to have more than 2
+dimensions, if needed. We can make an array by using
 <code>array()</code>. The exercise below provides an example of an array
 with 3 dimensions.</p>
 <div class="tutorial-exercise" data-label="array" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>#  4 rows,2 columns and 3 arrays
-array_example &lt;- array(c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19), dim = c(4,2,3))
+array_example &lt;- array(c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19), dim = c(4, 2, 3))
 array_example</code></pre>
 <pre><code>, , 1
 
@@ -492,45 +507,44 @@ array_example</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>When walking through the code, we are using the function
-<code>array()</code> to create an object that’s an array. The first
-argument provided in the function, we are giving R the elements we want
-displayed in the array. These are all numeric (homogeneous) elements.
-The second argument provided in the function <code>array()</code> is the
-dimensions needed for the array to be created (e.g.,
-<code>dim =</code>). So for <code>dim = c(4, 2, 3)</code> we are saying
-we want each dimension of the array to have 4 rows, 2 columns, and 3
-dimensions. When you run the line of code <code>array_example</code> you
-can see that three dimensions are provided (matrices) and each of these
-have 4 rows and 2 columns. The placement of the numerical elements
-<code>c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19)</code> starts in the first
-matrix (<code>, , 1</code>) at the first row and first column and
+<code>array()</code> to create an object that’s an array. In the first
+argument, we are giving R the elements we want displayed in the array.
+These are all numeric (homogeneous) elements. The second argument
+provided in the function <code>array()</code> is the dimensions needed
+for the array to be created (e.g., <code>dim =</code>). So for
+<code>dim = c(4, 2, 3)</code> we are saying we want each dimension of
+the array to have 4 rows, 2 columns, and 3 dimensions. When you run the
+line of code <code>array_example</code> you can see that three
+dimensions are provided (matrices) and each of these have 4 rows and 2
+columns. The placement of the numerical elements
+<code>c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19)</code> starts in the
+first matrix (<code>, , 1</code>) at the first row and first column and
 continues to place the numerical elements provided in a row wise manner
-until all numerical elements have been listed (the last value (19)
-provided in the second matrix in the fourth row, first column. But in
-order to continue to build the array as specified by the dimensions
-given in the <code>dim</code> argument, R continues to starts to loop
-the numerical elements provided by starting again at placing 1 in the
-second matrix in the first row, second column and continues on until the
-full array is created as specified.</p>
+until all numerical elements have been listed. For example, the last
+value in the elements list (19) is located in the second matrix in the
+fourth row, first column. But in order to continue to build the array as
+specified by the dimensions given in the <code>dim</code> argument, R
+starts to loop the numerical elements provided by starting again at
+placing 1 in the second matrix in the first row, second column and
+continues on until the full array is created as specified.</p>
 </div>
 <div id="section-data-frames" class="section level3">
 <h3>Data frames</h3>
 <p>Yay! We made it to the final data structure: data frames. Data frames
-will more than likely be the most common data structure you will use in
-the education research field, and is the most common way to store data
-in R. Data frames are 2-dimensional (rows and columns) and can store
+will likely be the most common data structure you will use in the
+education research field, and is the most common way to store data in R.
+Data frames are 2-dimensional (rows and columns) and can store
 heterogeneous elements. For data frames, columns are typically variables
-and rows are cases/observations. We can make a data frame from scratch
-using <code>data.frame()</code>, however, more often than not, you will
-have a data file (e.g., .csv) and will read it into R (much like you did
-in the past module when reading in the hsb data set.). Regardless, let’s
-make a data frame in the example below.</p>
+and rows are cases or observations. We can make a data frame from
+scratch using <code>data.frame()</code>, however, more often than not,
+you will have a data file (e.g., .csv) and will read it into R (much
+like you did in the past module when reading in the <code>hsb</code>
+data set.). Regardless, let’s make a data frame in the example
+below.</p>
 <div class="tutorial-exercise" data-label="dataframe"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code># pass these vectors as input to the array.
-#  4 rows,2 columns and 3 arrays
-class_data &lt;- data.frame (studentid  = c(101, 102, 104, 105, 106),
+<pre class="text"><code>class_data &lt;- data.frame (studentid  = c(101, 102, 104, 105, 106),
                   gender = c(&quot;Female&quot;, &quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;),
                   test1 = c(98, 82, 85, 97, 92),
                   mathmajor = c(1, 0, 0, 1, 1)
@@ -554,8 +568,9 @@ character values).</p>
 <div id="section-data-indexing" class="section level2">
 <h2>Data Indexing</h2>
 <p>Now that we know about data types and data structures, we can now
-talk about how to access specific values/elements inside of a data
-structure. This process is also referred to as data indexing.</p>
+talk about how to access specific values or elements inside of a data
+structure. This process is also referred to as <em>data
+indexing</em>.</p>
 <div id="section-indexing-for-vectors" class="section level3">
 <h3>Indexing for Vectors</h3>
 <p>Vectors are 1 dimensional so if we need to access a certain
@@ -689,8 +704,8 @@ the most.</p>
 </div>
 <div id="section-indexing-for-data-frames" class="section level3">
 <h3>Indexing for Data Frames</h3>
-<p>Yay! We made it to the portion of this module where we will learn how
-to index and access data within data frames. Let’s use the data frame we
+<p>We made it to the portion of this module where we will learn how to
+index and access data within data frames. Let’s use the data frame we
 created earlier in the example below.</p>
 <pre class="r"><code>class_data &lt;- data.frame (studentid  = c(101, 102, 104, 105, 106),
                   gender = c(&quot;Female&quot;, &quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;),
@@ -733,8 +748,8 @@ class_data</code></pre>
 </div>
 <p>Please be careful if you alter data and save it back into the
 original data frame (like we did above) because the assignment operator
-<code>&lt;-</code> can at times serve as a save function. If you wanted
-to change the colnames but save this updated data frame as a differently
+<code>&lt;-</code> will overwrite the original object. If you wanted to
+change the colnames but save this updated data frame as a differently
 named object, we can achieve this by saving the changed data frame to
 different named data frame.</p>
 <p>Let’s take the recently altered <code>class_data</code> data frame
@@ -770,10 +785,14 @@ has the updated column names (<code>id</code>, <code>sex</code>,
 class="section level4">
 <h4>Accessing specific elements of a data frame</h4>
 <p>Since data frames are 2 dimensional structures, we can access
-specific element(s) within a data frame by specifying the rows and/or
-column.</p>
+specific elements within a data frame by specifying the rows and
+columns.</p>
 <p>Let’s access the <code>test1</code> grade for <code>studentid</code>
-104 using the data frame from our example.</p>
+104 using the data frame from our example. Since we know this is the
+third row and third column, we can access this value by using
+<code>class_data_raw[3, 3]</code>. Note that we index a data frame using
+brackets <code>[r,c]</code> where <code>r</code> and <code>c</code> are
+the row and column numbers, respectively.</p>
 <pre class="r"><code>class_data_raw[3, 3]</code></pre>
 <pre><code>## [1] 85</code></pre>
 <p>We can also access multiple values as well. Let’s retrieve the
@@ -800,10 +819,10 @@ the data frame.</p>
 </div>
 <div id="section-special-data-type-factors" class="section level2">
 <h2>Special Data Type: Factors</h2>
-<p>Before we close out this sub module, there are two additional topics
-we wanted to cover that don’t fit neatly into the basic framework
-outlined above when it comes to data considerations but will be helpful
-for when we get into data wrangling.</p>
+<p>Before we close out this module, there are two additional topics we
+wanted to cover that don’t fit neatly into the basic framework outlined
+above when it comes to data considerations but will be helpful for when
+we get into data wrangling.</p>
 <p>The first special topic is understanding factors.</p>
 <p>When discussing data types earlier, we noted the following as the
 four basic data types:</p>
@@ -813,17 +832,15 @@ four basic data types:</p>
 <li>Character</li>
 <li>Logical</li>
 </ul>
-<p>When working with education-related data in R, you will also be
-working with a specific data type called factors. Factors are a special
-case of character variables that represent categorical variables. For
-example, you will be working with demographic data that often contains
-categorical variables such as sex or race/ethnicity. If you are working
-with a data set, you may have a sex categorical variable that may have a
-limited number of values (e.g., female, male). This is different from a
-data set with a variable (or column) of names as a column of names will
-have numerous different possibilities to where this variable would not
-be considered a categorical variables (or factor) and is instead just
-considered a character variable.</p>
+<p>When you use R for analyzing education data, you’ll often deal with a
+data type known as <code>factors</code>. Factors are a type of character
+variable used to represent categories. These categories have a limited
+number of values, like ‘female’ or ‘male’. For example, demographic data
+often includes categories such as gender or race. However, this is
+different from a column of student names in a dataset. The column of
+student names can have many unique values, so it’s not considered a
+category (or factor). Instead, it’s just a regular character
+variable.</p>
 <p>We can create a factor variable using <code>factor()</code>.</p>
 <pre class="r"><code>classification &lt;- factor(c(&quot;freshman&quot;, &quot;sophomore&quot;, &quot;junior&quot;, &quot;senior&quot;))
 classification</code></pre>
@@ -834,8 +851,8 @@ classification</code></pre>
 <pre><code>##  Factor w/ 4 levels &quot;freshman&quot;,&quot;junior&quot;,..: 1 4 2 3</code></pre>
 <p>In the output above, you can see that R tells us that the object
 called <code>classification</code> is a factor with four levels. When
-you create factors in R, you automatically defines the factor levels
-based on alphabetical order. As you can see in the output, R is labeling
+you create factors, R automatically defines the factor levels based on
+alphabetical order. As you can see in the output, R is labeling
 <code>freshman</code> as level 1, <code>sophomore</code> as level 4,
 <code>junior</code> as level 2, and <code>senior</code> as level 3.</p>
 <p>The ordering of levels in this case is not intuitive so let’s go
@@ -864,6 +881,10 @@ str(school_type)</code></pre>
 <pre class="r"><code>school_type &lt;- as.factor(school_type)
 str(school_type)</code></pre>
 <pre><code>##  Factor w/ 3 levels &quot;charter&quot;,&quot;private&quot;,..: 2 3 1</code></pre>
+<p>Let’s revise the the order of the levels of the factor
+<code>school_type</code> so that public is first, private is second, and
+charter is third.</p>
+<pre class="r"><code>school_type &lt;- factor(school_type, levels = c(&quot;public&quot;, &quot;private&quot;, &quot;charter&quot;))</code></pre>
 <p>Yay! Now you know about factors :)</p>
 </div>
 </div>
@@ -923,8 +944,12 @@ that can occur in R.</p>
 <td align="left">x AND y</td>
 </tr>
 <tr class="even">
-<td align="left"><code>isTrue(x)</code></td>
+<td align="left"><code>isTRUE(x)</code></td>
 <td align="left">test if <code>x</code> is TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>isFALSE(x)</code></td>
+<td align="left">test if <code>x</code> is FALSE</td>
 </tr>
 </tbody>
 </table>
@@ -952,26 +977,27 @@ list1 == list2</code></pre>
 and <code>list1</code> are equal values, the second element are not
 equal (remember, R is case sensitive), third element is not equal, and
 the fourth element is equal.</p>
-<p>There’s a lot we can do with logical comparisons but we wanted to
-introduce you to logical comparisons and operators as they will come in
-handy when we begin to wrangle our data in the next module.</p>
+<p>There’s a lot more we can do with logical comparisons, but we wanted
+to simply introduce you to logical comparisons and operators as they
+will come in handy when we begin to wrangle our data in the next
+module.</p>
 </div>
 <div id="section-tasks" class="section level2">
 <h2>Tasks</h2>
 <p>Now that you are more acquainted with data types and structures,
 let’s engage in a task! Please follow the steps outlined below.</p>
 <ol style="list-style-type: decimal">
-<li>Open the R script you created in the previous submodule
+<li>Open the R script you created in the previous module
 (your-lastname-R-task-1-1) that is saved in your project folder for this
 course. You should have code written to load the tidyverse and psych
-libraries and to read in your hsb dataset.Go ahead and run this script
-to make sure your code works (we are going to pick up where we left off
-last time).</li>
+libraries and to read in your <code>hsb</code> dataset.Go ahead and run
+this script to make sure your code works (we are going to pick up where
+we left off last time).</li>
 <li>Using comments within R, write notes on the names for each of the
-variables in the hsb dataset.</li>
+variables in the <code>hsb</code> dataset.</li>
 <li>Using comments, write notes on the types of data for each variable
-in the hsb dataset.</li>
-<li>Ensure the following 4 variables are classified as factors: gender,
+in the <code>hsb</code> dataset.</li>
+<li>Ensure the following 5 variables are classified as factors: gender,
 race, ses, schtype, prog. Save these changes to another data frame
 object called <code>hsbclean</code>.</li>
 <li>Change the following column names and save these changes to another
@@ -983,15 +1009,16 @@ data frame object called <code>hsbclean</code>.</li>
 <li>socst <code>-&gt;</code> socialst</li>
 </ul>
 <ol start="6" style="list-style-type: decimal">
-<li>Save R script as lastname-R-task3</li>
-<li>Read the brief resource in Canvas titled:
-datawrangling-r-cheat-sheet.pdf</li>
+<li>Save R script as lastname-R-task-1-2</li>
+<li>Read the brief resource in Canvas titled: <a
+href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">datawrangling-r-cheat-sheet.pdf</a></li>
 </ol>
 <div id="section-note" class="section level4">
 <h4>Note:</h4>
 <p>You may run into issues in completing the tasks listed above. Please
-refer to this document as well as the previous Learnr documents. Google
-is also a great resource when you run into issues in R.</p>
+refer to this document as well as the previous tutorials, Please see the
+troubleshooting document linked through Canvas—and also linked <a
+href="https://docs.google.com/document/d/14Jc-KG3m5k1BvyKWqw7KmDD21IugU5nV5edfJkZyspY/edit?usp=drive_web&amp;ouid=110969489876425298430">here</a>.</p>
 </div>
 <div id="section-reflect" class="section level3">
 <h3>Reflect</h3>
@@ -1126,7 +1153,7 @@ learnr:::store_exercise_cache(structure(list(label = "log_vector", global_setup 
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
 "library(tidyverse)", "gradethis::gradethis_setup()"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "log_vector", code = "# Logical atomic vector\nlog_vector <- c(TRUE, FALSE, T, F)\nlog_vector", 
+    list(label = "log_vector", code = "# Logical atomic vector\nlog_vector <- c(TRUE, FALSE, TRUE, FALSE)\nlog_vector", 
         opts = list(label = "\"log_vector\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
@@ -1149,8 +1176,8 @@ learnr:::store_exercise_cache(structure(list(label = "log_vector", global_setup 
         exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, stage = NULL, ..., \n    solution_eval_fn = NULL) \n{\n    (utils::getFromNamespace(\"check_exercise\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, stage = stage, ...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
         label = "log_vector", exercise = TRUE, code = c("# Logical atomic vector", 
-        "log_vector <- c(TRUE, FALSE, T, F)", "log_vector"), 
-        out.width.px = 624, out.height.px = 384, params.src = "log_vector, exercise = TRUE", 
+        "log_vector <- c(TRUE, FALSE, TRUE, FALSE)", "log_vector"
+        ), out.width.px = 624, out.height.px = 384, params.src = "log_vector, exercise = TRUE", 
         fig.alt = NULL, fig.num = 0, exercise.df_print = "paged"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
@@ -1296,7 +1323,7 @@ learnr:::store_exercise_cache(structure(list(label = "array", global_setup = str
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
 "library(tidyverse)", "gradethis::gradethis_setup()"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "array", code = "#  4 rows,2 columns and 3 arrays\narray_example <- array(c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19), dim = c(4,2,3))\narray_example\n", 
+    list(label = "array", code = "#  4 rows,2 columns and 3 arrays\narray_example <- array(c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19), dim = c(4, 2, 3))\narray_example\n", 
         opts = list(label = "\"array\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
@@ -1319,7 +1346,7 @@ learnr:::store_exercise_cache(structure(list(label = "array", global_setup = str
         exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, stage = NULL, ..., \n    solution_eval_fn = NULL) \n{\n    (utils::getFromNamespace(\"check_exercise\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, stage = stage, ...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
         label = "array", exercise = TRUE, code = c("#  4 rows,2 columns and 3 arrays", 
-        "array_example <- array(c(1,2,3,4,5,6, 60, 18, 12, 13, 14, 19), dim = c(4,2,3))", 
+        "array_example <- array(c(1, 2, 3, 4, 5, 6, 60, 18, 12, 13, 14, 19), dim = c(4, 2, 3))", 
         "array_example", ""), out.width.px = 624, out.height.px = 384, 
         params.src = "array, exercise = TRUE", fig.alt = NULL, 
         fig.num = 0, exercise.df_print = "paged"), engine = "r", 
@@ -1339,7 +1366,7 @@ learnr:::store_exercise_cache(structure(list(label = "dataframe", global_setup =
 "knitr::opts_chunk$set(echo = FALSE)", "tutorial_options(exercise.eval = TRUE)", 
 "library(tidyverse)", "gradethis::gradethis_setup()"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "dataframe", code = "# pass these vectors as input to the array.\n#  4 rows,2 columns and 3 arrays\nclass_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),\n                  gender = c(\"Female\", \"Female\", \"Male\", \"Female\", \"Male\"),\n                  test1 = c(98, 82, 85, 97, 92),\n                  mathmajor = c(1, 0, 0, 1, 1)\n                  )\nclass_data\n", 
+    list(label = "dataframe", code = "class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),\n                  gender = c(\"Female\", \"Female\", \"Male\", \"Female\", \"Male\"),\n                  test1 = c(98, 82, 85, 97, 92),\n                  mathmajor = c(1, 0, 0, 1, 1)\n                  )\nclass_data\n", 
         opts = list(label = "\"dataframe\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
@@ -1361,8 +1388,7 @@ learnr:::store_exercise_cache(structure(list(label = "dataframe", global_setup =
         max.print = 1000, exercise.eval = TRUE, exercise.timelimit = 60, 
         exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, stage = NULL, ..., \n    solution_eval_fn = NULL) \n{\n    (utils::getFromNamespace(\"check_exercise\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, stage = stage, ...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
-        label = "dataframe", exercise = TRUE, code = c("# pass these vectors as input to the array.", 
-        "#  4 rows,2 columns and 3 arrays", "class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),", 
+        label = "dataframe", exercise = TRUE, code = c("class_data <- data.frame (studentid  = c(101, 102, 104, 105, 106),", 
         "                  gender = c(\"Female\", \"Female\", \"Male\", \"Female\", \"Male\"),", 
         "                  test1 = c(98, 82, 85, 97, 92),", "                  mathmajor = c(1, 0, 0, 1, 1)", 
         "                  )", "class_data", ""), out.width.px = 624, 
@@ -1510,7 +1536,7 @@ learnr:::store_exercise_cache(structure(list(label = "index_matrix2", global_set
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","glue","gradethis","graphics","grDevices","grid","gtable","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.2","2.1-0","4.3.1","4.3.1","0.6.33","1.1.2","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.3","1.6.2","0.2.14","4.3.1","4.3.1","4.3.1","0.3.3","1.1.3","0.5.7","1.6.4","1.6.13","0.1.4","1.8.8","1.45","1.3.2","0.11.5","1.0.4","1.9.2","2.0.3","4.3.1","0.12","0.5.0","1.9.0","2.0.3","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.2","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.41","1.8-4","2.3.8"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","compiler","datasets","digest","dplyr","ellipsis","evaluate","fansi","fastmap","fontawesome","forcats","generics","ggplot2","glue","gradethis","graphics","grDevices","grid","gtable","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.1","0.6.1","1.0.8","2.3.1","3.6.1","2.1-0","4.3.1","4.3.1","0.6.33","1.1.3","0.3.2","0.23","1.0.6","1.1.1","0.5.2","1.0.0","0.1.3","3.4.4","1.6.2","0.2.14","4.3.1","4.3.1","4.3.1","0.3.4","1.1.3","0.5.7","1.6.4","1.6.11","0.1.4","1.8.7","1.45","1.3.1","0.11.5","1.0.4","1.9.3","2.0.3","4.3.1","0.12","0.5.0","1.9.0","2.0.3","1.2.1","1.0.2","2.5.1","1.0.11","2.1.4","1.1.1","2.25","2.0.4","0.15.0","0.4.8","1.2.1","1.8.0","4.3.1","1.8.3","1.5.1","3.2.1","1.3.0","1.2.0","2.0.0","0.2.0","4.3.1","0.4.0","1.2.4","4.3.1","0.6.5","2.5.2","0.40","1.8-4","2.3.7"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>

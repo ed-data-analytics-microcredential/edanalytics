@@ -480,7 +480,7 @@ levels(gss$partyid)
 
 Now that you are more acquainted with basic data manipulation, process in checking data, and advanced data manipulation, let's engage in a task! Please follow the steps outlined below.
 
-1. Open the R script you created in the previous module (lastname-R-task3) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your `hsb` dataset. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
+1. Open the R script you created in the previous module (lastname-R-task-1-2) that is saved in your project folder for this course. You should have code written to load the tidyverse and psych libraries and to read in your `hsb` dataset. Go ahead and run this script to make sure your code works (we are going to pick up where we left off last time).
 2. Use the processes outlined above to check your data.
 - How much missing data is in the data set?
 - Check to ensure all variables that should be factors are factors (if not, make them factors)
@@ -496,7 +496,7 @@ Now that you are more acquainted with basic data manipulation, process in checki
 - What's the difference in the science scores for Hispanic females enrolled in public schools vs. Hispanic females enrolled in private schools?
 - Create a new data frame called `hsbprivate` which contains observations of students who attend private schools
 - Save your data as a new data frame called `hsbtransformed`
-6. Save R script as lastname-R-task4
+6. Save R script as lastname-R-task-2-1
 7. Read the brief resource: [datawrangling-r-cheat-sheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 ### Note

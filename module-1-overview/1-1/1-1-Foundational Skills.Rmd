@@ -358,7 +358,7 @@ Please follow the steps outlined below.
 
 1.  Create a new R script (your-last-name-R-task-1-1) and save in your project folder for this course. If you haven't created a project yet, check out the instructions  on how to do so in the [first tutorial](https://ed-analytics.shinyapps.io/1-1-foundational-skills/#section-projects)
 2.  Load the tidyverse and psych packages in your R script
-3.  Find the hsb dataset for this course named [hsb-data.csv](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv) save it to the folder your project is it. 
+3.  Find the hsb dataset for this course named [hsb.csv](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv) save it to the folder your project is it. 
 4. Read this data set into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb`.
 5.  Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.
 6.  Using comments within R, write a few notes about the results produced from the `describe()` function. In addition, please make sure you have left brief comments on all written code within this file---future you will thank you later!
