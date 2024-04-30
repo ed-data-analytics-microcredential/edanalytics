@@ -455,13 +455,14 @@ below.</p>
 (lastname-R-task-2-1) that is saved in your project folder for this
 course. Go ahead and run this script to make sure your code works (we
 are going to pick up where we left off last time).</li>
-<li>Read in the dataset called <code>hsb_future</code> located in your R
-project. This dataset is a brief one-question survey students in the
-<code>hsb</code> dataset completed. The question in this survey asked if
-students had future plans to attend college or trade school.
-<code>1</code> indicates the student plans on attending college or trade
-school and<code>0</code> indicates no plans of attending college or
-trade school. Go ahead and merge this dataset with the
+<li>Read in the dataset called <a
+href="https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb_future.csv">hsb_future.csv</a>
+located in your R project. This dataset is a brief one-question survey
+students in the <code>hsb</code> dataset completed. The question in this
+survey asked if students had future plans to attend college or trade
+school. <code>1</code> indicates the student plans on attending college
+or trade school and<code>0</code> indicates no plans of attending
+college or trade school. Go ahead and merge this dataset with the
 <code>hsbtransformed</code> and save as a new dataframe called
 <code>hsb_join</code>.</li>
 <li>Using the <code>hsb_join</code>dataframe, make this dataset longer
@@ -516,11 +517,11 @@ session$onSessionEnded(function() {
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz1-1", question = structure("Is the gss dataset considered tidy?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_a2615c9", 
+"character")), answers = list(structure(list(id = "lnr_ans_be16167", 
     option = "Yes!", value = "Yes!", label = structure("Yes!", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job! This data follows the 3 rules of tidy data", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_58580ba", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_26328b6", 
     option = "No.", value = "No.", label = structure("No.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -530,23 +531,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz1-1-answer", question = "quiz1-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1135743395.97113, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 755661147.148118, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("Why is this dataset considered untidy?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_26fdcd5", 
+"character")), answers = list(structure(list(id = "lnr_ans_c614fb8", 
     option = "It violates rule 1", value = "It violates rule 1", 
     label = structure("It violates rule 1", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job! Columns <code>wk1<\u002fcode> - <code>wk76<\u002fcode> should be a single column as the weeks in this dataset are a single variable.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c731c5b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9073b72", 
     option = "It violates rule 2", value = "It violates rule 2", 
     label = structure("It violates rule 2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4320006", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b23bde2", 
     option = "It violates rule 3", value = "It violates rule 3", 
     label = structure("It violates rule 3", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -557,7 +558,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Try reviewing the rules and dataset one more time :)", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz2-1-answer", question = "quiz2-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 82577981.9615466, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 218717834.398152, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
