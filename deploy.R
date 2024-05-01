@@ -12,5 +12,5 @@ deployApp("./module-2-wrangling/2-1", appName = "2-1-data-wrangling", account = 
 deployApp("./module-2-wrangling/2-2", appName = "2-2-tidy-data", account = "ed-analytics")
 
 deployApp("./module-3-descriptive-stats/3-1", appName = "3-1-stats-terms", account = "ed-analytics")
-deployApp("./module-3-descriptive-stats/3-2", appName = "3-2-statistics", account = "ed-analytics")
+#deployApp("./module-3-descriptive-stats/3-2", appName = "3-2-statistics", account = "ed-analytics")
 
