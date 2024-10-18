@@ -3,18 +3,16 @@
 **Authors**: Louis Rocconi (lrocconi@utk.edu), Joshua Rosenberg, & Sarah Narvaiz  
 The University of Tennessee, Knoxville
 
+## Overview:
 
-## Project Overview:
-
-This project aims to develop and deliver a microcredential program, "Getting Started in Educational Data Analytics Using R", through the College of Education, Health, and Human Sciences (CEHHS) at the University of Tennessee, Knoxville (UTK).
+*Educational Data Analytics Using R* is a self-aced resource created by a team at the College of Education, Health, and Human Sciences (CEHHS) at the University of Tennessee, Knoxville (UTK).
 
 ### Target Audience:
 
 - K-12 and higher education leaders and analysts
 - Undergraduate and graduate students in CEHHS and across UTK interested in learning R and data analytics 
 - Individuals seeking an introduction to data analytics, R, and its applications in education
-
-**No Prior Knowledge Required**: The program assumes no prior knowledge of programming or statistics, making it accessible to a broader audience.
+- **No Prior Knowledge Required**: The program assumes no prior knowledge of programming or statistics, making it accessible to a broader audience.
 
 ### Learning Experience:
 
