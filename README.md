@@ -1,7 +1,6 @@
 # Educational Data Analytics Using R
 
-**Authors**: Louis Rocconi (lrocconi@utk.edu), Joshua Rosenberg, & Sarah Narvaiz  
-The University of Tennessee, Knoxville
+Louis Rocconi (lrocconi@utk.edu), Joshua Rosenberg, & Sarah Narvaiz, The University of Tennessee, Knoxville
 
 ## Overview:
 
