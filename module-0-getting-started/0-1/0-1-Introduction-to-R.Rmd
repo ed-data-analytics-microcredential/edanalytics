@@ -41,7 +41,7 @@ The R Project for Statistical Computing (<https://www.r-project.org>) supports a
 
 **Why learn R?**
 
--   R is free and open-source. Because it is free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can can audit the code and edit any bugs (i.e., there is no black box).
+-   R is free and open-source. Because it is free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can audit the code and edit any bugs (i.e., there is no black box).
 -   R is the *lingua franca* of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go.
 -   R has beautiful data visualization capabilities. We will learn the basics of making graphs in R in this microcredential.
 -   R has a great community! There are many talented R programmers that have contributed helpful R packages. In addition, there are great R mailing lists and Stack Overflow (<https://stackoverflow.com>) where you can find help using R.
