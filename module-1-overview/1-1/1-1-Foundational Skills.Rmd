@@ -19,71 +19,11 @@ The purpose of this tutorial is to get you setup with what [Estrellado and colle
 
 No two data science projects are the same.
 Even so, we’ve created a general framework for you to use as a foundation and as a set of concepts to help you work through the walkthroughs in these tutorials.
-The four core concepts we will use to build our framework are:
+The three core concepts we will use to build our framework are:
 
--   Projects
 -   Packages
 -   Functions
 -   Data
-
-## Projects
-
-### Background
-
-One of the first steps of every workflow should be to set up a “Project” within RStudio.
-A Project is the home for all of the files, images, reports, and code that are used in any given project.
-Note that when we capitalize the word “Project,” we’re referring to a specific setup within RStudio, while we refer to general projects that you might work on with the lowercase “project.”
-
-We use Projects because they create a self-contained folder for a given analysis in R.
-This means that if you want to share your Project with a colleague, they will not have to reset file paths (or even know anything about file paths!) in order to re-run your analysis.
-
-Furthermore, even if the only person you ever collaborate with is a future version of yourself, using a Project for each of your analyses will mean that you can move the Project folder around on your computer, or even move it to a new computer, and remain confident that the analysis will run in the future (at least in terms of file path structures).
-
-### Setting Up Your Project
-
-R Projects play a critical role in managing files in R. Therefore, we've included instructions on how to create an R Project. Creating a Project is one of the first steps in working on an R-based data science project in RStudio.
-
-To create a Project you will need to first open RStudio.
-
-From within RStudio, follow these steps:
-
--   Click on “File”
--   Select “New Project”
-
-```{r, out.width="60%"}
-knitr::include_graphics("images/project-window.png")
-```
-
--   Choose “New Directory”
--   Click on “New Project”
--   Enter your Project’s name in the box that says, “Directory name.” We recommend choosing a Project name that helps you remember that this is a project that involves data science in education. Avoid using spaces in your Project name, and instead, separate words with hyphens or underscore characters.
--   Choose where to save your Project by clicking on “Browse” next to the box labeled "Create project as a subdirectory of:" If you are just using this to learn and test out creating a Project, consider placing it in your downloads or another temporary directory so that you remember to remove it later.
--   Click “Create Project”
-
-You've done it!
-There are a number of benefits to projects in RStudio:
-- They allow you to open and use related files.
-- They also allow you to easily switch between the things you are working on.
-- Last, they make it easy to collaborate.
-
-### Quiz Questions
-
-Let's reflect with a short question.
-
-```{r letter-a, echo=FALSE}
-question("Which of the following is not a benefit of creating a Project in RStudio?",
-  answer("Projects allow you to open and use related files"),
-  answer("Projects allow you to easily switch between the things you are working on"),
-  answer("Projects provide ready-made templates for analyses", correct = TRUE),
-  answer("Projects make it easy to collaborate")
-)
-```
-
-To close an R Project, click FILE in the top right corner of your screen and scroll down to "Close Project".
-
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/NNbYaNc421s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-<!-- -->
 
 ## R Packages
 
@@ -98,8 +38,8 @@ More on this in the video below where you will learn about packages, how to inst
 
 ![](https://youtu.be/8m2X9AVtVCg)
 
-As a brief note, when you load RStudio, you can still use the default language which is called base R.
-Base R is already pre-loaded when you open RStudio.
+As a brief note, when you load Positron, you can still use the default language which is called base R.
+Base R is already pre-loaded when you run an R instance.
 For example, you can use the following line of code below which is considered Base R.
 
 ```{r  baseR, exercise = TRUE}
@@ -124,21 +64,10 @@ install.packages("tidyverse")
 
 Please remember you only need to install R packages **once** in your computer's lifetime, you need quotations around the package name when you use `install_package()`, and R is **case sensitive** so be careful in how you type the name of the package.
 
-Alternatively, you can click the **Install** button in the Packages tab in lower right pane of RStudio and type of the name of the package you want to install (e.g., `tidyverse`) and click Install.
-See figures below:
-
-```{r, out.width="100%"}
-knitr::include_graphics("images/packages_window1.PNG")
-```
-
-```{r, out.width="50%", fig.align='center'}
-knitr::include_graphics("images/packages_window2.PNG")
-```
-
 ### Loading R Packages
 
 Now that we covered how to install R packages onto your computer (within R), anytime you want to use a package, you will need to load it.
-While you only need to install an R package once in your computer's lifetime, anytime you want to use an R package in any R file/script, you will need to load it every time.
+While you only need to install an R package once in your computer's lifetime, anytime you want to use an R package in any R file/script, you will need to load it (once per file).
 In order to do this, you will use the `library()` function.
 
 For example, if you wanted to load the package `tidyverse` into your R environment, you would use the following line of code.
@@ -166,7 +95,7 @@ If you would like additional information on packages within R, you can watch the
 ### Your Turn: Install the following packages in R
 
 Let's practice installing packages in R.
-Open up RStudio and install the following packages.
+Open up Positron and install the following packages.
 We will use these packages throughout the course.
 
 -   psych
@@ -262,7 +191,7 @@ We listed the common data files that are supported by RStudio below
 -   sav
 -   dta
 
-These data files are uploaded using code opposed to the 'point and click' procedure.
+These data files are uploaded using code as opposed to the 'point and click' procedure.
 The different file types listed above can be read-in (aka uploaded) to RStudio using different functions found in different packages (perhaps you can see the order of operations we've built thus far).
 We've provided some examples below.
 
@@ -291,11 +220,11 @@ nameyourdataset <- read_dta('nameoffile.dta')
 
 ### The High School and Beyond Data
 
-For this course, we will be using data from the High School and Beyond (HSB) survey conducted by the National Center for Education Statistics.
+For this tutorial, we will be using data from the High School and Beyond (HSB) survey conducted by the National Center for Education Statistics.
 We will be using a sample of the HSB data set which contains data from 200 randomly sampled high school students with 11 variables.
 The HSB data can be found in your R project under the 'data' folder and is labeled hsb.csv. The data can also be downloaded by clicking [here](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv).
 The codebook, or data dictionary, for the data set can also be found in the 'data' folder and is labeled [hsb-codebook.txt](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb-codebook.txt).
-We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this course.
+We provided the codebook below in case you wanted to look, but you may need to refer to the .txt file as we work our way through this tutorial.
 
 **HSB Codebook**:
 
@@ -353,16 +282,16 @@ quiz(caption = "Quiz - Working with Packages",
 
 ## Tasks
 
-Now that you are more acquainted with R, RStudio, and the Foundational Skills framework, let's engage in a task!
+Now that you are more acquainted with R, Positron, and the Foundational Skills framework, let's engage in a task!
 Please follow the steps outlined below.
 
-1.  Create a new R script (your-last-name-R-task-1-1) and save in your project folder for this course. If you haven't created a project yet, check out the instructions  on how to do so in the [first tutorial](https://ed-analytics.shinyapps.io/1-1-foundational-skills/#section-projects)
+1.  Create a new R script (your-last-name-R-task-tutorial-2) and save in your course folder for this week.
 2.  Load the tidyverse and psych packages in your R script
-3.  Find the hsb dataset for this course named [hsb.csv](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv) save it to the folder your project is it. 
-4. Read this data set into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb` using the assignment operator. If this is successfully done, you will see an object in your environment pane within RStudio called `hsb`.
+3.  Find the hsb dataset for this course named [hsb.csv](https://raw.githubusercontent.com/ed-data-analytics-microcredential/edanalytics/main/data/hsb.csv) save it to this week's folder. 
+4. Read this data set into R within your script using the `read_csv()` function within tidyverse. Assign the dataset to an object called `hsb` using the assignment operator. If this is successfully done, you will see an object in your environment pane within Positron called `hsb`.
 5.  Use the `describe()` function within the psych library and type the name of your dataset within the parenthesis and press run.
 6.  Using comments within R, write a few notes about the results produced from the `describe()` function. In addition, please make sure you have left brief comments on all written code within this file---future you will thank you later!
-7. Upload this completed file to receive credit!
+7. Upload this completed file to Canvas to receive credit!
 
 #### Note:
 

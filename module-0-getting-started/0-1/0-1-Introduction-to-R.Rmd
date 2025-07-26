@@ -3,7 +3,7 @@ title: "Introduction to R Tutorial"
 output: learnr::tutorial
 runtime: shiny_prerendered
 description: >
-  In this tutorial, we will learn about R and how to set up R and RStudio on 
+  In this tutorial, we will learn about R and how to set up R and the Positron IDE on 
   your computer. We will also demonstrate basic R functionality and how to 
   install R packages from CRAN. 
 ---
@@ -31,8 +31,7 @@ In this tutorial, we learn about R and help you set up your computer to use R.
 -   Why R?
 -   What can R do?
 -   Install R on your computer
--   Install the RStudio IDE
--   Install the `tidyverse` R package
+-   Install the Positron IDE
 
 ## Why R?
 
@@ -43,7 +42,6 @@ The R Project for Statistical Computing (<https://www.r-project.org>) supports a
 
 -   R is free and open-source. Because it is free, everyone has access to it! Because it is open-source, anyone can add functionality to R in the form of packages. Also, statisticians and computer scientist can audit the code and edit any bugs (i.e., there is no black box).
 -   R is the *lingua franca* of statistics. In other words, it is the most common data analysis tool. Since R is the main computing environment for statistical analysis, both established and new methods in statistics, data mining, machine learning, and psychometrics are often employed using R, so there is no need for specialized software. Just learn R and you are ready to go.
--   R has beautiful data visualization capabilities. We will learn the basics of making graphs in R in this microcredential.
 -   R has a great community! There are many talented R programmers that have contributed helpful R packages. In addition, there are great R mailing lists and Stack Overflow (<https://stackoverflow.com>) where you can find help using R.
 
 **R you ready?**
@@ -172,29 +170,37 @@ Did you learn anything that might be useful in the type of work you do?
 Great!
 Now that we know a little bit about R and what it can do, let's learn how to install the software onto your computer.
 
-To be successful in this course, you will need to download and install two required software programs on your computer: R and RStudio.
+To be successful in this course, you will need to download and install two required software programs on your computer: R and Positron.
 Don't worry, both are free!
 The first software you will need to install is R which the the **programming language** we will be using in this course.
 R is available for multiple computer operating systems such as Mac OS, Windows, and Linux.
-RStudio is the **software program** that makes R (the programming language) easy to use.
-As a recap, R is the programming language we will be using and RStudio is the software program/environment we use R in.
+Positron is the **software program** that makes R (the programming language) easy to use.
+As a recap, R is the programming language we will be using and Positron is the software program/environment we can use R in.
 
-We will first cover how to install R, the programming language, then we will cover how to install RStudio.
+We will first cover how to install R, the programming language, then we will cover how to install Positron.
 
-You can navigate to the official R and RStudio sites to download and install:
+You can navigate to the official R and Positron sites to download and install:
+
 -[R](https://cran.rstudio.com/) 
--[RStudio](https://posit.co/download/rstudio-desktop/).
+<br>
+-[Positron](https://positron.posit.co/download.html)
+
 Please watch the video below on how to download and install R.
 
 ### Video: How to install R
-<!--- Migrate this to our own site rather than Anthony's -->
-For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
 
 
-![](https://vimeo.com/203516510)
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 83.59133126934985%; height: 0;"><iframe src="https://www.loom.com/embed/8bd24ca9af17478aac9ca1ac9abc4695?sid=364c6a65-344c-456d-90c9-8f766ec539ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
 
 
-For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
+<br>
+How to update your R installation without losing your packages: [Blogpost](https://www.r-bloggers.com/2015/06/how-to-upgrade-r-without-losing-your-packages/)
+
+For more information and help installing R or Positron, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
 
 
 ### Test your knowledge
@@ -208,116 +214,116 @@ quiz(caption = "Quiz - Installing R",
 )
 ```
 
-## Install RStudio
+## Install Positron
 
 Great!
-Now that you have successfully downloaded and installed R, let's walk through how to download and install RStudio onto your computer.
+Now that you have successfully downloaded and installed R, let's walk through how to download and install Positron onto your computer.
 
-### How to install RStudio
+### How to Install Positron
 
-As we briefly described, RStudio is an Integrated Development Environment for R.
+As we briefly described, Positron is an Integrated Development Environment for R.
 What does that mean?
-Well, if you think of R as a language, which it is, you can think of RStudio as a program that helps you write and work in the language.
-RStudio makes programming in R much easier, and we suggest that you use it!
+Well, if you think of R as a language, which it is, you can think of Positron as a program that helps you write and work in the language.
+Positron makes programming in R much easier, and we suggest that you use it!
 
-You can navigate to the official RStudio site to download and install [RStudio](https://posit.co/download/rstudio-desktop/)
+You can navigate to the official Positron site to download and install [Positron](https://positron.posit.co/download.html)
 
-Please watch the video below on how to download and install RStudio.
+Please watch the video below on how to download and install Positron.
 
-![](https://vimeo.com/203516968)
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 83.20493066255777%; height: 0;"><iframe src="https://www.loom.com/embed/04f9d7275ca74224ad958787e759d4fb?sid=bc822164-a97f-4e91-bb95-23c21ee7c296" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
 
-<!--- Migrate this to our own site rather than Anthony's -->
-
-For a step-by-step tutorial on installing R and RStudio, please see this [resource](https://bookdown.org/aschmi11/RESMHandbook/r-basics.html)
-
-For more information and help installing R or RStudio, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
+For more information and help installing R or Positron, please contact [UT Research Computing Support](https://oit.utk.edu/research/research-software/r-language/).
 
 ### Test your knowledge
 
 ```{r quiz3, echo=FALSE}
-quiz(caption = "Quiz - Install RStudio",
-  question("What is the RStudio?",
-    answer("An application that makes it easier to use R.", correct = TRUE, message = "RStudio organizes your workspace and makes it easier to write, use, and save R code. We will rely on the RStudio IDE in several tutorials."),
+quiz(caption = "Quiz - Install Positron",
+  question("What is Positron?",
+    answer("An application that makes it easier to use R.", correct = TRUE, message = "Positron organizes your workspace and makes it easier to write, use, and save R code. We will rely on the Positron IDE in several tutorials."),
     answer("An application that let's you use R without writing any code", message = "No, you'll still need to write code. And thank goodness! Code provides a reproducible record of your work, which is essential for data science."),
-    answer("A spreadsheet program like Microsoft Excel.", message = "No, RStudio is not a spreadsheet program like Microsoft Excel"),
-    answer("Another name for R", message = "R and RStudio are two separate things. R is a language, like English. Think of RStudio as a program that helps you use the language, kind of like how a word processing program helps you write in English."),
+    answer("A spreadsheet program like Microsoft Excel.", message = "No, Positron is not a spreadsheet program like Microsoft Excel"),
+    answer("Another name for R", message = "R and Positron are two separate things. R is a language, like English. Think of Positron as a program that helps you use the language, kind of like how a word processing program helps you write in English."),
     allow_retry = TRUE
   ),
-  question("Is RStudio free to download and use?",
-    answer("Yes!", correct = TRUE, message = "Like R, RStudio is free and open-source. There do exist professional versions of RStudio with enhanced features, but we will not rely on those features in these tutorials."),
-    answer("No.", message = "Like R, RStudio is free and open-source. There do exist professional versions of RStudio with enhanced features, but we will not rely on those features in these tutorials.")
+  question("Is Positron free to download and use?",
+    answer("Yes!", correct = TRUE, message = "Like R, Positron is free and open-source. There do exist professional versions of Positron with enhanced features, but we will not rely on those features in these tutorials."),
+    answer("No.", message = "Like R, Positron is free and open-source. There do exist professional versions of Positron with enhanced features, but we will not rely on those features in these tutorials.")
   ),
-  question("Do you need to install R if you already have RStudio?",
+  question("Do you need to install R if you already have Positron?",
     answer("Yes.", correct = TRUE),
-    answer("No.", message = "R does not come with RStudio; you need to install R separately.")
+    answer("No.", message = "R does not come with Positron; you need to install R separately.")
   )
 )
 ```
 
-## Getting Started with R and RStudio
+## Getting Started with R and Positron
 
 Great!
-Now that you have successfully installed R and RStudio onto your computer.
+Now that you have successfully installed R and Positron onto your computer.
 Let's take a little tour to get you familiar with the software.
 
-## RStudio Tour
+## Positron Tour and Customization
 
-<div class="notice">
-<b>Are you completing this tutorial as a part of a <i>microcredential</i>? If so, please read and complete the following.</b>
-</div>
+The videos below will help you familiarize yourself with and customize Positron.
 
-Before we begin, please save the project file in Canvas titled `microcred.Rproj` in this current module.
-Save this `.Rproj` file in the folder you would like to keep your course materials for this class.
+### R Sessions and R Scripts
 
-Once you have successfully saved the `.Rproj` file in your preferred location on your computer.
-Double click on the `.RProj` file to open up this file in RStudio (RStudio will automatically open when you double click the file).
+First, let's learn how to create an R session and R script in Positron.
+<br>
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 78.71720116618076%; height: 0;"><iframe src="https://www.loom.com/embed/81eccbdb0c4d4c53ac04a62ef11a5951?sid=528010c8-ad51-430f-b8f6-d1c113d773ee" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
+<br>
 
-The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
+### Themes and Extensions
+Next, let's customize Positron by choosing a theme and adding extensions.
+<br>
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 80.11869436201779%; height: 0;"><iframe src="https://www.loom.com/embed/9f46b1eb70654526be37a653ab52701c?sid=760d238d-0ed2-44f5-be43-30751df9d295" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
+<br>
 
-Please follow along as you work to complete the microcredential.
+### Positron Tour
+Finally, let's take a quick tour of the Positron IDE and its many features.
+<br>
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 82.82208588957054%; height: 0;"><iframe src="https://www.loom.com/embed/a2bc58e05c9f4b028f9ed26c8495972f?sid=2c95b3f9-3cb8-4e1b-97b4-5fa007cde2ee" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
+<br>
 
-![](https://youtu.be/x55FsvAbylQ)
+## Working Directories
 
-<div class="notice">
-<b>Are you completing this in a stand-alone manner (not as a part of a microcredential)? If so, simply view the file below</b>
-</div>
+We hope you enjoyed our virtual tour of Positron.
+The next thing we want to cover are working directories and folders.
+Both let Positron know where on your computer your saving your files or opening files from.
+These are important to use properly when creating R files/scripts (otherwise you will get errors messages because Positron doesn't know what file location you're working off of).
 
-The video below will give you a tour of the RStudio environment using the `intro to R. R` file.
-
-![](https://youtu.be/x55FsvAbylQ)
-
-## Working Directory and R Projects
-
-We hope you enjoyed our virtual tour of RStudio.
-The next thing we want to cover are working directories and R Projects.
-Both let RStudio know where on your computer your saving your files or opening files from.
-These are important to use and set up at the beginning when creating R files/scripts (otherwise you will get errors messages because RStudio doesn't know what file location you're working off of).
-
-The video below will give you a brief tutorial of setting your file location using a working directory or R Projects.
-
-![](https://youtu.be/bRi33zu8bdk)
-
-You may have already figured out that you don't need to use `getwd()` for the `intro to R` file you're using in RStudio right now since it's part of an R Project.
-Using R Projects can be advantageous since RStudio recognizes the location of all the files stored within an R Project.
-
-We will dig into more detail on R projects in the 1.2 Foundational Skills module.
-
-Pretty cool, huh?
-
-## Disable Save Workspace Image
-
-![](https://youtu.be/2TC7_yKCByE)
-
+The video below will give you a brief tutorial of setting your file location using a working directory or folder.
+<br>
+```{r, results='asis', echo=FALSE}
+cat('
+<div style="position: relative; padding-bottom: 77.92207792207792%; height: 0;"><iframe src="https://www.loom.com/embed/86a0ea4a6bd44b8b9392c2f71855ec9d?sid=434baa88-268b-4da5-9e42-aa6683021b4d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+')
+```
+<br>
 
 ## Tasks
 
-Now that you have R and RStudio installed on your machine and you have been acquainted with RStudio, we have provided a few tasks below for you to complete.
+Now that you have R and Positron installed on your machine and you have been acquainted with Positron, we have provided a few tasks below for you to complete.
 
-1.  Choose a preferred appearance theme for RStudio
-2.  Change the default setting that saves the workspace
-3.  Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523,052523.
-4.  Save the R script in the project folder for this course. Please name the script the following: lastname-R-task-0-1
-5.  Read [Torfs & Brauer (2014 A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) for the next tutorial.
+1.  Choose a preferred appearance theme for Positron
+2.  Create one new R script which assigns the following numbers to an object called `student_ids`: 071194, 101022, 042523, 052523.
+3.  Save the R script in the weekly folder for this course. Please name the script the following: lastname-R-task-tutorial-1. Upload it to Canvas.
 
 ### Reflect
 

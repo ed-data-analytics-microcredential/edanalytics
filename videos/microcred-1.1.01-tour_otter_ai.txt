@@ -1,0 +1,250 @@
+Unknown Speaker  0:01  
+Hi and welcome to one of the first mini video tutorials of this course. And this video, we're going to do a quick little introduction into our studio,
+
+Unknown Speaker  0:18  
+just to get you familiar with what it looks like and what all the little panes can do within our studio. Great. So let's go ahead and get started.
+
+Unknown Speaker  0:32  
+I have a script open in our studio, so this is what it looks like when you have a dot r file open.
+
+Unknown Speaker  0:41  
+So we'll first start with what is our studio? What is our in our studio? R is an open source programming language using a variety of disciplines for statistical computing, and our studio is the environment or the software application in which we can use utilize the language of r. So we're going to be relying on our for this course to learn and apply principles and skills related to education data analytics. So like I said, I have our studio open right now, and I have this dot R script open, so we're going to take a little R studio tour. So typically there are four panes within our studio, pane, 123,
+
+Unknown Speaker  1:29  
+and four.
+
+Unknown Speaker  1:32  
+The first pane in which you're reading this script is where your script which is indicated by an dot r file, or Markdown file, which is indicated by a dot R and D file, is displayed. So right now we have a dot r file shown and open.
+
+Unknown Speaker  1:54  
+And the second pane, this one right here to the right, is called the environment pain, and this is where you'll see the data sets and different objects you've loaded into your environment. The third pane, which is below the environment pain, this one right here.
+
+Unknown Speaker  2:14  
+It is all sorts of stuff, but mainly you're going to use, use this pain to view, view your files, packages and plots, and you can also, we'll get to this a little bit later, but you can use the help funk, this Help tab to get documentation on certain functions used in our but We'll talk a little bit more about that later.
+
+Unknown Speaker  2:44  
+Great. And then the last pane, the fourth pane down here, this is your console, and this is where, if you run any lines of code in R that produce an output. This is where your output will be displayed
+
+Unknown Speaker  3:01  
+when you run your code,
+
+Unknown Speaker  3:04  
+the console can also be used as a scratch pad
+
+Unknown Speaker  3:10  
+where you can write and run code, but it will not be a part of the script that you save. For example, let's say you needed to know the square root of 100 but you didn't want to save it in your R script, because, like again, it serves as a scratch pad so you can type in down here in your console. Console, square root function,
+
+Unknown Speaker  3:39  
+100 press enter, and it's going to give you the output, which is 10. The square root of 100 is 10. But again, it doesn't. Once you save your R script doesn't. If you open it back up, you won't see this. So this is like a little scratch pad the console can serve also as a scratch pad.
+
+Unknown Speaker  4:02  
+Great.
+
+Unknown Speaker  4:03  
+I do want to note that your environment structure, so this entire our studio
+
+Unknown Speaker  4:09  
+surface can be
+
+Unknown Speaker  4:13  
+or the surface and the structure can be changed. I'm using a Mac, but it should be basically the same on any other operating system is you come up to your R Studio,
+
+Unknown Speaker  4:28  
+file tabs, you click on preferences,
+
+Unknown Speaker  4:36  
+it'll open up the preference options, and Then you'll go to pain layout. And like I said, there's four panes which mimic what I have display displayed on my R Studio. So source environment, Boles plots packages in your console. And for some reason, if you wanted your console to be
+
+Unknown Speaker  4:58  
+over here.
+
+Unknown Speaker  5:00  
+So instead, you can change your console to be displayed in the second panel, and then your file plots packages and then your environment. But I am going to leave mine as
+
+Unknown Speaker  5:17  
+is, so you can alter how those four different panes are displayed. In what order, you can also change the appearance of your
+
+Unknown Speaker  5:28  
+our studio
+
+Unknown Speaker  5:31  
+surface. So right now, I just have the default settings, but you can change the the
+
+Unknown Speaker  5:40  
+editor theme to be a different color, so maybe it's a little bit easier on your eyes. Oops, I clicked add. I did not want to do
+
+Unknown Speaker  5:49  
+that. Um, whichever is easier easiest, sorry, on your eyes. Um,
+
+Unknown Speaker  5:56  
+you can go ahead and do that, but I'm going to leave mine as is. If you find something that you like, you can
+
+Unknown Speaker  6:05  
+click on it, hit Apply, and then, okay, but I'm going to leave mine as is, so you can change the payment layout as well as the appearance of your our studio.
+
+Unknown Speaker  6:19  
+Great.
+
+Unknown Speaker  6:21  
+Next I want to cover setting a working directory. So a working directory is essentially the file, folder in which your script will either be housed or where you'll pull information from. So just think of it kind of like
+
+Unknown Speaker  6:44  
+when you have file files or folders on your desktop or your computer, or however you manage your file system
+
+Unknown Speaker  6:55  
+setting your working directory will tell R to go into this folder and
+
+Unknown Speaker  7:03  
+go into this file. And so essentially, it gives the location of where your files are saved to our like it's the file path. If you, any of you work with file paths,
+
+Unknown Speaker  7:16  
+great.
+
+Unknown Speaker  7:19  
+So the first step for anything done in R is to set your working directory. If you don't set your working directory, R won't know where you are pulling or trying to pull information from. So you need to tell R where to pull
+
+Unknown Speaker  7:37  
+your files from by setting your working directory.
+
+Unknown Speaker  7:42  
+So it's the first thing you want to do always when working with R.
+
+Unknown Speaker  7:47  
+So the line of code below shows the default location of where r is currently operating off of. So for me, if you run this, get w, D, print, open. Parentheses, close parentheses.
+
+Unknown Speaker  8:04  
+You can see my console output. I'm currently my file path is set, or our is put, is linked to this folder that's in my Dropbox folder, and in this folder called our micro cred.
+
+Unknown Speaker  8:24  
+If this is not the location you want to work off of, you can change your working directory by running this line of code below set W, D, but you would just have to replace this line path, and this is the line path right now, you can also man manually set your working directory by going back to the R Studio file tabs, click on session, click on Set working directory. And then you can choose a directory.
+
+Unknown Speaker  9:02  
+And you can choose whichever,
+
+Unknown Speaker  9:06  
+yeah, whichever folder you need to pull from. So right now, mine is micro credential up here, you can always change where you want it. And then, let's say you want it in here, this folder will say, open, okay. And then it will set your working directory
+
+Unknown Speaker  9:34  
+and provide the new file path. And so
+
+Unknown Speaker  9:39  
+you can
+
+Unknown Speaker  9:42  
+set also set your working directory that way.
+
+Unknown Speaker  9:48  
+Okay? Another option, instead of setting your working directory or telling R where you want to pull files from, there are two ways to do this. One is to set your working directory, which we just.
+
+Unknown Speaker  10:00  
+And over, you can check your working directory, and then you can set your working directory. Another option for telling R where you want to
+
+Unknown Speaker  10:09  
+pull your files from information from, is to set up an R project. And setting up an R project is basically a folder where all of your files for a specific data analysis project will be housed,
+
+Unknown Speaker  10:29  
+so housed and stored, and then our will recognize all of the files within that our project folder that they all belong together, so you won't have to set your working directory
+
+Unknown Speaker  10:48  
+right. So using our projects can be advantageous, since our recognizes the location of all the files stored within an R project, you can, you can create a our project. Let's say, if you let's close this, for example. So let's say you just open R. This is what R looks like. When you open it, you're going to go to file
+
+Unknown Speaker  11:15  
+instead of new file, where you can create a new R script.
+
+Unknown Speaker  11:20  
+Let's close that you can come up here file, new project, um,
+
+Unknown Speaker  11:28  
+and then it's gonna load a new project,
+
+Unknown Speaker  11:31  
+taking a little bit of time,
+
+Unknown Speaker  11:36  
+great. And then you're going to start a new directory, a new project.
+
+Unknown Speaker  11:44  
+What are you going to call your project folder? So
+
+Unknown Speaker  11:50  
+let's call it
+
+Unknown Speaker  11:56  
+project
+
+Unknown Speaker  12:02  
+tutorial
+
+Unknown Speaker  12:04  
+and then you get to choose where you want to save that.
+
+Unknown Speaker  12:09  
+So click Browse. Let's say I just want it to be saved on my desktop or wherever you like to keep your files.
+
+Unknown Speaker  12:19  
+Click Open, and then you're going to create
+
+Unknown Speaker  12:25  
+project, and it's going to say, switching project to the location, the new project location, it's going to take a little bit to load. I'm
+
+Unknown Speaker  12:44  
+Yeah, great, remind.
+
+Unknown Speaker  12:48  
+Okay, great. And so now we're working off this dot r project,
+
+Unknown Speaker  12:57  
+file or folder. It's really a file. So let's say you add a new file in here. Let's say the script,
+
+Unknown Speaker  13:09  
+and then we're going to say this is a tester script, and then you want to do 25 plus, 82,
+
+Unknown Speaker  13:22  
+107, 107, great. And then you're gonna, whenever you're done with the script that you're using or the file within this project, you're gonna say Save, and then it's going to automatically save it into this folder, the project tutorial folder, which also has that dot r project, and this dot r project
+
+Unknown Speaker  13:45  
+tells R that everything within this main folder goes together.
+
+Unknown Speaker  13:52  
+Say test
+
+Unknown Speaker  13:55  
+script, right? You're going to save it and then let's
+
+Unknown Speaker  14:03  
+close the project.
+
+Unknown Speaker  14:07  
+That's gonna close, and then it's gonna show R
+
+Unknown Speaker  14:14  
+without anything in it. Kind of like if you were to open up R for the first time, this is what it would look like there is no script, there's nothing in the environment, and there's nothing in this.
+
+Unknown Speaker  14:28  
+In this
+
+Unknown Speaker  14:29  
+third pane, you don't have anything loaded in it. So if you wanted to open back up that project file, you would go to File, and then you can say open project or recent projects. And so recent project, we have that project tutorial that we just created. We're going to open it up.
+
+Unknown Speaker  14:53  
+Going to take a little bit of time to load and.
+
+Unknown Speaker  15:02  
+Yeah, great. And then it's gonna automatically open the last file that we had, open this dot our file, and I can run this this again,
+
+Unknown Speaker  15:14  
+and it works perfect. So I don't if you use a dot r project
+
+Unknown Speaker  15:20  
+and install all your files for a certain project within this dot r project
+
+Unknown Speaker  15:26  
+folder or file R is going to know that everything within that dot r project is linked together, so you don't need to set your working directory for this. Course, we are using a dot project
+
+Unknown Speaker  15:42  
+file folder, just so everything is kept together nice and orderly, and you don't have to set your working directory every single time you open a script or want to create a script. So
+
+Unknown Speaker  15:56  
+that covers it for this video, and we'll see you guys in the next one. Bye.
+
+Transcribed by https://otter.ai
