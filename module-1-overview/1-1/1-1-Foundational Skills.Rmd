@@ -36,6 +36,8 @@ Alternatively, you can think of a package as different dialects of the R languag
 
 More on this in the video below where you will learn about packages, how to install packages, and how to load packages :)
 
+*Note*: This video was recorded using the RStudio IDE, but the process is the same for Positron. You will notice the two IDEs even look very similar.
+
 ![](https://youtu.be/8m2X9AVtVCg)
 
 As a brief note, when you load Positron, you can still use the default language which is called base R.
@@ -86,11 +88,13 @@ We wanted to provide you with some best practices on using R packages through yo
 -   Since you need to load a package every time you plan to use a package in your R file/script, it is common practice to list the packages you will be using at the top of your file/script using `library()`
 -   While we will provide you with the most common packages to use for education data science, you can learn more about the packages we will be using as well as additional packages [here](https://cran.r-project.org/web/packages/available_packages_by_date.html)
 
-### Additional information on R Packages
+<!-- ### Additional information on R Packages
 
 If you would like additional information on packages within R, you can watch the brief video below.
 
-![](https://vimeo.com/203516241)
+*Note*: This video was recorded using the RStudio IDE, but the process is the same for Positron. You will notice the two IDEs even look very similar.
+
+![](https://vimeo.com/203516241) -->
 
 ### Your Turn: Install the following packages in R
 
@@ -166,6 +170,8 @@ We made a brief video below showing you how to get help.
 *Note:* `sqrt()` and `mean()` are Base R functions and are not associated with a specific package.
 
 ![](https://youtu.be/52DXIFcxY-o)
+
+*Note:* This video was was also recorded using the RStudio IDE, but again, the process is very similar in Positron.
 
 Perhaps you remembered learning that packages have R functions within them?
 This is true!

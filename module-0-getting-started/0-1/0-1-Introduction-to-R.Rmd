@@ -276,7 +276,7 @@ First, let's learn how to create an R session and R script in Positron.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 78.71720116618076%; height: 0;"><iframe src="https://www.loom.com/embed/81eccbdb0c4d4c53ac04a62ef11a5951?sid=528010c8-ad51-430f-b8f6-d1c113d773ee" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 77.25321888412017%; height: 0;"><iframe src="https://www.loom.com/embed/1868ee3cc041488ebbbb8d3399500ba1?sid=4894f43c-9ba0-4850-b44c-7844b024e274" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -286,7 +286,7 @@ Next, let's customize Positron by choosing a theme and adding extensions.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 80.11869436201779%; height: 0;"><iframe src="https://www.loom.com/embed/9f46b1eb70654526be37a653ab52701c?sid=760d238d-0ed2-44f5-be43-30751df9d295" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 76.59574468085107%; height: 0;"><iframe src="https://www.loom.com/embed/5e545d0201db47b6b36b27e6c9efff22?sid=95fb8167-e7f3-477f-bb2a-c3471d492924" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -296,7 +296,7 @@ Finally, let's take a quick tour of the Positron IDE and its many features.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 82.82208588957054%; height: 0;"><iframe src="https://www.loom.com/embed/a2bc58e05c9f4b028f9ed26c8495972f?sid=2c95b3f9-3cb8-4e1b-97b4-5fa007cde2ee" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 77.80979827089337%; height: 0;"><iframe src="https://www.loom.com/embed/30fad0539acf4e5f872647ab5b858a51?sid=5110ac65-8671-4a85-8730-7dc8fc2dcdf6" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -312,7 +312,7 @@ The video below will give you a brief tutorial of setting your file location usi
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 77.92207792207792%; height: 0;"><iframe src="https://www.loom.com/embed/86a0ea4a6bd44b8b9392c2f71855ec9d?sid=434baa88-268b-4da5-9e42-aa6683021b4d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 78.14761215629522%; height: 0;"><iframe src="https://www.loom.com/embed/27b922cca43d4407bd7ae9b906ca2776?sid=0121362b-9e44-49f9-a097-243057788f93" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
