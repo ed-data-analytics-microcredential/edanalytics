@@ -305,8 +305,8 @@ cat('
 
 We hope you enjoyed our virtual tour of Positron.
 The next thing we want to cover are working directories and folders.
-Both let Positron know where on your computer your saving your files or opening files from.
-These are important to use properly when creating R files/scripts (otherwise you will get errors messages because Positron doesn't know what file location you're working off of).
+Both let Positron know where on your computer you're saving your files or opening files from.
+These are important to use properly when creating R files/scripts (otherwise you will get frustrating errors messages).
 
 The video below will give you a brief tutorial of setting your file location using a working directory or folder.
 <br>
