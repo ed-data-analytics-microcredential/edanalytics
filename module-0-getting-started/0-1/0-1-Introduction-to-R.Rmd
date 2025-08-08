@@ -16,7 +16,7 @@ description: >
   border-left: 6px solid #ffcc00;
   margin-bottom: 15px;
 }
-
+```
 
 ```{r setup, include=FALSE}
 library(learnr)
@@ -192,7 +192,7 @@ Please watch the video below on how to download and install R.
 
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 83.59133126934985%; height: 0;"><iframe src="https://www.loom.com/embed/8bd24ca9af17478aac9ca1ac9abc4695?sid=364c6a65-344c-456d-90c9-8f766ec539ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 83.59133126934985%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=3601928f-f8c7-4992-9fbf-b3300138b716&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 
@@ -232,7 +232,7 @@ Please watch the video below on how to download and install Positron.
 
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 83.20493066255777%; height: 0;"><iframe src="https://www.loom.com/embed/04f9d7275ca74224ad958787e759d4fb?sid=bc822164-a97f-4e91-bb95-23c21ee7c296" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 83.20493066255777%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2801f7ae-d388-4356-b7a1-b3300138b716&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 
@@ -276,7 +276,7 @@ First, let's learn how to create an R session and R script in Positron.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 77.25321888412017%; height: 0;"><iframe src="https://www.loom.com/embed/1868ee3cc041488ebbbb8d3399500ba1?sid=4894f43c-9ba0-4850-b44c-7844b024e274" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 77.25321888412017%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=fd8de47b-bbcf-4cfe-a3fc-b3300138b723&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -286,7 +286,7 @@ Next, let's customize Positron by choosing a theme and adding extensions.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 76.59574468085107%; height: 0;"><iframe src="https://www.loom.com/embed/5e545d0201db47b6b36b27e6c9efff22?sid=95fb8167-e7f3-477f-bb2a-c3471d492924" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 76.59574468085107%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=29eb24b3-89ac-44c1-abe2-b3300138b720&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -296,7 +296,7 @@ Finally, let's take a quick tour of the Positron IDE and its many features.
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 77.80979827089337%; height: 0;"><iframe src="https://www.loom.com/embed/30fad0539acf4e5f872647ab5b858a51?sid=5110ac65-8671-4a85-8730-7dc8fc2dcdf6" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 77.80979827089337%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=831882fc-4b99-4f52-90c7-b3300138d790&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
@@ -312,7 +312,7 @@ The video below will give you a brief tutorial of setting your file location usi
 <br>
 ```{r, results='asis', echo=FALSE}
 cat('
-<div style="position: relative; padding-bottom: 78.83211678832116%; height: 0;"><iframe src="https://www.loom.com/embed/aa41938f8f9d444d9cbde61390b1c386?sid=f62dce24-62ac-487a-9c20-1e54d4e73871" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 78.83211678832116%; height: 0;"><iframe src="https://utk.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a2a2d444-61b2-4670-b5fc-b3300138db24&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ')
 ```
 <br>
